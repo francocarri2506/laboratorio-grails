@@ -1,6 +1,6 @@
 package Cursos
 
-class Interesado {
+class Interesado extends Usuario{
 
     static constraints = {
     }

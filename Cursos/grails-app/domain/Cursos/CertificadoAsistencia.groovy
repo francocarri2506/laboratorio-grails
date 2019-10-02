@@ -1,6 +1,6 @@
 package Cursos
 
-class CertificadoAsistencia {
+class CertificadoAsistencia extends Certificado{
 
     static constraints = {
     }

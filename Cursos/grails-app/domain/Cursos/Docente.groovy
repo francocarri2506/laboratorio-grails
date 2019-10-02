@@ -1,7 +1,7 @@
 package Cursos
 
-class Docente {
-
+class Docente extends Interesado{
+    String legajo
     static constraints = {
     }
 }

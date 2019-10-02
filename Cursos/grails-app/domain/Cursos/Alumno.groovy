@@ -1,7 +1,7 @@
 package Cursos
 
-class Alumno {
-
+class Alumno extends Interesado{
+    String matricula
     static constraints = {
     }
 }

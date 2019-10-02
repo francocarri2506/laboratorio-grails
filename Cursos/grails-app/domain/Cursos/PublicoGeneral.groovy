@@ -1,6 +1,6 @@
 package Cursos
 
-class PublicoGeneral {
+class PublicoGeneral extends Interesado{
 
     static constraints = {
     }
