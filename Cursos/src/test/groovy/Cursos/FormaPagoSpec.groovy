@@ -11,8 +11,11 @@ class FormaPagoSpec extends Specification implements DomainUnitTest<FormaPago> {
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "Comprobar la creacion de una forma de pago"() {
+        when:"cuando creo el objeto"
+            def formapago= new FormaPago(id:"1",descripcion:"tergeta")
+            formapago.save(flush:true)
+        then:"se guarda en la base de datos"
+            FormaPago.findById("1")==formapago
     }
 }

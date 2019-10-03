@@ -12,11 +12,12 @@ class Curso {
     Date fechadelCertificado
     Integer cupoMaximo
     Integer cupoMinimo
+    //static hasMany = [alumnos:Alumno]
 
     //static hasMany = [aspitantes:Aspirante , expositores:Expositor , autoridades:Autoridad]
 
     static constraints = {
-        nombre (blank:false, maxsize:100)
+        nombre (blank:false, maxsize:100, unique:true)
 
         fechaDesde (blank:true, validator:{ Date fecha, Curso obj ->
        if(fecha < new Date()){

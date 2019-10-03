@@ -13,9 +13,11 @@ class AdministradorSpec extends Specification implements DomainUnitTest<Administ
 
     void "Comprobar la creacion de un Administrador"() {
         when:"cuando creo el objeto"
-            def administrador = new Administrador(dni:"39998673",apellido:"carrizo", nombre:"franco" , usuario:"francocar",contrasenia:"holakease")
+            def administrador = new Administrador(dni:"39998673",apellido:"carrizo", nombre:"franco",email:"carrizonicolas@gmail.com",contrasenia:"holakease")
             administrador.save(flush:true)
         then:"se guarda en la base de datos"
             Administrador.findByDni("39998673")==administrador
     }
+
+    
 }
