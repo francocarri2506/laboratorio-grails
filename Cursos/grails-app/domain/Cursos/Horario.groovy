@@ -9,7 +9,7 @@ class Horario {
 
 
     static constraints = {
-        id (unique:true maxsize:5)
+        id (unique:true, maxsize:5)
         descripcion (blank:false , maxsize:100, nullable : true)
 
         horaInicio (blank:false , maxsize:100, nullable : true, validator:{ Integer valor, Horario obj ->
@@ -26,7 +26,3 @@ class Horario {
 
 }
 
- fechaHasta (blank:true, validator:{ Date valor, Curso obj ->
-        if(valor < obj.fechaDesde ){
-            return ['fechaHastaError',obj.fechaHasta]
-        }})

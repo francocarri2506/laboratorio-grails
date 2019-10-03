@@ -6,7 +6,7 @@ class CuponPago {
     FormaPago pago
     Integer id
     static constraints = {
-        id (unique:true maxsize:5)
-        estado (blank:false , maxsize:100)
+        id (unique:true, maxsize:5)
+        estado (blank:false, maxsize:100)
     }
 }

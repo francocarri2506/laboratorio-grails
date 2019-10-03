@@ -9,7 +9,7 @@ class Inscripcion {
     Integer  numeroorden
 
     static constraints = {
-      fechaInscripcion (blank:true, value: new Date() )  //nose si esto se podra
+    //  fechaInscripcion (blank:true, value: new Date() )  //nose si esto se podra
     }
 
 }

@@ -2,7 +2,7 @@ package Cursos
 
 class Certificado {
 
-    STtring descripcion
+    String descripcion
     Curso curso
     Interesado interesado
     

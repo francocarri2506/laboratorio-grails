@@ -11,8 +11,11 @@ class AutoridadCertificanteSpec extends Specification implements DomainUnitTest<
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "Comprobar la creacion de una Autoridad"() {
+        when:"cuando creo el objeto"
+            def autoridad = new AutoridadCertificante(dni:"39998673",apellido:"carrizo", nombre:"franco" , cargo:"Decano",email:"carrizonicolas@gmail.com")
+            autoridad.save(flush:true)
+        then:"se guarda en la base de datos"
+            AutoridadCertificante.findByDni("39998673")==autoridad
     }
 }

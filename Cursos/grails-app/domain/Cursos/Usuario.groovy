@@ -2,7 +2,7 @@ package Cursos
 
 class Usuario {
 
-    BigInteger dni
+    String dni
     String apellido
     String nombre
     String email
