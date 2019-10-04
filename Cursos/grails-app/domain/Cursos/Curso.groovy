@@ -12,7 +12,7 @@ class Curso {
     Date fechadelCertificado
     Integer cupoMaximo
     Integer cupoMinimo
-    //static hasMany = [alumnos:Alumno]
+    static hasMany = [alumnos:Alumno]
 
     //static hasMany = [aspitantes:Aspirante , expositores:Expositor , autoridades:Autoridad]
 
