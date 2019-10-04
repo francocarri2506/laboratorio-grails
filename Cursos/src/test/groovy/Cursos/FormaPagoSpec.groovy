@@ -18,4 +18,5 @@ class FormaPagoSpec extends Specification implements DomainUnitTest<FormaPago> {
         then:"se guarda en la base de datos"
             FormaPago.findById("1")==formapago
     }
+
 }
