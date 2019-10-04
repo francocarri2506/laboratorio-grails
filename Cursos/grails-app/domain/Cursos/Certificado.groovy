@@ -6,6 +6,6 @@ class Certificado {
     Curso curso
     
     static constraints = {
-        descripcion (blank:false , maxsize:100)
+        descripcion (blank:false, maxsize:100)
     }
 }
