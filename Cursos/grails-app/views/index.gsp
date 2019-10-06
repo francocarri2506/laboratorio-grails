@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
 	
-	<title>Progressus - Free business bootstrap template by GetTemplate</title>
+	<title>Pagina Principal - Home</title>
 
 	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
 	
@@ -65,7 +65,7 @@
 		<div class="container">
 			<div class="row">
 				<h1 class="lead">CADA LOGRO COMIENZA CON <br>LA DECISIÓN DE INTENTARLO</h1>
-				<p class="tagline">by <a href="https://es.wikipedia.org/wiki/Gail_Devers">Gail Devers</a></p>
+				<p class="tagline">by                    <a href="https://es.wikipedia.org/wiki/Gail_Devers">Gail Devers</a></p>
 				<p><a class="btn btn-default btn-lg" role="button">ACCEDER</a> <a class="btn btn-action btn-lg" role="button">CURSOS</a></p>
 			</div>
 		</div>
@@ -79,7 +79,8 @@
 
     <div class="row mt centered ">
       <div class="col-lg-4 col-lg-offset-4">
-        <h3>NOVEDADES</h3>
+	  <h2 class="text-center thin"><strong>NOVEDADES</strong></h2>
+      
         <hr>
       </div>
     </div>
@@ -94,7 +95,7 @@
 					</div>
 				</a>
         
-        <p class="lead">Java es un lenguaje de programación y una plataforma informática comercializada por primera vez en 1995 por Sun Microsystems. Hay muchas aplicaciones y sitios web que no funcionarán a menos que tenga Java instalado y cada día se crean más. Java es rápido, seguro y fiable.</p>
+        <p class="text-muted">Java es un lenguaje de programación y una plataforma informática comercializada por primera vez en 1995 por Sun Microsystems. Hay muchas aplicaciones y sitios web que no funcionarán a menos que tenga Java instalado y cada día se crean más. Java es rápido, seguro y fiable.</p>
         <hr-d>
           <p class="time"><i class="fa fa-comment-o"></i> 3 | <i class="fa fa-calendar"></i> 14 Nov.</p>
       </div>
@@ -107,7 +108,7 @@
 					  	<p class="b-from-right b-animate b-delay03">Leer más</p>
 					</div>
 				</a>
-        <p class="lead">La carrera de Diseño y Programación Web te forma como especialista capaz de diseñar y desarrollar aplicaciones web y móviles, ricas en interacción, funcionales, accesibles, de fácil comprensión y basadas en estándares web.</p>
+        <p class="text-muted">La carrera de Diseño y Programación Web te forma como especialista capaz de diseñar y desarrollar aplicaciones web y móviles, ricas en interacción, funcionales, accesibles, de fácil comprensión y basadas en estándares web.</p>
         <hr-d>
           <p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p>
       </div>
@@ -121,7 +122,7 @@
 					</div>
 				</a>
       
-        <p class="lead">La robótica es una ciencia o rama de la tecnología, que estudia el diseño y construcción de máquinas capaces de desempeñar tareas realizadas por el ser humano o que requieren del uso de inteligencia.</p>
+        <p class="text-muted">La robótica es una ciencia o rama de la tecnología, que estudia el diseño y construcción de máquinas capaces de desempeñar tareas realizadas por el ser humano o que requieren del uso de inteligencia.</p>
         <hr-d>
           <p class="time"><i class="fa fa-comment-o"></i> 1 | <i class="fa fa-calendar"></i> 13 Oct.</p>
       </div>
@@ -134,10 +135,11 @@
 	<!-- /Intro-->
 		
 	<!-- Highlights - jumbotron -->
+	
 	<div class="jumbotron top-space">
 		<div class="container">
 			
-			<h3 class="text-center thin">RAZONES POR LAS QUE DEBES ESTUDIAR</h3>
+			<h3 class="text-center thin"><strong>RAZONES POR LAS QUE DEBES ESTUDIAR</strong></h3>
 			
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
@@ -171,9 +173,10 @@
 	<!-- /Highlights -->
 
 	<!-- container -->
+	
 	<div class="container">
 
-		<h2 class="text-center top-space">Preguntas Frecuentes</h2>
+		<h2 class="text-center top-space"><strong>PREGUNTAS FRECUENTES</strong></h2>
 		<br>
 
 		<div class="row">
@@ -200,12 +203,12 @@
 				<p>En caso de aprobar el examen final del curso, el docente a cargo nos comunicará sobre dicha situación. Luego, usted recibirá, en un plazo no mayor a 10 días, su certificado por correo electrónico.</p>
 			</div>
 		</div> <!-- /row -->
-        <h2 class="text-center top-space">LA FACULTAD</h2>
+        <h2 class="text-center top-space"><strong>LA FACULTAD</strong></h2>
 
 		<div class="jumbotron top-space">
         
-			<h4>La Universidad Nacional de Catamarca, creada en el año 1971, ha surgido como expresión neta de la teoría del desarrollismo, en el marco de la Ley Nacional Nº 17.245. El entonces Ministro de Educación y Cultura de la Nación, Dr. Gustavo Malek, había expresado que la “Nueva Universidad” debía reunir una serie de condiciones para atender cumplidamente los tres horizontes fundamentales de la acción universitaria (formación de hombres, de profesionales y de investigadores; o sea, cultura, saber y ciencia), poseer equilibrio humanístico-científico-tecnológico, ser realista en sus estudios e innovador en su metodología didáctica. Debía ser ágil y flexible en sus estructuras. En lo posible, sin ofrecimientos de carreras clásicas sino de aquellas consideradas como más necesarias en sus zonas de influencia y abierta a todos los sectores populares.</h4>
-     		<p class="text-right"><a class="btn btn-primary btn-large">Leer más »</a></p>
+			<h5>La Universidad Nacional de Catamarca, creada en el año 1971, ha surgido como expresión neta de la teoría del desarrollismo, en el marco de la Ley Nacional Nº 17.245. El entonces Ministro de Educación y Cultura de la Nación, Dr. Gustavo Malek, había expresado que la “Nueva Universidad” debía reunir una serie de condiciones para atender cumplidamente los tres horizontes fundamentales de la acción universitaria (formación de hombres, de profesionales y de investigadores; o sea, cultura, saber y ciencia), poseer equilibrio humanístico-científico-tecnológico, ser realista en sus estudios e innovador en su metodología didáctica. Debía ser ágil y flexible en sus estructuras. En lo posible, sin ofrecimientos de carreras clásicas sino de aquellas consideradas como más necesarias en sus zonas de influencia y abierta a todos los sectores populares.</h4>
+     		<p class="text-right"><a href="http://tecno.unca.edu.ar/historia/" class="btn btn-primary btn-large">Leer más »</a></p>
   		</div>
 
 </div>	<!-- /container -->
@@ -288,7 +291,7 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
-								Copyright &copy; JOGAF - 2019. Diseñado por <a href="http://gettemplate.com/" rel="designer">JOGAF</a> 
+								Copyright &copy; JOGAF - 2019. Diseñado por <a href="#" rel="designer">JOGAF</a> 
 							</p>
 						</div>
 					</div>
