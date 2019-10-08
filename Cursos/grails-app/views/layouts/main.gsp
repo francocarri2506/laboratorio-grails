@@ -1,92 +1,110 @@
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
-    <meta name="layout" content="main2"/>
+
     <meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
-	
-	<title>Progressus - Free business bootstrap template by GetTemplate</title>
 
-	<link rel="shortcut icon" href="assets/images/gt_favicon.png">
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<asset:stylesheet src="bootstrap.min.css"/>
-	<asset:stylesheet src="font-awesome.min.css"/>
+    
+    
+    <title>
+        <g:layoutTitle default="Grails"/>
+    </title>
+    
 
-	<!-- Custom styles for our template -->
+
+    <!-- Custom styles for our template -->
 	<asset:stylesheet src="bootstrap-theme.css" media="screen" />
 	<asset:stylesheet src="main2.css"/>
+    <asset:stylesheet src="hover-pack.css"/>
 
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <asset:stylesheet src="application.css"/>
+
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<asset:stylesheet src="bootstrap.min.css"/>
+	<asset:stylesheet src="font-awesome.min.css"/>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
-</head>
-</head>
-<body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top headroom" >
-		<div class="container">
+    <g:layoutHead/>
+</head>
+<body class="home">
+
+    <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container">
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				
-                <a class="navbar-brand" href="#">
-            <asset:image src="logo.png"  alt="Progressus HTML5 template"/></a>
-			</div>
+                
+			<a class="navbar-brand" href="#">
+            <asset:image src="logo2.png"  alt="Progressus HTML5 template"/></a>
+            
+            </div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="about.html">About</a></li>
+					<li class="active"><a href="#">INICIO</a></li>
+					<li><a href="about.html">LA FACULTAD</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="sidebar-left.html">Left Sidebar</a></li>
-							<li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+							<li><a href="sidebar-left.html">Preguntas Frecuentes</a></li>
+							<li class="active"><a href="sidebar-right.html">Lista de Cursos</a></li>
 						</ul>
 					</li>
-					<li><a href="contact.html">Contact</a></li>
-					<li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+					<li><a href="contact.html">CONTACTOS</a></li>
+					<li><a class="btn" href="signin.html">ACCEDER / REGISTRARSE</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
-	</div> 
-            <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
-                <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                </ul>
-            </div>
-        </div>
     </div>
 
     <g:layoutBody/>
 
-   <footer id="footer" class="top-space">
+    	<!-- Social links. @TODO: replace by link/instructions in template -->
+	<section id="social">
+		<div class="container">
+			<div class="wrapper clearfix">
+				<!-- AddThis Button BEGIN -->
+				<div class="addthis_toolbox addthis_default_style">
+				<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+				<a class="addthis_button_tweet"></a>
+				<a class="addthis_button_linkedin_counter"></a>
+				<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+				</div>
+				<!-- AddThis Button END -->
+			</div>
+		</div>
+	</section>
+	<!-- /social links -->
+
+
+	<footer id="footer" class="top-space">
 
 		<div class="footer1">
 			<div class="container">
 				<div class="row">
 					
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Contact</h3>
+						<h3 class="widget-title">Contactos</h3>
 						<div class="widget-body">
-							<p>+234 23 9873237<br>
-								<a href="mailto:#">some.email@somewhere.com</a><br>
+							<p>383-4878963<br>
+								<a href="mailto:#">jogaf@gmail.com</a><br>
 								<br>
-								234 Hidden Pond Road, Ashland City, TN 37015
+								Maipu y Belgran, San Fernando del Valle de Catamarca, CP 4700
 							</p>	
 						</div>
 					</div>
 
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow me</h3>
+						<h3 class="widget-title">Sígueme</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons">
 								<a href=""><i class="fa fa-twitter fa-2"></i></a>
-								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
 								<a href=""><i class="fa fa-github fa-2"></i></a>
 								<a href=""><i class="fa fa-facebook fa-2"></i></a>
 							</p>	
@@ -94,10 +112,11 @@
 					</div>
 
 					<div class="col-md-6 widget">
-						<h3 class="widget-title">Text widget</h3>
+						<h3 class="widget-title">Acerca de:</h3>
 						<div class="widget-body">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+							<p>El presente prototipo de aplicación web fue desarrollado en equipo por los alumnos Franco Carrizo, Gabriel Pacheco y José Rodríguez, 
+                            todos pertencientes a la carrera de Ingeniería en Informática, la cual se dicta en la Universidad Nacional de Catamarca. 
+                            </p>
 						</div>
 					</div>
 
@@ -112,11 +131,11 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
-								<b><a href="signup.html">Sign up</a></b>
+								<a href="#">INICIO</a> | 
+								<a href="about.html">LA FACULTAD</a> |
+								<a href="sidebar-right.html">CURSOS</a> |
+								<a href="contact.html">CONTACTOS</a> |
+								<b><a href="signup.html">ACCEDER</a></b>
 							</p>
 						</div>
 					</div>
@@ -124,7 +143,7 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+								Copyright &copy; JOGAF - 2019. Diseñado por <a href="#" rel="designer">JOGAF</a> 
 							</p>
 						</div>
 					</div>
@@ -134,12 +153,23 @@
 		</div>
 
 	</footer>	
+		
+
+
+
+
+	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<asset:javascript src="headroom.min.js"/>
+	<asset:javascript src="jQuery.headroom.min.js"/>
+	<asset:javascript src="template.js"/>
+    
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>
     </div>
 
-    <asset:javascript src="application.js"/>
 
 </body>
 </html>
