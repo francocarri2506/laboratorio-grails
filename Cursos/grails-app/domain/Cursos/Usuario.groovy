@@ -1,6 +1,7 @@
 package Cursos
 
-class Usuario implements Serializable {
+class Usuario implements Serializable{
+  /*implements Serializable*/ 
     private static final long serialVersionUID = 1
 
    // String dni
@@ -35,6 +36,7 @@ class Usuario implements Serializable {
         UsuarioRol.findAllByUsuario(this)
       }
 
+      /*
       def beforeInsert() {
         password=generateMD5_A(password)
 
@@ -45,7 +47,7 @@ class Usuario implements Serializable {
           password=generateMD5_A(password)
         }
       }
-
+      */
             def beforeValidate() {
                 nombreUsuario=nombreUsuario?.toUpperCase()
                 email=email?.toLowerCase()
@@ -53,8 +55,8 @@ class Usuario implements Serializable {
             }
 
     static constraints = {
-        dni(blank:false , unique:true , matches: "[0-9]{8}")
-        apellido(blank:false , maxsize:100)
+        //dni(blank:false , unique:true , matches: "[0-9]{8}")
+        //apellido(blank:false , maxsize:100)
         //nombreUsuario(blank:false , maxsize:100)
        // email (email:true, blank:true)
        // password (blank:false , maxsize:100)

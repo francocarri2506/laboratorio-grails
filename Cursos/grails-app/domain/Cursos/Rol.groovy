@@ -1,9 +1,10 @@
 package Cursos
 
-class Rol implements Serializable {
-    private static final long serialVersionUID = 1
+class Rol implements Serializable{
+    /*implements Serializable*/
+	private static final long serialVersionUID = 1
 
-	   String authority
+	String authority
 
 
   	boolean equals(otro) {

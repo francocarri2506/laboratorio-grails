@@ -7,6 +7,8 @@ import spock.lang.*
 
 class CursoControllerSpec extends Specification implements ControllerUnitTest<CursoController>, DomainUnitTest<Curso> {
 
+
+    /*
     def populateValidParams(params) {
         assert params != null
 
@@ -218,6 +220,7 @@ class CursoControllerSpec extends Specification implements ControllerUnitTest<Cu
         response.redirectedUrl == '/curso/index'
         flash.message != null
     }
+    */
 }
 
 

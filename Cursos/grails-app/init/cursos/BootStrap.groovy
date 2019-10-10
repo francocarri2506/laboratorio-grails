@@ -1,4 +1,4 @@
-package cursos
+package Cursos
 
 class BootStrap {
 
@@ -10,20 +10,20 @@ class BootStrap {
   //        println it
   //      }
   //    }
-/*
-    def usu= new Usuario(nombreUsuario: 'franco', password: 'nicolas', email: 'carrizonicolasfranco@gmail.com')
-      if(!usu.save(flush: true)) {
+
+    def usu= new Usuario(nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+    if(!usu.save(flush: true)) {
         usu.errors.each{
           println it
         }
-      }
+      }  
 
-      def rol = new Rol(authority: 'ADMIN')
-      if(!rol.save(flush: true)) {
+     def rol = new Rol(authority: 'ADMIN')
+     if(!rol.save(flush: true)) {
         rol.errors.each{
           println it
         }
-      }
+      } 
 
       def usuarioRol = new UsuarioRol(usuario: usu, rol: rol)
       if(!usuarioRol.save(flush: true)) {
@@ -31,9 +31,10 @@ class BootStrap {
           println it
         }
       }
-*/
 
+      
     }
+
     def destroy = {
     }
 }
