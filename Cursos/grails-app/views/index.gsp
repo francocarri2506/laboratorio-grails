@@ -31,8 +31,8 @@
 
 <body class="home">
 <!--
-	para la parte del login FRANCO
--->
+	para la parte del login FRANCO   esta parte la puse en el main del layout principal
+
 <g:if test="${session!=null && session.usuario!=null}">
     <div class="nav" role="navigation">
         <ul>
@@ -53,7 +53,7 @@
     <div class="message" role="status">${message}</div>
   </g:if>
 
-
+-->
 
 
 	<!-- Fixed navbar -->
