@@ -96,4 +96,9 @@ class UsuarioController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    def acceder() {
+        render (view:"acceder")
+        
+    }
+
 }
