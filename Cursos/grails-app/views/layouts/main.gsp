@@ -56,12 +56,32 @@
 							<li class="active"><a href="sidebar-right.html">Lista de Cursos</a></li>
 						</ul>
 					</li>
-					<li><a href="contact.html">CONTACTOS</a></li>
-					<li><a class="btn" href="signin.html">ACCEDER / REGISTRARSE</a></li>
+					<li><a href="contact.html">CONTACTOS</a></li>	
+					<li>
+						<g:if test="${session!=null && session.usuario!=null}">
+							<div class="nav" role="navigation">
+								<ul>
+								<li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario: ${session?.usuario?.nombreUsuario}</a></li>
+								<li><g:link controller="login" action="logout" controller="login"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link></li>
+								</ul>
+							</div>
+						</g:if>
+						<g:else>
+							<div class="nav" role="navigation">
+								<ul>
+								<li><g:link class="btn"  controller="login" action="login">ACCEDER / REGISTRARSE</g:link></li>
+								</ul>
+							</div>
+						</g:else>
+						<g:if test="${message}">
+							<div class="message" role="status">${message}</div>
+						</g:if>
+					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
     </div>
+
 
     <g:layoutBody/>
 
@@ -134,8 +154,19 @@
 								<a href="#">INICIO</a> | 
 								<a href="about.html">LA FACULTAD</a> |
 								<a href="sidebar-right.html">CURSOS</a> |
-								<a href="contact.html">CONTACTOS</a> |
-								<b><a href="signup.html">ACCEDER</a></b>
+								<a href="contact.html">CONTACTOS</a> |		
+								<b>
+									<g:if test="${session!=null && session.usuario!=null}">
+											<a href="#"><span class="glyphicon glyphicon-user"></span> Usuario: ${session?.usuario?.nombreUsuario}</a>
+											<g:link controller="login" action="logout" controller="login"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link>
+									</g:if>
+									<g:else>	
+											<g:link controller="login" action="login">ACCEDER / REGISTRARSE</g:link>
+									</g:else>
+									<g:if test="${message}">
+										<div class="message" role="status">${message}</div>
+									</g:if>
+								</b>
 							</p>
 						</div>
 					</div>
