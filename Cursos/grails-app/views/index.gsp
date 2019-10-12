@@ -177,7 +177,7 @@
 	
 	<div class="container">
 
-		<h2 class="text-center top-space"><strong>PREGUNTAS FRECUENTES</strong></h2>
+		<h2 class="text-center top-space" id="preguntas"><strong>PREGUNTAS FRECUENTES</strong></h2>
 		<br>
 
 		<div class="row">
@@ -204,12 +204,12 @@
 				<p>En caso de aprobar el examen final del curso, el docente a cargo nos comunicará sobre dicha situación. Luego, usted recibirá, en un plazo no mayor a 10 días, su certificado por correo electrónico.</p>
 			</div>
 		</div> <!-- /row -->
-        <h2 class="text-center top-space"><strong>LA FACULTAD</strong></h2>
+        <h2 class="text-center top-space" id="facultad"><strong>LA FACULTAD</strong></h2>
 
 		<div class="jumbotron top-space">
         
 			<h5>La Universidad Nacional de Catamarca, creada en el año 1971, ha surgido como expresión neta de la teoría del desarrollismo, en el marco de la Ley Nacional Nº 17.245. El entonces Ministro de Educación y Cultura de la Nación, Dr. Gustavo Malek, había expresado que la “Nueva Universidad” debía reunir una serie de condiciones para atender cumplidamente los tres horizontes fundamentales de la acción universitaria (formación de hombres, de profesionales y de investigadores; o sea, cultura, saber y ciencia), poseer equilibrio humanístico-científico-tecnológico, ser realista en sus estudios e innovador en su metodología didáctica. Debía ser ágil y flexible en sus estructuras. En lo posible, sin ofrecimientos de carreras clásicas sino de aquellas consideradas como más necesarias en sus zonas de influencia y abierta a todos los sectores populares.</h4>
-     		<p class="text-right"><a href="http://tecno.unca.edu.ar/historia/" class="btn btn-primary btn-large">Leer más »</a></p>
+     		<p class="text-right"><g:link controller="administrador" action="facultad" class="btn btn-primary btn-large"> Leer más »</g:link></p>
   		</div>
 
 </div>	<!-- /container -->

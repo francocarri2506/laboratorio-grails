@@ -96,4 +96,8 @@ class AdministradorController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    def facultad() {
+        render (view:"facultad")
+        
+    }
 }

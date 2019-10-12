@@ -9,15 +9,15 @@
 	
 	<title>Acceder</title>
 
-	
-	
-	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<asset:stylesheet src="bootstrap.min.css"/>
+	<asset:stylesheet src="font-awesome.min.css"/>
 
 	<!-- Custom styles for our template -->
-	<link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="assets/css/main.css">
+	<asset:stylesheet src="bootstrap-theme.css" media="screen" />
+	<asset:stylesheet src="main2.css"/>
+    <asset:stylesheet src="hover-pack.css"/>
+	
+	
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -29,13 +29,15 @@
 <body>
 	
 
-	<header id="head" class="secondary"></header>
+	
 
 	<!-- container -->
 	<div class="container">
 
 		<ol class="breadcrumb">
-			<li><a href="#">INICIO</a></li>
+
+		<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+			
 			<li class="active">ACCEDER</li>
 		</ol>
 
@@ -44,7 +46,10 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">ACCDER</h1>
+					<h1 class="page-title">ACCDER</h1><br>
+					<g:if test="${message}">
+      <div class="message" role="status">${message}</div>
+    </g:if>
 				</header>
 				
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
@@ -53,15 +58,16 @@
 							<h3 class="thin text-center">Iniciar sesión en su cuenta </h3>
 							<p class="text-center text-muted">¿No tiene una cuenta? <a href="signup.html">Registrarse</a>. </p>
 							<hr>
-							
+							<g:form controller="usuario" action="loginUser" method="post">
 							<form>
 								<div class="top-margin">
 									<label>USUARIO/EMAIL <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type='email' id='email' name='email' required/>
+									
 								</div>
 								<div class="top-margin">
 									<label>CONTRASEÑA <span class="text-danger">*</span></label>
-									<input type="password" class="form-control">
+									<input type="password" id='password' name='password' required/>
 								</div>
 
 								<hr>
@@ -72,9 +78,12 @@
 									</div>
 									<div class="col-lg-4 text-right">
 										<button class="btn btn-action" type="submit">ACCEDER</button>
+										
 									</div>
 								</div>
 							</form>
+						
+     			 </g:form>		
 						</div>
 					</div>
 
@@ -87,12 +96,6 @@
 	</div>	<!-- /container -->
 	
 
-	
-	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-	<script src="assets/js/headroom.min.js"></script>
-	<script src="assets/js/jQuery.headroom.min.js"></script>
-	<script src="assets/js/template.js"></script>
+
 </body>
 </html>
