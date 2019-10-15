@@ -41,7 +41,8 @@
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 
-			<a class="navbar-brand" href="#">
+
+			<a class="navbar-brand" href="${createLink(uri: '/')}">
             <asset:image src="logo2.png"  alt="Progressus HTML5 template"/></a>
             
             </div>
