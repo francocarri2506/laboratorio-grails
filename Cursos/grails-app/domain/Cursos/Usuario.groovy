@@ -1,7 +1,9 @@
 package Cursos
 
+import java.security.MessageDigest
+
 class Usuario implements Serializable{
-  /*implements Serializable*/ 
+  
     private static final long serialVersionUID = 1
 
    // String dni
@@ -36,7 +38,7 @@ class Usuario implements Serializable{
         UsuarioRol.findAllByUsuario(this)
       }
 
-      /*
+      
       def beforeInsert() {
         password=generateMD5_A(password)
 
@@ -47,7 +49,7 @@ class Usuario implements Serializable{
           password=generateMD5_A(password)
         }
       }
-      */
+      
             def beforeValidate() {
                 nombreUsuario=nombreUsuario?.toUpperCase()
                 email=email?.toLowerCase()

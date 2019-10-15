@@ -1,7 +1,7 @@
 package Cursos
 
 class UsuarioRol implements Serializable{
-    /*implements Serializable*/ 
+    
     private static final long serialVersionUID = 1
 
     Usuario usuario

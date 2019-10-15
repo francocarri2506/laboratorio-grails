@@ -1,7 +1,7 @@
 package Cursos
 
 class Rol implements Serializable{
-    /*implements Serializable*/
+    
 	private static final long serialVersionUID = 1
 
 	String authority
