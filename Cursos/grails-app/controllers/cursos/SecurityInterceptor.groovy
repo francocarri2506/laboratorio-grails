@@ -92,12 +92,14 @@ class SecurityInterceptor {
           return false
       }
 
-    //  if(controllerName=='libro' && (actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
-    //    if(!session.usuario.getRoles().any{it.authority=='ADMIN'}) {
-    //        render(view: "/index", model: [message:'No tiene permisos para la accion solicitada'])
-    //        return false
-    //    }
-    //  }
+      
+
+     if(/*controllerName=='curso' && */(actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
+       if(!session.usuario.getRoles().any{it.authority=='ADMIN'}) {
+           render(view: "/index", model: [message:'No tiene permisos para la accion solicitada'])
+           return false
+       }
+     }
 
 
       return true
