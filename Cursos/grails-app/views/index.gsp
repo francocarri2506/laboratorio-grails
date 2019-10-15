@@ -76,7 +76,7 @@
 	<!-- Intro -->
 	<!-- /headerwrap -->
 
-  <div class="container">
+  	<div class="container">
 
     <div class="row mt centered ">
       <div class="col-lg-4 col-lg-offset-4">
@@ -131,7 +131,7 @@
 
     </div>
     <!-- /row -->
-  </div>
+ 	 </div>
   <!-- /container -->
 	<!-- /Intro-->
 		
@@ -225,7 +225,7 @@
                         </li>
                     </g:each>
                 </ul>
-            </div>
+</div>
 
 	
 </body>

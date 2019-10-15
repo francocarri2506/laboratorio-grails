@@ -107,9 +107,14 @@ class UsuarioController {
    }
      def u = Usuario.findByEmail(params.email)
      if (u) {
-       if (u.password == /*u.generateMD5_A*/(params.password)) {
+       if (u.password == u.generateMD5_A(params.password)) {
           session.usuario = u
-          render(view: "/index")
+          def usRol = UsuarioRol.findByUsuario(u)
+          if (usRol.rol.authority == "ADMIN"){
+            render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
+          }
+          else
+            render(view: "/index") //sino se muestra el home
         } else {
           render(view: "acceder", model: [message: "Constraseña Incorrecta"])
         }
@@ -123,4 +128,8 @@ class UsuarioController {
       render(view: "/index")
     }
 
+    //PROBANDOOOOOOOO
+    def redirectALoginController = {
+        redirect(controller:"administrador",action:"renderIndex2")
+    }
 }

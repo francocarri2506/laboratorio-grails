@@ -58,6 +58,7 @@
 							<h3 class="thin text-center">Iniciar sesión en su cuenta </h3>
 							<p class="text-center text-muted">¿No tiene una cuenta? <a href="signup.html">Registrarse</a>. </p>
 							<hr>
+							
 							<g:form controller="usuario" action="loginUser" method="post">
 							<form>
 								<div class="top-margin">
@@ -83,7 +84,7 @@
 								</div>
 							</form>
 						
-     			 </g:form>		
+     			 	</g:form>		
 						</div>
 					</div>
 

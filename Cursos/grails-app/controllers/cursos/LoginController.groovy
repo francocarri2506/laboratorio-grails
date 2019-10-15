@@ -7,7 +7,6 @@ class LoginController {
      return render(view: 'login')
    }
      def u = Usuario.findByEmail(params.email)
-     def contr=u.generateMD5_A(params.password)
      if (u) {
        if (u.password == u.generateMD5_A(params.password)) {
           session.usuario = u
