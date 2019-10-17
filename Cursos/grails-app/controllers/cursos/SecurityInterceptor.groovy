@@ -14,7 +14,7 @@ class SecurityInterceptor {
       .excludes(controller:'libro', action:'list')
       .excludes(view:"/index")*/
 
-      match(controller:"curso", action:"index")
+      
       match(controller:"curso", action:"edit")
       match(controller:"curso", action:"show")
       match(controller:"curso", action:"create")
@@ -94,7 +94,7 @@ class SecurityInterceptor {
 
       
 
-     if(/*controllerName=='curso' && */(actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
+     if(/*controllerName=='curso' && */(actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
        if(!session.usuario.getRoles().any{it.authority=='ADMIN'}) {
            render(view: "/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
