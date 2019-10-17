@@ -104,6 +104,7 @@ class UsuarioController {
     def loginUser() {
    if (request.get) {
      return render(view: 'login')
+     
    }
      def u = Usuario.findByEmail(params.email)
      if (u) {

@@ -57,7 +57,8 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#preguntas">Preguntas Frecuentes</a></li>
-							<li class="active"><a href="sidebar-right.html">Lista de Cursos</a></li>
+							<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>
+							
 						</ul>
 					</li>
 					<li><a href="#footer">CONTACTOS</a></li>

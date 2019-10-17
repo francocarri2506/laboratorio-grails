@@ -52,6 +52,40 @@ class BootStrap {
         println it
       }
     }
+
+            def fechaD= Date.parse('yyyy-MM-dd', "2019-11-11")
+            def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
+            def fechaIns= Date.parse('yyyy-MM-dd', "2019-10-10")
+            def fechaCur= Date.parse('yyyy-MM-dd', "2020-06-06")
+            def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
+                fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
+                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria" )
+
+      if(!curso.save(flush: true)) {
+            curso.errors.each{
+              println it
+            }
+          }  
+
+          def curso1 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
+                fechadelCertificado:fechaCur,nombre:"Programacion 3",cupoMaximo:10 ,
+                cupoMinimo:3 ,cantidadHoras:" 4 ",horarios:"8:00 - 12:00",lugar:"UNCA IDI" )
+
+  if(!curso1.save(flush: true)) {
+            curso1.errors.each{
+              println it
+            }
+          } 
+
+def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
+                fechadelCertificado:fechaCur,nombre:"Ingenieria de Software 3",cupoMaximo:10 ,
+                cupoMinimo:3 ,cantidadHoras:" 2 ",horarios:"10:00 - 12:00",lugar:"UNCA IDI" )
+
+  if(!curso2.save(flush: true)) {
+            curso2.errors.each{
+              println it
+            }
+          } 
     
   }
 
