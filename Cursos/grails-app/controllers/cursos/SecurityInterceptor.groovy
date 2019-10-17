@@ -78,7 +78,7 @@ class SecurityInterceptor {
       match(controller:"usuario", action:"index")
       match(controller:"usuario", action:"edit")
       match(controller:"usuario", action:"show")
-      match(controller:"usuario", action:"create")
+    //  match(controller:"usuario", action:"create")
 
       
 
@@ -111,6 +111,12 @@ class SecurityInterceptor {
       match(controller:"curso", action:"edit")
       match(controller:"curso", action:"show")
       match(controller:"curso", action:"create")
+
+
+      match(controller:"administrador", action:"index")
+      match(controller:"administrador", action:"edit")
+      match(controller:"administrador", action:"show")
+      match(controller:"administrador", action:"create")
 
      }
 
