@@ -30,6 +30,9 @@
 	<script src="assets/js/html5shiv.js"></script>
 	<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
+    <!-- Para el usuario una vez logeado -->
+	 <asset:stylesheet src="font-awesome.min2.css"/>
+	
 
     <g:layoutHead/>
 </head>
@@ -57,15 +60,16 @@
 							<li class="active"><a href="sidebar-right.html">Lista de Cursos</a></li>
 						</ul>
 					</li>
-					<li><a href="#footer">CONTACTOS</a></li>	
-					<li>
+					<li><a href="#footer">CONTACTOS</a></li>
+					<li class="dropdown">
 						<g:if test="${session!=null && session.usuario!=null}">
-							<div class="nav" role="navigation">
-								<ul>
-								<li><a href="#"><span class="glyphicon glyphicon-user"></span> Usuario: ${session?.usuario?.nombreUsuario}</a></li>
-								<li><g:link controller="login" action="logout" controller="login"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link></li>
+						<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown"><asset:image src="img.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+								<ul class="dropdown-menu dropdown-usermenu pull-right">
+									<li><a href="#"> Perfil</a></li>
+									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
 								</ul>
-							</div>
+					</li>
+							
 						</g:if>
 						<g:else>
 							<div class="nav" role="navigation">
@@ -78,6 +82,56 @@
 							<div class="message" role="status">${message}</div>
 						</g:if>
 					</li>
+				<!-- top navigation 
+				
+					<ul class="nav navbar-nav navbar-right">
+					<g:if test="${session!=null && session.usuario!=null}">
+                		<li class="">
+                  			<a href="#" class="user-profile dropdown-toggle" data-toggle="dropdown">
+                    			<asset:image src="img.jpg" alt=""/>${session?.usuario?.nombreUsuario}<b class="caret"></b></a>
+							  
+						
+                  		<ul class="dropdown-menu">
+                    	<li><a href="#"> Profile</a></li>
+                    	<li>
+                      	<a href="#">
+                        <span class="badge bg-red pull-right">50%</span>
+                        <span>Settings</span>
+                     	 </a>
+                    	</li>
+                    	<li><a href="#">Help</a></li>
+                   		<li><g:link controller="login" action="logout"><i class="fa fa-sign-out pull-right"></i> Cerrar Sesion</g:link></li>
+						  
+                		</ul>
+                		</li>
+						
+		
+
+                		<li role="presentation" class="dropdown">
+                  		<a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                   		<i class="fa fa-envelope-o"></i>
+                    	<span class="badge bg-green">6</span>
+                  		</a>                  		
+                		</li>
+              		</ul>
+				
+								   
+       
+
+					<li>
+					
+						</g:if>
+						<g:else>
+							<div class="nav" role="navigation">
+								<ul>
+								<li><g:link class="btn"  controller="usuario" action="acceder">ACCEDER / REGISTRARSE</g:link></li>
+								</ul>
+							</div>
+						</g:else>
+						<g:if test="${message}">
+							<div class="message" role="status">${message}</div>
+						</g:if>
+					</li>-->
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -197,7 +251,9 @@
 	<asset:javascript src="headroom.min.js"/>
 	<asset:javascript src="jQuery.headroom.min.js"/>
 	<asset:javascript src="template.js"/>
-    
+    <!-- jQuery -->
+    <asset:javascript src="jquery.min.js"/>
+	<asset:javascript src="custom.min.js"/>
 
     <div id="spinner" class="spinner" style="display:none;">
         <g:message code="spinner.alt" default="Loading&hellip;"/>
