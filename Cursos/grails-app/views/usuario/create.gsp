@@ -6,7 +6,7 @@
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
-        <a href="#create-usuario" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+        <!--<a href="#create-usuario" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -33,6 +33,14 @@
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
                 </fieldset>
             </g:form>
-        </div>
+        </div>-->
+
+        <g:form action="save" method="post"> 
+            Usuario: <input type="text" name="nombreUsuario"> 
+            Contraseña: <input type="text" name="password">
+            Email: <input type="text" name="email">
+
+            <g:submitButton name="create" class="save" value="Crear" id="create"/>
+        </g:form>
     </body>
 </html>
