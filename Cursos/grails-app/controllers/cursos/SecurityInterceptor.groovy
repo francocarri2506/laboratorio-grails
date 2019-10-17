@@ -16,7 +16,7 @@ class SecurityInterceptor {
 
       
       match(controller:"curso", action:"edit")
-      match(controller:"curso", action:"show")
+      
       match(controller:"curso", action:"create")
 
       match(controller:"administrador", action:"index")
@@ -107,10 +107,9 @@ class SecurityInterceptor {
 
   boolean after() { 
 
-     match(controller:"curso", action:"index")
-      match(controller:"curso", action:"edit")
-      match(controller:"curso", action:"show")
-      match(controller:"curso", action:"create")
+//aca habria que poner cada vez que quieramos que vuelva a loquearce  
+//el admin por ejemplo cada vez que quiera modificar algo
+
 
 
       match(controller:"administrador", action:"index")
