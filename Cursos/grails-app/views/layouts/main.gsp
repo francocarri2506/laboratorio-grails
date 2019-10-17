@@ -252,7 +252,7 @@
 	<asset:javascript src="jQuery.headroom.min.js"/>
 	<asset:javascript src="template.js"/>
     <!-- jQuery -->
-    <asset:javascript src="jquery.min.js"/>
+    <asset:javascript src="jquery.min2.js"/>
 	<asset:javascript src="custom.min.js"/>
 
     <div id="spinner" class="spinner" style="display:none;">
