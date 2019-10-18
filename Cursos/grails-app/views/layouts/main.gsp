@@ -64,7 +64,13 @@
 					<li><a href="#footer">CONTACTOS</a></li>
 					<li class="dropdown">
 						<g:if test="${session!=null && session.usuario!=null}">
-						<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown"><asset:image src="img.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+							<g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
+								<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">
+								<asset:image src="img.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+							</g:if>
+							<g:else>
+							<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+							</g:else>	
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a href="#"> Perfil</a></li>
 									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
