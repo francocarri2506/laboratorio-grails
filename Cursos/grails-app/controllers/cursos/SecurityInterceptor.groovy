@@ -14,7 +14,6 @@ class SecurityInterceptor {
       .excludes(controller:'libro', action:'list')
       .excludes(view:"/index")*/
 
-      match(controller:"curso", action:"index")
       match(controller:"curso", action:"edit")
       match(controller:"curso", action:"show")
       match(controller:"curso", action:"create")
