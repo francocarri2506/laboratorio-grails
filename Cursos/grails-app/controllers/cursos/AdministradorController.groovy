@@ -100,6 +100,10 @@ class AdministradorController {
         render (view:"facultad")
         
     }
+    def preguntas() {
+        render (view:"preguntas")
+        
+    }
 
     //PROBANDOOOOOO
     def renderIndex2 = {

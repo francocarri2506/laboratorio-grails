@@ -67,8 +67,8 @@
 						<div class="panel-body">
 							<h3 class="thin text-center">Crear un nuevo Usuario</h3>
 							<hr>
-                            <g:form controller="usuario" action="save" method="post">
-							<form>
+                            <g:form action="save" method="post">
+					
         
                          
 								<div class="top-margin">
@@ -88,7 +88,7 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Confirmar Contraseña<span class="text-danger">*</span></label>
-										<input type="text" name="password" class="form-control" required>
+										<input type="text" name="password2" class="form-control" requiredgit >
 									</div>
 								</div>
 
@@ -97,11 +97,12 @@
 								<div class="row">
 									
 									<div class="col-lg-12 text-right">
-										<button name="create" class="btn btn-action" id="create"type="submit">CREAR</button>
+										<g:submitButton name="create" class="save" id="create" value="CREAR"/>
+										
                                         
 									</div>
 								</div>
-							</form>
+							
                             </g:form>
                             
 						</div>

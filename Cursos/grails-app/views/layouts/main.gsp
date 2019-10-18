@@ -56,7 +56,7 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#preguntas">Preguntas Frecuentes</a></li>
+							<li><g:link controller="administrador" action="preguntas">Preguntas Frecuentes</g:link></li>
 							<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>
 							
 						</ul>
@@ -70,6 +70,7 @@
 							</g:if>
 							<g:else>
 							<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+							
 							</g:else>	
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a href="#"> Perfil</a></li>
@@ -210,11 +211,12 @@
 			<div class="container">
 				<div class="row">
 					
-					<div class="col-md-6 widget">
+					<div class="col-md-8 widget">
 						<div class="widget-body">
 							<p class="simplenav">
 								<a href="${createLink(uri: '/')}">INICIO</a> | 
 								<g:link controller="administrador" action="facultad">LA FACULTAD</g:link> |
+								<g:link controller="administrador" action="preguntas">PREGUNTAS FRECUENTES</g:link> |
 								<a href="sidebar-right.html">CURSOS</a> |
 								<a href="#footer">CONTACTOS</a> |		
 								<b>
@@ -234,7 +236,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-6 widget">
+					<div class="col-md-4 widget">
 						<div class="widget-body">
 							<p class="text-right">
 								Copyright &copy; JOGAF - 2019. Diseñado por <a href="#" rel="designer">JOGAF</a> 
