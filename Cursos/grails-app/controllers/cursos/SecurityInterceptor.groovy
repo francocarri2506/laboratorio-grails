@@ -14,8 +14,9 @@ class SecurityInterceptor {
       .excludes(controller:'libro', action:'list')
       .excludes(view:"/index")*/
 
+      
       match(controller:"curso", action:"edit")
-      match(controller:"curso", action:"show")
+      
       match(controller:"curso", action:"create")
 
       match(controller:"administrador", action:"index")
@@ -77,7 +78,7 @@ class SecurityInterceptor {
       match(controller:"usuario", action:"index")
       match(controller:"usuario", action:"edit")
       match(controller:"usuario", action:"show")
-      match(controller:"usuario", action:"create")
+    //  match(controller:"usuario", action:"create")
 
       
 
@@ -93,7 +94,7 @@ class SecurityInterceptor {
 
       
 
-     if(/*controllerName=='curso' && */(actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
+     if(/*controllerName=='curso' && */(actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' )) {
        if(!session.usuario.getRoles().any{it.authority=='ADMIN'}) {
            render(view: "/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
@@ -106,10 +107,15 @@ class SecurityInterceptor {
 
   boolean after() { 
 
-     match(controller:"curso", action:"index")
-      match(controller:"curso", action:"edit")
-      match(controller:"curso", action:"show")
-      match(controller:"curso", action:"create")
+//aca habria que poner cada vez que quieramos que vuelva a loquearce  
+//el admin por ejemplo cada vez que quiera modificar algo
+
+
+
+      match(controller:"administrador", action:"index")
+      match(controller:"administrador", action:"edit")
+      match(controller:"administrador", action:"show")
+      match(controller:"administrador", action:"create")
 
      }
 

@@ -224,6 +224,14 @@
                             <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
                         </li>
                     </g:each>
+
+	<!-- estos controladdores serian las acciones que al final quedarian  -->				
+					<li class="controller">
+                            <a href="/curso/index">Lista de cursos disponibles</a>
+                    </li>
+					<li class="controller">
+                            <a href="/precio/index">Lista de Precios y/o descuentos</a>
+                    </li>
                 </ul>
 </div>
 
