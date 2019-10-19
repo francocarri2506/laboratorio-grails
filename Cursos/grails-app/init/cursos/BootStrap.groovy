@@ -89,6 +89,48 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
     
   }
 
+/*//solo deja crear un solo usuario ...
+def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joserodriguez@gmail.com')
+  if(!usu1.save(flush: true)) {
+      usu1.errors.each{
+        println it
+      }
+    }  
+
+    def rol1 = new Rol(authority: 'ADMIN')
+    if(!rol1.save(flush: true)) {
+      rol1.errors.each{
+        println it
+      }
+    } 
+
+    def usuarioRol1 = new UsuarioRol(usuario: usu1, rol: rol1)
+    if(!usuarioRol1.save(flush: true)) {
+      usuarioRol1.errors.each{
+        println it
+      }
+    }
+def usu2= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'gabrielpacheco@gmail.com')
+  if(!usu2.save(flush: true)) {
+      usu2.errors.each{
+        println it
+      }
+    }  
+
+    def rol2 = new Rol(authority: 'ADMIN')
+    if(!rol2.save(flush: true)) {
+      rol2.errors.each{
+        println it
+      }
+    } 
+
+    def usuarioRol2 = new UsuarioRol(usuario: usu2, rol: rol2)
+    if(!usuarioRol2.save(flush: true)) {
+      usuarioRol2.errors.each{
+        println it
+      }
+    }
+   */ 
   def destroy = {
   }
 }
