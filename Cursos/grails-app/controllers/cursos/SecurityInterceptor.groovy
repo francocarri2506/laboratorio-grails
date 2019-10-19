@@ -80,7 +80,13 @@ class SecurityInterceptor {
       match(controller:"usuario", action:"show")
     //  match(controller:"usuario", action:"create")
 
-      
+      match(controller:"certificadoAprobacion", action:"index")
+      match(controller:"certificadoAprobacion", action:"edit")
+      match(controller:"certificadoAprobacion", action:"show")
+
+      match(controller:"certificadoAsistencia", action:"index")
+      match(controller:"certificadoAsistencia", action:"edit")
+      match(controller:"certificadoAsistencia", action:"show")
 
 
 
@@ -88,7 +94,7 @@ class SecurityInterceptor {
 
   boolean before() {
       if (!session.usuario && actionName != "login") {
-          redirect(controller: "login", action: "login")
+          redirect(controller: "usuario", action: "acceder")
           return false
       }
 

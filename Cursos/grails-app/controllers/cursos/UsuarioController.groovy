@@ -110,8 +110,13 @@ class UsuarioController {
      if (u) {
        if (u.password == u.generateMD5_A(params.password)) {
           session.usuario = u
+
           def usRol = UsuarioRol.findByUsuario(u)
-          if (usRol.rol.authority == "ADMIN"){
+          
+          if (usRol==null){
+            render(view: "/index")
+          }
+          else if (usRol.rol.authority == "ADMIN"){
             render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
           }
           else
@@ -124,11 +129,14 @@ class UsuarioController {
       }
     }
 
+
     def logout() {
       session.usuario=null
       render(view: "/index")
     }
 
+
+    //Para renderizar una vista de otro controlador
     //PROBANDOOOOOOOO
     def redirectALoginController = {
         redirect(controller:"administrador",action:"renderIndex2")

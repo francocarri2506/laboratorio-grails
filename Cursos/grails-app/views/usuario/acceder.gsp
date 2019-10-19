@@ -46,7 +46,7 @@
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
-					<h1 class="page-title">ACCDER</h1><br>
+					<h1 class="page-title">ACCEDER</h1><br>
 					<g:if test="${message}">
       <div class="message" role="status">${message}</div>
     </g:if>
