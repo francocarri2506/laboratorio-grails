@@ -6,8 +6,8 @@ class Usuario implements Serializable{
   
     private static final long serialVersionUID = 1
 
-   // String dni
-   // String apellido
+    //String dni
+    //String apellido
     String nombreUsuario
     String password
     String email
