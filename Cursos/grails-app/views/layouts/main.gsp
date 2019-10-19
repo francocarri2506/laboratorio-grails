@@ -70,7 +70,7 @@
 							</g:if>
 							<g:else>
 								<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">
-								<asset:image src="img.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+								<asset:image src="${session?.usuario?.nombreUsuario}.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
 							</g:else>	
 								
 								<ul class="dropdown-menu dropdown-usermenu pull-right">

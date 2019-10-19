@@ -141,4 +141,9 @@ class UsuarioController {
     def redirectALoginController = {
         redirect(controller:"administrador",action:"renderIndex2")
     }
+     def indexAdmin() {
+        render (view:"index2")
+        
+    }
+    
 }

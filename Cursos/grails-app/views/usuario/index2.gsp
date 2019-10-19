@@ -48,7 +48,8 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <asset:image src="img2.jpg" alt="" class="img-circle profile_img"/>
+             
+                <asset:image src="${session?.usuario?.nombreUsuario}.jpg" alt="" class="img-circle profile_img"/>
               </div>
               <div class="profile_info">
                 <span>Bienvenido</span>
@@ -195,7 +196,7 @@
                       <g:if test="${session!=null && session.usuario!=null}">
                       <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
                         <a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">
-                        <asset:image src="img2.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+                        <asset:image src="${session?.usuario?.nombreUsuario}.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
                       </g:if>
                       <g:else>
                       <a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
