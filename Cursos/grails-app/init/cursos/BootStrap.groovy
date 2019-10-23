@@ -100,8 +100,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
               println it
             }
           } 
-  */
-  
+*/  
 }
 def destroy = {
 
