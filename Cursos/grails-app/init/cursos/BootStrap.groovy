@@ -101,7 +101,6 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
     
-<<<<<<< HEAD
   }
 
 /*solo deja crear un solo usuario ...
@@ -111,15 +110,12 @@ def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joser
         println it
       }
     }  
-=======
->>>>>>> 1fcda6c69efd808627c43690dc8039fb84bd33a7
 
      def expositor1 = new Expositor(dni:"39998673",apellido:"carrizo", nombre:"franco" , titulo:"Ingeniero",email:"carrizonicolas@gmail.com")
             curso.addToExpositores(expositor1)
   }
 
 
-<<<<<<< HEAD
     def usuarioRol2 = new UsuarioRol(usuario: usu2, rol: rol2)
     if(!usuarioRol2.save(flush: true)) {
       usuarioRol2.errors.each{
@@ -129,8 +125,4 @@ def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joser
    */ 
   //def destroy = {
   //}
-=======
-  def destroy = {
-  }
->>>>>>> 1fcda6c69efd808627c43690dc8039fb84bd33a7
 }

@@ -78,6 +78,7 @@
 									<label>Nombre:<span class="text-danger">*</span></label>
 									<input type="text" name="nombre" class="form-control" required>
 								</div>
+								
 								<div class="top-margin">
 									<label>DNI:<span class="text-danger">*</span></label>
 									<input type="text" name="dni" class="form-control" required>
