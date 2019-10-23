@@ -11,7 +11,8 @@ class BootStrap {
 //      }
 //    }
 
-  def usu= new Usuario(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+
+  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
   if(!usu.save(flush: true)) {
       usu.errors.each{
         println it
@@ -31,7 +32,7 @@ class BootStrap {
         println it
       }
     }
-     def usu3= new Usuario(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
+     def usu3= new Administrador(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
        if(!usu3.save(flush: true)) {
       usu3.errors.each{
         println it
