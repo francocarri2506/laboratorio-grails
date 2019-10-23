@@ -104,7 +104,10 @@ class AdministradorController {
         render (view:"preguntas")
         
     }
-    
+    def indexAdmin() {
+        render (view:"index2")
+        
+    }
     //PROBANDOOOOOO
     def renderIndex2 = {
         render(view:"index2");
