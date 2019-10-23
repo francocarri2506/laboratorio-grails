@@ -2,7 +2,7 @@ package Cursos
 
 class BootStrap {
 
- /* def init = { servletContext ->
+  def init = { servletContext ->
 
 //  def usu= new Usuario(dni:39998673, apellido:"carrizo", nombreUsuario: 'franco', password: 'franco1', email: 'carrizonicolasfranco@gmail.com')
 //    if(!usu.save(flush: true)) {
@@ -10,9 +10,9 @@ class BootStrap {
 //        println it
 //      }
 //    }
-
-
+/*
   def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+
   if(!usu.save(flush: true)) {
       usu.errors.each{
         println it
@@ -100,29 +100,10 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
               println it
             }
           } 
-    
+  */
+  
+}
+def destroy = {
+
   }
-
-/*solo deja crear un solo usuario ...
-def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joserodriguez@gmail.com')
-  if(!usu1.save(flush: true)) {
-      usu1.errors.each{
-        println it
-      }
-    }  
-
-     def expositor1 = new Expositor(dni:"39998673",apellido:"carrizo", nombre:"franco" , titulo:"Ingeniero",email:"carrizonicolas@gmail.com")
-            curso.addToExpositores(expositor1)
-  }
-
-
-    def usuarioRol2 = new UsuarioRol(usuario: usu2, rol: rol2)
-    if(!usuarioRol2.save(flush: true)) {
-      usuarioRol2.errors.each{
-        println it
-      }
-    }
-   */ 
-  //def destroy = {
-  //}
 }

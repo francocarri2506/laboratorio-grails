@@ -12,8 +12,7 @@ class AutoridadCertificante extends Usuario{
         firma (nullable:true)
     }
 
-     
-   
+
     static mapping = {
             firma sqlType: 'bytea' 
     }
