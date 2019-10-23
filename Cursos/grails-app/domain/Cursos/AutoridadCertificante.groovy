@@ -9,9 +9,11 @@ class AutoridadCertificante extends Usuario{
     static constraints = {
 
         cargo (intList:['Decano', 'Secretario', 'Secretaria', 'Academico', 'Director Departamento','Directora Departamento'])
+        firma (nullable:true)
     }
 
-
+     
+   
     static mapping = {
             firma sqlType: 'bytea' 
     }
