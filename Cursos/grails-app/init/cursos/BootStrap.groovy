@@ -11,7 +11,7 @@ class BootStrap {
 //      }
 //    }
 
-  def usu= new Usuario(nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+  def usu= new Usuario(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
   if(!usu.save(flush: true)) {
       usu.errors.each{
         println it
@@ -31,7 +31,7 @@ class BootStrap {
         println it
       }
     }
-     def usu3= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
+     def usu3= new Usuario(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
        if(!usu3.save(flush: true)) {
       usu3.errors.each{
         println it
@@ -44,7 +44,7 @@ class BootStrap {
       }
     }
 
-    def interesado= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'gabriel@gmail.com')
+    def interesado= new Interesado(dni:"39998125", apellido:"pacheco",nombre:"gabriel",nombreUsuario: 'gabriel', password: 'holahola', email: 'gabriel@gmail.com',categoria:"Alumno")
     if(!interesado.save(flush: true)) {
       interesado.errors.each{
         println it
@@ -99,50 +99,12 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
     
+
+     def expositor1 = new Expositor(dni:"39998673",apellido:"carrizo", nombre:"franco" , titulo:"Ingeniero",email:"carrizonicolas@gmail.com")
+            curso.addToExpositores(expositor1)
   }
 
-/*//solo deja crear un solo usuario ...
-def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joserodriguez@gmail.com')
-  if(!usu1.save(flush: true)) {
-      usu1.errors.each{
-        println it
-      }
-    }  
 
-    def rol1 = new Rol(authority: 'ADMIN')
-    if(!rol1.save(flush: true)) {
-      rol1.errors.each{
-        println it
-      }
-    } 
-
-    def usuarioRol1 = new UsuarioRol(usuario: usu1, rol: rol1)
-    if(!usuarioRol1.save(flush: true)) {
-      usuarioRol1.errors.each{
-        println it
-      }
-    }
-def usu2= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'gabrielpacheco@gmail.com')
-  if(!usu2.save(flush: true)) {
-      usu2.errors.each{
-        println it
-      }
-    }  
-
-    def rol2 = new Rol(authority: 'ADMIN')
-    if(!rol2.save(flush: true)) {
-      rol2.errors.each{
-        println it
-      }
-    } 
-
-    def usuarioRol2 = new UsuarioRol(usuario: usu2, rol: rol2)
-    if(!usuarioRol2.save(flush: true)) {
-      usuarioRol2.errors.each{
-        println it
-      }
-    }
-   */ 
   def destroy = {
   }
 }

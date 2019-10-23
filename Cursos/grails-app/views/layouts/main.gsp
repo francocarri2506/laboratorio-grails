@@ -177,9 +177,9 @@
 						<h3 class="widget-title">Contactos</h3>
 						<div class="widget-body">
 							<p>383-4878963<br>
-								<a href="mailto:#">jogaf@gmail.com</a><br>
+								<a href="mailto:jogaf@gmail.com">jogaf@gmail.com</a><br>
 								<br>
-								Maipu y Belgran, San Fernando del Valle de Catamarca, CP 4700
+								Maipu y Belgrano, San Fernando del Valle de Catamarca, CP 4700
 							</p>	
 						</div>
 					</div>
