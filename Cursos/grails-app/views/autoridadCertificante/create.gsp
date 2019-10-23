@@ -27,7 +27,31 @@
             </g:hasErrors>
             <g:form resource="${this.autoridadCertificante}" method="POST">
                 <fieldset class="form">
-                    <f:all bean="autoridadCertificante"/>
+                    <div class="fieldcontain required">
+                    <label for="nombreUsuario">Nombre Usuario
+                    <span class="required-indicator">*</span>
+                    </label><input type="text" name="nombreUsuario" value="" required="" id="nombreUsuario">
+                    </div><div class="fieldcontain required">
+                    <label for="password">Password
+                    <span class="required-indicator">*</span>
+                    </label><input type="text" name="password" value="" required="" id="password">
+                    </div><div class="fieldcontain required">
+                    <label for="email">Email
+                    <span class="required-indicator">*</span>
+                    </label><input type="email" name="email" value="" required="" id="email">
+                    </div><div class="fieldcontain required">
+                    <label for="cargo">Cargo
+                    <span class="required-indicator">*</span>
+                    </label><input type="text" name="cargo" value="" required="" id="cargo">
+                    </div><div class="fieldcontain">
+                    <label for="firma">Firma</label><input type="file" name="firma" value="" id="firma">
+                    </div><div class="fieldcontain">
+                    <label for="cursos">Cursos</label><select name="cursos" id="cursos" multiple="">
+                    <option value="7">Cursos.Curso : 7</option>
+                    <option value="8">Cursos.Curso : 8</option>
+                    <option value="9">Cursos.Curso : 9</option>
+                    </select>
+                    </div>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

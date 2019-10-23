@@ -2,7 +2,11 @@ package Cursos
 
 class BootStrap {
 
+<<<<<<< HEAD
  // def init = { servletContext ->
+=======
+ /* def init = { servletContext ->
+>>>>>>> 4531ee825d92a5723518f681896a837a7757bac6
 
 //  def usu= new Usuario(dni:39998673, apellido:"carrizo", nombreUsuario: 'franco', password: 'franco1', email: 'carrizonicolasfranco@gmail.com')
 //    if(!usu.save(flush: true)) {
@@ -11,7 +15,11 @@ class BootStrap {
 //      }
 //    }
 
+<<<<<<< HEAD
   /*def usu= new Usuario(nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+=======
+  def usu= new Usuario(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+>>>>>>> 4531ee825d92a5723518f681896a837a7757bac6
   if(!usu.save(flush: true)) {
       usu.errors.each{
         println it
@@ -31,7 +39,7 @@ class BootStrap {
         println it
       }
     }
-     def usu3= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
+     def usu3= new Usuario(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
        if(!usu3.save(flush: true)) {
       usu3.errors.each{
         println it
@@ -44,7 +52,7 @@ class BootStrap {
       }
     }
 
-    def interesado= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'gabriel@gmail.com')
+    def interesado= new Interesado(dni:"39998125", apellido:"pacheco",nombre:"gabriel",nombreUsuario: 'gabriel', password: 'holahola', email: 'gabriel@gmail.com',categoria:"Alumno")
     if(!interesado.save(flush: true)) {
       interesado.errors.each{
         println it
@@ -100,43 +108,29 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
     
+<<<<<<< HEAD
   }
 
+<<<<<<< HEAD
 /*//*solo deja crear un solo usuario ...
+=======
+/*solo deja crear un solo usuario ...
+>>>>>>> 4531ee825d92a5723518f681896a837a7757bac6
 def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joserodriguez@gmail.com')
   if(!usu1.save(flush: true)) {
       usu1.errors.each{
         println it
       }
     }  
+=======
+>>>>>>> 1fcda6c69efd808627c43690dc8039fb84bd33a7
 
-    def rol1 = new Rol(authority: 'ADMIN')
-    if(!rol1.save(flush: true)) {
-      rol1.errors.each{
-        println it
-      }
-    } 
+     def expositor1 = new Expositor(dni:"39998673",apellido:"carrizo", nombre:"franco" , titulo:"Ingeniero",email:"carrizonicolas@gmail.com")
+            curso.addToExpositores(expositor1)
+  }
 
-    def usuarioRol1 = new UsuarioRol(usuario: usu1, rol: rol1)
-    if(!usuarioRol1.save(flush: true)) {
-      usuarioRol1.errors.each{
-        println it
-      }
-    }
-def usu2= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'gabrielpacheco@gmail.com')
-  if(!usu2.save(flush: true)) {
-      usu2.errors.each{
-        println it
-      }
-    }  
 
-    def rol2 = new Rol(authority: 'ADMIN')
-    if(!rol2.save(flush: true)) {
-      rol2.errors.each{
-        println it
-      }
-    } 
-
+<<<<<<< HEAD
     def usuarioRol2 = new UsuarioRol(usuario: usu2, rol: rol2)
     if(!usuarioRol2.save(flush: true)) {
       usuarioRol2.errors.each{
@@ -144,7 +138,15 @@ def usu2= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'ga
       }
     }
    */ 
+<<<<<<< HEAD
   /*def destroy = {
+=======
+  //def destroy = {
+  //}
+=======
+  def destroy = {
+>>>>>>> 4531ee825d92a5723518f681896a837a7757bac6
   }
+>>>>>>> 1fcda6c69efd808627c43690dc8039fb84bd33a7
 }
 */}
