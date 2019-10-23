@@ -65,9 +65,7 @@
 			<div class="row">
 				<h1 class="lead">CADA LOGRO COMIENZA CON <br>LA DECISIÓN DE INTENTARLO</h1>
 				<p class="tagline">by                    <a href="https://es.wikipedia.org/wiki/Gail_Devers">Gail Devers</a></p>
-				<p><g:link class="btn btn-default btn-lg" role="button" controller="usuario" action="acceder">ACCEDER</g:link>
-				<a class="btn btn-action btn-lg" role="button">CURSOS</a></p>
-			
+				<a href="/curso/index" class="btn btn-action btn-lg" role="button">CURSOS</a></p>
 			</div>
 		</div>
 	</header>
