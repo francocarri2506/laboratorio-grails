@@ -77,22 +77,14 @@
                       <li><a href="/certificadoAsistencia/index">Certificados de asistencia</a></li>
                       <li><a href="/certificadoExpositor/index">Certificados de Expositor</a></li>
                       <li><a href="/certificadoAprobacion/index">Certificado de Aprobación</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> GESTION AUTORIDADES <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/autoridadCertificante/index">Autoridades Certificantes</a></li>
                       <li><a href="/expositor/index">Expositores</a></li>
-                      <li><a href="typography.html">Typography</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="glyphicons.html">Glyphicons</a></li>
-                      <li><a href="widgets.html">Widgets</a></li>
-                      <li><a href="invoice.html">Invoice</a></li>
-                      <li><a href="inbox.html">Inbox</a></li>
-                      <li><a href="calendar.html">Calendar</a></li>
+                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-table"></i> GESTION CURSOS <span class="fa fa-chevron-down"></span></a>
@@ -100,6 +92,13 @@
                       <li><a href="/curso/index">Lista de Cursos </a></li>
                       <li><a href="/curso/create">Crear nuevo Curso</a></li>
                       <li><a href="/curso/index">Editar/Eliminar Curso</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-table"></i> GESTION USUARIOS <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/administrador/index">Administradores </a></li>
+                      <li><a href="/interesado/index">Interesados</a></li>
 
                     </ul>
                   </li>
