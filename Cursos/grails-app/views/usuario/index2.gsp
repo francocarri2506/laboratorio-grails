@@ -38,7 +38,7 @@
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
             
-              <g:link controller="usuario" action="index2Admin">
+              <g:link controller="usuario" action="indexAdmin">
                 <asset:image src="logo2.png" class="site_title"/>
               <span>USUARIO ADMINISTRADOR</span></a></g:link>
             </div>

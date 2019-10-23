@@ -73,11 +73,12 @@ class BootStrap {
                 fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
                 cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria" )
 
-      if(!curso.save(flush: true)) {
-            curso.errors.each{
-              println it
-            }
-          }  
+      
+
+          def autoridad1 = new AutoridadCertificante(password:"123456",nombreUsuario:"franco13" , cargo:"Decano",email:"carrizonicolas13@gmail.com")
+          autoridad1.save(flush:true)
+         curso.addToAutoridades(autoridad1)
+            curso.save(flush:true)
 
           def curso1 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
                 fechadelCertificado:fechaCur,nombre:"Programacion 3",cupoMaximo:10 ,
