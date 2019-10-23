@@ -2,7 +2,7 @@ package Cursos
 
 class BootStrap {
 
-  def init = { servletContext ->
+ /* def init = { servletContext ->
 
 //  def usu= new Usuario(dni:39998673, apellido:"carrizo", nombreUsuario: 'franco', password: 'franco1', email: 'carrizonicolasfranco@gmail.com')
 //    if(!usu.save(flush: true)) {
@@ -102,7 +102,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
     
   }
 
-/*//solo deja crear un solo usuario ...
+/*solo deja crear un solo usuario ...
 def usu1= new Usuario(nombreUsuario: 'jose', password: 'holahola', email: 'joserodriguez@gmail.com')
   if(!usu1.save(flush: true)) {
       usu1.errors.each{
@@ -144,6 +144,6 @@ def usu2= new Usuario(nombreUsuario: 'gabriel', password: 'holahola', email: 'ga
       }
     }
    */ 
-  def destroy = {
-  }
+  //def destroy = {
+  //}
 }
