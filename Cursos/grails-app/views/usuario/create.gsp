@@ -69,7 +69,19 @@
 							<hr>
                             <g:form action="save" method="post">
 					
-        
+								<div class="top-margin">
+									<label>Apellido:<span class="text-danger">*</span></label>
+									<input type="text" name="apellido" class="form-control" required>
+								</div>
+
+								<div class="top-margin">
+									<label>Nombre:<span class="text-danger">*</span></label>
+									<input type="text" name="nombre" class="form-control" required>
+								</div>
+								<div class="top-margin">
+									<label>DNI:<span class="text-danger">*</span></label>
+									<input type="text" name="dni" class="form-control" required>
+								</div>
                          
 								<div class="top-margin">
 									<label>Nombre de Usuario:</label>
@@ -91,6 +103,8 @@
 										<input type="text" name="password2" class="form-control" requiredgit >
 									</div>
 								</div>
+
+								
 
 								<hr>
 

@@ -16,10 +16,15 @@ class BootStrap {
 //    }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   /*def usu= new Usuario(nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 =======
   def usu= new Usuario(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 >>>>>>> 4531ee825d92a5723518f681896a837a7757bac6
+=======
+
+  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+>>>>>>> 02767d2c113fff01b5947c891c6b609967d275db
   if(!usu.save(flush: true)) {
       usu.errors.each{
         println it
@@ -39,7 +44,7 @@ class BootStrap {
         println it
       }
     }
-     def usu3= new Usuario(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
+     def usu3= new Administrador(dni:"39998642", apellido:"rodriguez",nombre:"jose",nombreUsuario: 'jose', password: 'holahola', email: 'jose791946@gmail.com')
        if(!usu3.save(flush: true)) {
       usu3.errors.each{
         println it
