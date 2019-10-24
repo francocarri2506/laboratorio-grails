@@ -18,6 +18,38 @@ class CursoController {
         respond cursoService.get(id)
     }
 
+    def inscribirse (Long id){
+        def curso = Curso.findById(id)
+        if (curso==null){
+            redirect(controller: 'curso', action: 'create')
+        }
+        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
+        if(usuario==null){
+            redirect(controller: 'usuario', action: 'create')
+        }
+        
+        curso.addToInteresados(usuario)
+        if (!curso.save()){
+            redirect(controller: 'usuario', action: 'create')
+        }
+        
+        def ins = new Inscripcion (cursos: curso, interesado: usuario)
+        if (ins==null){
+            redirect(controller: 'inscripcion', action: 'create')
+        }
+        
+        if(!ins.save(flush: true)) {
+            ins.errors.each{
+                println it
+            }
+            redirect(action: 'index')
+        }
+        else{
+            redirect(controller: 'inscripcion', action: 'create')
+        }
+        
+    }
+
     def create() {
         respond new Curso(params)
     }
