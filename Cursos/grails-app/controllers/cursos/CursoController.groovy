@@ -14,6 +14,20 @@ class CursoController {
         respond cursoService.list(params), model:[cursoCount: cursoService.count()]
     }
 
+
+    def buscarCurso() {
+        if(!params.nombrecurso) {
+          flash.message="Debe ingresar el nombre o parte del nombre del curso"
+          return redirect(action: 'index')
+        }
+        flash.message="Resultado de la busqueda con nombre del curso: ${params.nombrecurso}"
+        
+        def cursos= cursoService.buscarCursitoNombre(params.nombrecurso)
+
+        render(view:'index', model:[cursoList:cursos, cursoCount:cursos.size()])
+    }
+
+
     def show(Long id) {
         respond cursoService.get(id)
     }
