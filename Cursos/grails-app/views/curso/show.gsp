@@ -15,7 +15,7 @@
                     <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 				</g:if>
 				<g:else>
-					<li><g:link class="inscribirce" action="inscribirce" resource="${this.curso}" >INSCRIBIRCE</g:link></li>			
+					<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" >INSCRIBIRSE</g:link></li>			
 				</g:else>	
                 
             </ul>

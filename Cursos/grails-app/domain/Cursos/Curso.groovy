@@ -12,7 +12,7 @@ class Curso {
     Date fechadelCertificado
     Integer cupoMaximo
     Integer cupoMinimo
-    static hasMany = [alumnos:Alumno, docentes:Docente, publicos:PublicoGeneral,autoridades:AutoridadCertificante,expositores:Expositor]
+    static hasMany = [interesados: Interesado, publicos:PublicoGeneral,autoridades:AutoridadCertificante,expositores:Expositor]
     //static hasMany = [aspitantes:Aspirante , expositores:Expositor , autoridades:Autoridad]
 
     static constraints = {
