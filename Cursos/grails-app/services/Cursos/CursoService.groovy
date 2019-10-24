@@ -3,16 +3,15 @@ package Cursos
 import grails.gorm.services.Service
 
 @Service(Curso)
-interface CursoService {
+abstract class  CursoService implements CursitoService{
 
-    Curso get(Serializable id)
 
-    List<Curso> list(Map args)
-
-    Long count()
-
-    void delete(Serializable id)
-
-    Curso save(Curso curso)
+    @Override
+     List<Curso> buscarCursitoNombre(String nombre) {
+          nombre='%'+nombre+'%'
+          return Curso.findAllByNombreLike(nombre)
+    }
 
 }
+
+  

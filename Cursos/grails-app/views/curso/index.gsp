@@ -17,6 +17,23 @@
                     <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
                 </g:else>
             </ul>
+            <ul>
+                <form action="buscarCurso" method="POST">
+                          <div class="row">
+                              <div class="col-md-6">
+                                    <label>Ingrese Nombre del curso que decea buscar</label>
+                                    <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  value="">
+                              </div>
+                              <div class="col-md-6">
+                                  <br />
+                                  <button type="submit" class="btn btn-primary">
+                                      
+                                      Buscar
+                                  </button>
+                              </div>
+                          </div>
+                </form>
+            </ul>
         </div>
         <div id="list-curso" class="content scaffold-list" role="main">
             <h1><g:message code="default.list.label" args="[entityName]" /></h1>
