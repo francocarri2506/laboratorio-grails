@@ -142,4 +142,12 @@ class CursoController {
             '*'{ render status: NOT_FOUND }
         }
     }
+/**/
+     def listado() {
+        
+        def cursoService
+      
+      [listado: cursoService.listadoCursos()]
+    }
 }
+

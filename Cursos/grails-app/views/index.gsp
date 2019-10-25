@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
+	<meta name="curso" content="listado"/>
     <meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -214,25 +215,24 @@
 	
 
 	<!-- los controladores estan momentáneamente -->
-<div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
+	<div id="controllers" role="navigation">
+					<h2>Available Controllers:</h2>
+					<ul>
+						<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
+							<li class="controller">
+								<g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
+							</li>
+						</g:each>
 
-	<!-- estos controladdores serian las acciones que al final quedarian  -->				
-					<li class="controller">
-                            <a href="/curso/index">Lista de cursos disponibles</a>
-                    </li>
-					<li class="controller">
-                            <a href="/precio/index">Lista de Precios y/o descuentos</a>
-                    </li>
-                </ul>
-</div>
-
-	
+		<!-- estos controladdores serian las acciones que al final quedarian  -->				
+						<li class="controller">
+								<a href="/curso/index">Lista de cursos disponibles</a>
+						</li>
+						<li class="controller">
+								<a href="/precio/index">Lista de Precios y/o descuentos</a>
+						</li>
+					</ul>
+	</div>
+					
 </body>
 </html>
