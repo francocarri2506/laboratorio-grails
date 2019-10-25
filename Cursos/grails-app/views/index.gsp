@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-	<meta name="curso" content="listado"/>
     <meta charset="utf-8">
 	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
@@ -211,7 +210,7 @@
      		<p class="text-right"><g:link controller="administrador" action="facultad" class="btn btn-primary btn-large"> Leer más »</g:link></p>
   		</div>
 
-</div>	<!-- /container -->
+	</div>	<!-- /container -->
 	
 
 	<!-- los controladores estan momentáneamente -->

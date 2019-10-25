@@ -149,5 +149,12 @@ class CursoController {
       
       [listado: cursoService.listadoCursos()]
     }
+
+    def verImagen () {
+      def img = Curso.get(params.id)
+      response.outputStream << img.imagen
+      response.outputStream.flush()
+    }
 }
+
 

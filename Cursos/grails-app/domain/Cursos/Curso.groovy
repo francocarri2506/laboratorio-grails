@@ -12,12 +12,12 @@ class Curso {
     Date fechadelCertificado
     Integer cupoMaximo
     Integer cupoMinimo
-    static hasMany = [interesados: Interesado, publicos:PublicoGeneral,autoridades:AutoridadCertificante,expositores:Expositor]
-    //static hasMany = [aspitantes:Aspirante , expositores:Expositor , autoridades:Autoridad]
+    byte[] imagen
+    static hasMany = [interesados: Interesado,autoridades:AutoridadCertificante,expositores:Expositor]
+    
 
     static constraints = {
         nombre (blank:false, maxsize:100, unique:true)
-
         fechaDesde (blank:true, validator:{ Date fecha, Curso obj ->
        if(fecha < new Date()){
        return ['fechaDesdeError',obj.fechaDesde]
@@ -49,5 +49,12 @@ class Curso {
         }})
         
         cupoMinimo (blank:true)
+
+        imagen (nullable:true)
+    }
+
+
+    static mapping = {
+            imagen sqlType: 'bytea' 
     }
 }

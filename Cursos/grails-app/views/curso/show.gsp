@@ -25,7 +25,86 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
+ <!--  
             <f:display bean="curso" />
+ -->
+
+    <ol class="property-list curso">
+
+        <li class="fieldcontain">
+            <span id="nombre-label" class="property-label">Nombre</span>
+            <div class="property-value" aria-labelledby="nombre-label">${this.curso.nombre}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="fechaDesde-label" class="property-label">Fecha Desde</span>
+            <div class="property-value" aria-labelledby="fechaDesde-label">${this.curso.fechaDesde}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="fechaHasta-label" class="property-label">Fecha Hasta</span>
+            <div class="property-value" aria-labelledby="fechaHasta-label">${this.curso.fechaHasta}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="cantidadHoras-label" class="property-label">Cantidad Horas</span>
+            <div class="property-value" aria-labelledby="cantidadHoras-label">${this.curso.cantidadHoras}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="lugar-label" class="property-label">Lugar</span>
+            <div class="property-value" aria-labelledby="lugar-label">${this.curso.lugar}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="horarios-label" class="property-label">Horarios</span>
+            <div class="property-value" aria-labelledby="horarios-label">${this.curso.horarios}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="fechaLimiteInscripcion-label" class="property-label">Fecha Limite Inscripcion</span>
+            <div class="property-value" aria-labelledby="fechaLimiteInscripcion-label">${this.curso.fechaLimiteInscripcion}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="fechadelCertificado-label" class="property-label">Fechadel Certificado</span>
+            <div class="property-value" aria-labelledby="fechadelCertificado-label">${this.curso.fechadelCertificado}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="cupoMaximo-label" class="property-label">Cupo Maximo</span>
+            <div class="property-value" aria-labelledby="cupoMaximo-label">${this.curso.cupoMaximo}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="cupoMinimo-label" class="property-label">Cupo Minimo</span>
+            <div class="property-value" aria-labelledby="cupoMinimo-label">${this.curso.cupoMinimo}</div>
+        </li>
+    <!--   --> 
+        <li class="fieldcontain">
+            <span id="expositores-label" class="property-label">Expositores</span>
+            <div class="property-value" aria-labelledby="expositores-label"><ul>${this.curso.expositores}</ul></div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="autoridades-label" class="property-label">Autoridades</span>
+            <div class="property-value" aria-labelledby="autoridades-label"><ul>${this.curso.autoridades}</ul></div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="interesados-label" class="property-label">Interesados</span>
+            <div class="property-value" aria-labelledby="interesados-label"><ul>${this.curso.interesados}</ul></div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="imagen-label" class="property-label">Imagen</span>
+            <div class="property-value" aria-labelledby="imagen-label"><img  src=${createLink(controller:"Curso", action:"verImagen", id:"${params.id}")} width='300' /></div>
+
+        </li>    
+</ol>
+
+
+
 
             <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
 

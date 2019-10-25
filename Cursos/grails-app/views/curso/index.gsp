@@ -53,8 +53,8 @@
                             <form action="buscarCurso" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
-                                            <label>Ingrese Nombre del curso que decea buscar</label>
-                                            <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  value="">
+                                            
+                                            <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese Nombre del curso que decea buscar">
                                     </div>
                                     <div class="col-md-6">
                                         <br />
@@ -79,13 +79,12 @@
                 </g:if>
                 <g:else>
                     <div class="container"> 
-                        <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
-                        <ul><br><br>
+                    <!--   <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
+                    -->     <ul><br><br>
                             <form action="buscarCurso" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
-                                                <label>Ingrese Nombre del curso que decea buscar</label>
-                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  value="">
+                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese Nombre del curso que decea buscar">
                                         </div>
                                         <div class="col-md-6">
                                             <br />
@@ -94,6 +93,7 @@
                                     </div>
                             </form>
                         </ul>
+                     
                         <div class="row">
                             <div id="list-curso" class="content scaffold-list" role="main">
                                 <g:each in="${cursoList}" >
@@ -101,7 +101,10 @@
                                         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                                             <div class="col p-4 d-flex flex-column position-static">
                                                 <h3 class=""><a href="/curso/show/${it.id}">${it.nombre}</h3></a>
-                                                <div class="mb-1 text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></div>     
+                                                 <div ><img  src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='300' /></div>
+                                                <div class="mb-1 text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></div> 
+                                                <div class="mb-1 text-muted">Fecha Limite de Inscripcion: <g:formatDate format="dd/MM/yyyy" date="${it.fechaLimiteInscripcion}"/></div> 
+
                                             </div>
                                         </div>
                                     </div>    
@@ -109,7 +112,25 @@
                             </div>
                         </div>
                     </div>
+                    
+<!--  
+        <div class="row mt">
+            <g:each in="${cursoList}" >
+                <div class="col-lg-4 col-md-4 col-xs-12 desc">    
+                    <a class="b-link-fade b-animate-go"href="/curso/show/${it.id}"> <img src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='300' /></div>
 
+                                <div class="b-wrapper">
+                                    <h4 class="b-from-left b-animate b-delay03"><a href="/curso/show/${it.id}">${it.nombre}</a></h4>
+                                    
+                                </div>
+                    </a>
+                    <hr-d>
+                        <div class="mb-1 text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></div>     
+                </div>
+            </g:each>
+        </div>
+    </div>
+    -->   
                 <!-- razones por las que debes estudiar -->
 
                 <div class="jumbotron top-space">
