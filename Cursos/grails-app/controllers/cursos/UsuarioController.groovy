@@ -114,13 +114,14 @@ class UsuarioController {
           def usRol = UsuarioRol.findByUsuario(u)
           
           if (usRol==null){
-            render(view: "/index")
+           // render(view: "/index")
+            redirect(controller:"curso", action:"index")
           }
           else if (usRol.rol.authority == "ADMIN"){
             render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
           }
           else
-            render(view: "/index") //sino se muestra el home
+            redirect(controller:"curso", action:"index") //sino se muestra el home
         } else {
           render(view: "acceder", model: [message: "Constraseña Incorrecta"])
         }

@@ -12,6 +12,9 @@ abstract class  CursoService implements CursitoService{
           return Curso.findAllByNombreLike(nombre)
     }
 
+/**/
+List listadoCursos() {
+    def cursos = Curso.findAll()
+      return cursos
+  }
 }
-
-  

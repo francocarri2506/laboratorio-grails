@@ -195,4 +195,19 @@ class CursoController {
             '*'{ render status: NOT_FOUND }
         }
     }
+/**/
+     def listado() {
+        
+        def cursoService
+      
+      [listado: cursoService.listadoCursos()]
+    }
+
+    def verImagen () {
+      def img = Curso.get(params.id)
+      response.outputStream << img.imagen
+      response.outputStream.flush()
+    }
 }
+
+

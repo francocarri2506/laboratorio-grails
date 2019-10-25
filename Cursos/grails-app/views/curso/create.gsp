@@ -25,7 +25,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.curso}" method="POST">
+            <g:form resource="${this.curso}" method="POST" enctype="multipart/form-data">
                 <fieldset class="form">
                     <f:all bean="curso"/>
                 </fieldset>
