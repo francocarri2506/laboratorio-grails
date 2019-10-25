@@ -19,7 +19,63 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="autoridadCertificante" />
+
+      <!--  <f:display bean="autoridadCertificante" /> 
+    -->  
+        
+        <ol class="property-list autoridadCertificante">
+    
+        <li class="fieldcontain">
+            <span id="nombreUsuario-label" class="property-label">Nombre Usuario</span>
+            <div class="property-value" aria-labelledby="nombreUsuario-label">${this.autoridadCertificante.nombreUsuario}</div>
+        </li>
+    <!-- 
+
+        <li class="fieldcontain">
+            <span id="password-label" class="property-label">Password</span>
+            <div class="property-value" aria-labelledby="password-label">${this.autoridadCertificante.password}</div>
+        </li>
+    -->
+        <li class="fieldcontain">
+            <span id="email-label" class="property-label">Email</span>
+            <div class="property-value" aria-labelledby="email-label">${this.autoridadCertificante.email}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="dni-label" class="property-label">Dni</span>
+            <div class="property-value" aria-labelledby="dni-label">${this.autoridadCertificante.dni}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="apellido-label" class="property-label">Apellido</span>
+            <div class="property-value" aria-labelledby="apellido-label">${this.autoridadCertificante.apellido}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="nombre-label" class="property-label">Nombre</span>
+            <div class="property-value" aria-labelledby="nombre-label">${this.autoridadCertificante.nombre}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="cargo-label" class="property-label">Cargo</span>
+            <div class="property-value" aria-labelledby="cargo-label">${this.autoridadCertificante.cargo}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="firma-label" class="property-label">Firma</span>
+            <div class="property-value" aria-labelledby="firma-label"><img  src=${createLink(controller:"AutoridadCertificante", action:"verImagen", id:"${params.id}")} width='300' /></div>
+        </li>
+    
+     <!--  
+    
+        <li class="fieldcontain">
+            <span id="cursos-label" class="property-label">Cursos</span>
+            <div class="property-value" aria-labelledby="cursos-label"><ul>${this.autoridadCertificante.cursos}</ul></div>
+        </li>
+    --> 
+    </ol>
+            
+           
             <g:form resource="${this.autoridadCertificante}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.autoridadCertificante}"><g:message code="default.button.edit.label" default="Edit" /></g:link>

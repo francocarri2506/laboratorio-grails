@@ -96,4 +96,11 @@ class AutoridadCertificanteController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+
+    def verImagen () {
+      def img = AutoridadCertificante.get(params.id)
+      response.outputStream << img.firma
+      response.outputStream.flush()
+    }
 }

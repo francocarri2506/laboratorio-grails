@@ -96,4 +96,10 @@ class ExpositorController {
             '*'{ render status: NOT_FOUND }
         }
     }
+
+    def verImagen () {
+      def img = Expositor.get(params.id)
+      response.outputStream << img.firma
+      response.outputStream.flush()
+    }
 }
