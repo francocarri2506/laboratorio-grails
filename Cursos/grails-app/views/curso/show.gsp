@@ -15,8 +15,14 @@
                     <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 				</g:if>
 				<g:else>
-					<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" >INSCRIBIRSE</g:link></li>			
-				</g:else>	
+                              
+					<!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
+
+                    <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "controlInscripcion()">              
+					    <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
+                    </g:form>
+
+                </g:else>	
                 
             </ul>
         </div>
@@ -37,5 +43,7 @@
                 </g:form>
            </g:if> 
         </div>
+
+        <asset:javascript src="headroom.min.js"/>
     </body>
 </html>
