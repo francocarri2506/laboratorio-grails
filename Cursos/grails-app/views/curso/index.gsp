@@ -28,6 +28,7 @@
 
 
     <body class="home">
+    
     <g:if test="${!session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
     
         <!-- Header -->

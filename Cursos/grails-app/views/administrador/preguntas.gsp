@@ -35,7 +35,7 @@
             <ol class="breadcrumb">
 
             
-                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
+                <li><a <g:link class="home" controller="curso" action="index">Principal</g:link></a></li>
                     
                 <li class="active">Preguntas Frecuentes</li>
             </ol>

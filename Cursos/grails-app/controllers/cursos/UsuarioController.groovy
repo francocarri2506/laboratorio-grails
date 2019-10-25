@@ -30,6 +30,7 @@ class UsuarioController {
 
         try {
             usuarioService.save(usuario)
+            
         } catch (ValidationException e) {
             respond usuario.errors, view:'create'
             return

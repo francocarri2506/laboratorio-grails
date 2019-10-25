@@ -51,16 +51,68 @@
             </div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="${createLink(uri: '/')}">INICIO</a></li>
-					<li><g:link controller="administrador" action="facultad">LA FACULTAD</g:link></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#preguntas">Preguntas Frecuentes</a></li>
-							<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>
-							
-						</ul>
-					</li>
+
+
+						<g:if test="${session!=null && session.usuario!=null}">
+							<g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
+								
+								<li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
+								<li><g:link controller="administrador" action="facultad">LA FACULTAD</g:link></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#">Preguntas Frecuentes</a></li>
+										<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>	
+									</ul>
+								</li>
+							</g:if>
+					<g:else>
+							<li><g:link controller="curso" action="index">INICIO</g:link></li>
+								<li><g:link controller="curso" action="index">LA FACULTAD</g:link></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#preguntas">Preguntas Frecuentes</a></li>
+										<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>
+										
+									</ul>
+								</li>
+						</g:else>
+								
+								<ul class="dropdown-menu dropdown-usermenu pull-right">
+									<li><a href="#"> Perfil</a></li>
+									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
+									<li><a href="#"> Mis Cursos</a></li>
+									<li><a href="#"> Mis Certificados</a></li>
+
+								</ul>
+					
+
+						</g:if>
+						<g:else>
+							<li><g:link controller="curso" action="index">INICIO</g:link></li>
+								<li><g:link controller="curso" action="index">LA FACULTAD</g:link></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
+									<ul class="dropdown-menu">
+										<li><a href="#preguntas">Preguntas Frecuentes</a></li>
+										<li class="active"><g:link controller="curso" action="index" >Lista de Cursos</g:link></li>
+										
+									</ul>
+								</li>
+						</g:else>
+
+
+
+
+					
+
+
+
+
+
+
+					
 					<li><a href="#footer">CONTACTOS</a></li>
 					<li class="dropdown">
 						<g:if test="${session!=null && session.usuario!=null}">
@@ -80,7 +132,7 @@
 									<li><a href="#"> Mis Certificados</a></li>
 
 								</ul>
-					</li>
+					
 
 						</g:if>
 						<g:else>
@@ -90,6 +142,7 @@
 								</ul>
 							</div>
 						</g:else>
+					</li>
 						<g:if test="${message}">
 							<div class="message" role="status">${message}</div>
 						</g:if>
