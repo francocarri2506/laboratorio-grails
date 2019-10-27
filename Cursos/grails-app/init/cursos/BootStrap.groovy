@@ -100,7 +100,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
               println it
             }
           } 
-*/
+
 
 def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
             def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
@@ -111,7 +111,7 @@ def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
                 cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"UNCA-IDI",imagen:"Cursos/grails-app/assets/images/cursoJava.jpg" )
 
 
-
+*/
 }
 def destroy = {
 

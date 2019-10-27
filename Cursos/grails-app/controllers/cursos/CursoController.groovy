@@ -51,15 +51,23 @@ class CursoController {
                 if (!curso.save()){
                     redirect(controller: 'usuario', action: 'create')
                 }
-                def ins = new Inscripcion (cursos: curso, interesado: usuario)
-                if(!ins.save(flush: true)) {
-                ins.errors.each{
-                    println it
-                }
-                redirect(action: 'index')
+                def fechaI = new Date()
+                if (fechaI < curso.fechaLimiteInscripcion || fechaI == curso.fechaLimiteInscripcion){
+                    def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI)
+                    
+
+                    if(!ins.save(flush: true)) {
+                    ins.errors.each{
+                        println it
+                    }
+                    redirect(action: 'index')
+                    }
+                    else{
+                    redirect(controller: 'inscripcion', action: 'create')
+                    }
                 }
                 else{
-                redirect(controller: 'inscripcion', action: 'create')
+                    redirect(controller: 'fechalimite', action: 'alcanzada')    
                 }
             }
             else{

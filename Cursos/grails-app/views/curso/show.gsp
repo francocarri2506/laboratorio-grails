@@ -18,7 +18,7 @@
                               
 					<!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
 
-                    <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "controlInscripcion()">              
+                    <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
 					    <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
                     </g:form>
 
@@ -69,7 +69,7 @@
     
         <li class="fieldcontain">
             <span id="fechaLimiteInscripcion-label" class="property-label">Fecha Limite Inscripcion</span>
-            <div class="property-value" aria-labelledby="fechaLimiteInscripcion-label">${this.curso.fechaLimiteInscripcion}</div>
+            <div class="property-value" id="fechaLimite" aria-labelledby="fechaLimiteInscripcion-label">${this.curso.fechaLimiteInscripcion}</div>
         </li>
     
         <li class="fieldcontain">
@@ -124,5 +124,6 @@
         </div>
 
         <asset:javascript src="headroom.min.js"/>
+        <asset:javascript src="prueba.js"/>
     </body>
 </html>
