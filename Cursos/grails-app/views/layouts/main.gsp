@@ -66,9 +66,9 @@
 									</ul>
 								</li>
 							</g:if>
-					<g:else>
-							<li><g:link controller="curso" action="index">INICIO</g:link></li>
-								<li><g:link controller="curso" action="index">LA FACULTAD</g:link></li>
+							<g:else>
+								<li><g:link controller="curso" action="index">INICIO</g:link></li>
+								<li><g:link controller="administrador" action="facultad">LA FACULTAD</g:link></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 									<ul class="dropdown-menu">
@@ -77,21 +77,12 @@
 										
 									</ul>
 								</li>
-						</g:else>
-								
-								<ul class="dropdown-menu dropdown-usermenu pull-right">
-									<li><a href="#"> Perfil</a></li>
-									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
-									<li><a href="#"> Mis Cursos</a></li>
-									<li><a href="#"> Mis Certificados</a></li>
-
-								</ul>
-					
+							</g:else>
 
 						</g:if>
 						<g:else>
 							<li><g:link controller="curso" action="index">INICIO</g:link></li>
-								<li><g:link controller="curso" action="index">LA FACULTAD</g:link></li>
+								<li><a href="#facultad">LA FACULTAD</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 									<ul class="dropdown-menu">
@@ -102,17 +93,6 @@
 								</li>
 						</g:else>
 
-
-
-
-					
-
-
-
-
-
-
-					
 					<li><a href="#footer">CONTACTOS</a></li>
 					<li class="dropdown">
 						<g:if test="${session!=null && session.usuario!=null}">
