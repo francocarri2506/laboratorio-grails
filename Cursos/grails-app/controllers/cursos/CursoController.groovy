@@ -27,6 +27,15 @@ class CursoController {
         render(view:'index', model:[cursoList:cursos, cursoCount:cursos.size()])
     }
 
+    def miscursos(){
+        //def curso = Curso.findById(id)
+        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
+        def insc = Inscripcion.findAllByInteresado(usuario)
+        def cursos= insc.cursos
+
+        render(view: 'miscursos', model:[cursoList:cursos, cursoCount:cursos.size()]) 
+    }
+
 
     def show(Long id) {
         respond cursoService.get(id)
@@ -34,6 +43,7 @@ class CursoController {
 
     def inscribirse (Long id){
         def curso = Curso.findById(id)
+        def idc= curso.id;
         if (curso==null){
             redirect(controller: 'curso', action: 'create')
         }
@@ -47,7 +57,9 @@ class CursoController {
             def inte= Inscripcion.findAllByCursosAndInteresado(curso, usuario)
             
             if(inte.size()==0){
-                curso.addToInteresados(usuario)    
+                curso.addToInteresados(usuario)
+                usuario.addToCursos(curso)
+                usuario.save()   
                 if (!curso.save()){
                     redirect(controller: 'usuario', action: 'create')
                 }
@@ -63,7 +75,7 @@ class CursoController {
                     redirect(action: 'index')
                     }
                     else{
-                    redirect(controller: 'inscripcion', action: 'create')
+                    redirect(controller: 'curso', action: 'miscursos')
                     }
                 }
                 else{

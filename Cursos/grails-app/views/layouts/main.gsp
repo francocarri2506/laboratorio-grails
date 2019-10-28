@@ -108,7 +108,7 @@
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a href="#"> Perfil</a></li>
 									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
-									<li><a href="#"> Mis Cursos</a></li>
+									<li><a href="/curso/miscursos"> Mis Cursos</a></li>
 									<li><a href="#"> Mis Certificados</a></li>
 
 								</ul>
