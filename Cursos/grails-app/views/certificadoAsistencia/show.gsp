@@ -23,6 +23,7 @@
             <g:form resource="${this.certificadoAsistencia}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.certificadoAsistencia}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+                    <g:link class="list" action="certificadoPDF">Comprobante</g:link>
                     <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
                 </fieldset>
             </g:form>

@@ -96,4 +96,8 @@ class CertificadoAsistenciaController {
             '*'{ render status: NOT_FOUND }
         }
     }
+    def certificadoPDF() {
+        render (view:"certificadoPDF")
+        
+    }
 }
