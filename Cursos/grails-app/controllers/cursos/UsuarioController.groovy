@@ -111,6 +111,7 @@ class UsuarioController {
                 if (u.password == u.generateMD5_A(params.password)) {
                     session.usuario = u
 
+                    /*
                     if(u instanceof Administrador){
                         def usRol = UsuarioRol.findByUsuario(u)
                 
@@ -134,7 +135,7 @@ class UsuarioController {
                             usuarioRol.save()    
                         }    
                     }
-
+                    */
     
 
 

@@ -67,7 +67,7 @@
 						<div class="panel-body">
 							<h3 class="thin text-center">Crear un nuevo Usuario</h3>
 							<hr>
-                            <g:form action="save" method="post">
+                            <g:form action="save" method="post" onsubmit= "return Clave()">
 					
 								<div class="top-margin">
 									<label>Apellido:<span class="text-danger">*</span></label>
@@ -97,15 +97,22 @@
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Contraseña <span class="text-danger">*</span></label>
-										<input type="text" name="password" class="form-control" required>
+										<input type="password" name="password" class="form-control" id="cl1" required>
 									</div>
 									<div class="col-sm-6">
 										<label>Confirmar Contraseña<span class="text-danger">*</span></label>
-										<input type="text" name="password2" class="form-control" requiredgit >
+										<input type="password" name="password2" class="form-control" id="cl2" required>
 									</div>
 								</div>
 
-								
+								<div class="top-margin">
+									<label for="categoria">Categoria<span class="text-danger">*</span></label>
+									<select name="categoria" required="" id="categoria">
+										<option value="Alumno">Alumno</option>
+										<option value="Publico General">Publico General</option>
+										<option value="Docente">Docente</option>
+									</select>
+								</div>
 
 								<hr>
 

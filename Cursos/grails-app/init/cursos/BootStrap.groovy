@@ -65,10 +65,11 @@ class BootStrap {
         println it
       }
     }
+*/    
 
             def fechaD= Date.parse('yyyy-MM-dd', "2019-11-11")
             def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
-            def fechaIns= Date.parse('yyyy-MM-dd', "2019-10-10")
+            def fechaIns= Date.parse('yyyy-MM-dd', "2019-11-09")
             def fechaCur= Date.parse('yyyy-MM-dd', "2020-06-06")
             def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
                 fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
@@ -101,7 +102,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
 
-
+/*
 def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
             def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
             def fechaIns= Date.parse('yyyy-MM-dd', "2019-7-12")

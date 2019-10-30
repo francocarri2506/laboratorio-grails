@@ -21,7 +21,7 @@
                     <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
 					    <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
                     </g:form>
-
+                    <!--action="inscribirse"-->
                 </g:else>	
                 
             </ul>
