@@ -99,19 +99,24 @@
 							<g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
 									<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">
 									<asset:image src="${session?.usuario?.nombreUsuario}.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
+							<ul class="dropdown-menu dropdown-usermenu pull-right">
+									<li><a href="#"> Perfil</a></li>
+									<li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
+								</ul>
 							</g:if>
 							<g:else>
 								<a href="#"class="user-profile dropdown-toggle" data-toggle="dropdown">
 								<asset:image src="${session?.usuario?.nombreUsuario}.jpg" alt=""/>${session?.usuario?.nombreUsuario} <b class="caret"></b></a>
-							</g:else>	
-								
+							
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a href="#"> Perfil</a></li>
-									<li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
+									<li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
 									<li><a href="/curso/miscursos"> Mis Cursos</a></li>
 									<li><a href="#"> Mis Certificados</a></li>
-
 								</ul>
+							</g:else>	
+								
+								
 					
 
 						</g:if>

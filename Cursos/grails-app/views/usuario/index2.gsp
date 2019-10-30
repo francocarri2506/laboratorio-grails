@@ -205,7 +205,7 @@
                       </g:else>	
                         <ul class="dropdown-menu dropdown-usermenu pull-right">
                           <li><a href="#"> Perfil</a></li>
-                          <li><g:link controller="login" action="logout" controller="login"><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
+                          <li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
                         </ul>
                   </li>
                       
