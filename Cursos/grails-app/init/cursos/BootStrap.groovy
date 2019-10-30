@@ -65,7 +65,6 @@ class BootStrap {
         println it
       }
     }
-*/    
 
             def fechaD= Date.parse('yyyy-MM-dd', "2019-11-11")
             def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
@@ -84,7 +83,7 @@ class BootStrap {
 
           def curso1 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
                 fechadelCertificado:fechaCur,nombre:"Programacion 3",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 4 ",horarios:"8:00 - 12:00",lugar:"UNCA IDI" )
+                cupoMinimo:3 ,cantidadHoras:" 4 ",horarios:"8:00 - 12:00",lugar:"UNCA IDI", costo: "600" )
 
   if(!curso1.save(flush: true)) {
             curso1.errors.each{
@@ -94,7 +93,7 @@ class BootStrap {
 
 def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
                 fechadelCertificado:fechaCur,nombre:"Ingenieria de Software 3",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 2 ",horarios:"10:00 - 12:00",lugar:"UNCA IDI" )
+                cupoMinimo:3 ,cantidadHoras:" 2 ",horarios:"10:00 - 12:00",lugar:"UNCA IDI", costo: "500" )
 
   if(!curso2.save(flush: true)) {
             curso2.errors.each{
@@ -102,7 +101,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
 
-/*
+
 def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
             def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
             def fechaIns= Date.parse('yyyy-MM-dd', "2019-7-12")

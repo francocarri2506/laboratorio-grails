@@ -10,6 +10,7 @@ class Curso {
     String horarios
     Date fechaLimiteInscripcion
     Date fechadelCertificado
+    BigInteger costo
     Integer cupoMaximo
     Integer cupoMinimo
     byte[] imagen
