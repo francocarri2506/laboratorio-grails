@@ -103,32 +103,60 @@ class UsuarioController {
     }
 
     def loginUser() {
-   if (request.get) {
-     return render(view: 'login')
-     
-   }
-     def u = Usuario.findByEmail(params.email)
-     if (u) {
-       if (u.password == u.generateMD5_A(params.password)) {
-          session.usuario = u
-
-          def usRol = UsuarioRol.findByUsuario(u)
-          
-          if (usRol==null){
-           // render(view: "/index")
-            redirect(controller:"curso", action:"index")
-          }
-          else if (usRol.rol.authority == "ADMIN"){
-            render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
-          }
-          else
-            redirect(controller:"curso", action:"index") //sino se muestra el home
-        } else {
-          render(view: "acceder", model: [message: "Constraseña Incorrecta"])
+        if (request.get) {
+            return render(view: 'login')
         }
-      } else {
-        render(view: "acceder", model: [message: "No existe el usuario ingresado"])
-      }
+        def u = Usuario.findByEmail(params.email)
+            if (u) {
+                if (u.password == u.generateMD5_A(params.password)) {
+                    session.usuario = u
+
+                    if(u instanceof Administrador){
+                        def usRol = UsuarioRol.findByUsuario(u)
+                
+                        if (usRol==null){
+                            def rol = new Rol (authority: "ADMIN")
+                            def usuarioRol = new UsuarioRol(usuario: u, rol: rol)
+                            if(!usuarioRol.save(flush:true)) {
+                                usuarioRol.errors.each{
+                                    println it
+                                }
+                            }    
+                        }    
+                    }
+                    else if(u instanceof Interesado){
+                        def usRol = UsuarioRol.findByUsuario(u)
+                                        
+                        if (usRol==null){
+                            def rol = new Rol (authority: "INTERESADO")
+                            rol.save()
+                            def usuarioRol = new UsuarioRol(usuario: u, rol: rol)
+                            usuarioRol.save()    
+                        }    
+                    }
+
+    
+
+
+                    def usRol = UsuarioRol.findByUsuario(u)
+                
+                    if (usRol==null || usRol.rol.authority== "INTERESADO"){
+                    // render(view: "/index")
+                        redirect(controller:"curso", action:"index")
+                    }
+                    else if (usRol.rol.authority == "ADMIN"){
+                        render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
+                    }
+                    else
+                        redirect(controller:"curso", action:"index") //sino se muestra el home
+                } 
+                else {
+                    render(view: "acceder", model: [message: "Constraseña Incorrecta"])
+                }
+            } 
+            else {
+                render(view: "acceder", model: [message: "No existe el usuario ingresado"])
+            }
     }
 
 
