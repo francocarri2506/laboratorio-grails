@@ -103,7 +103,7 @@ class UsuarioController {
     }
 
     def loginUser() {
-   if (request.get) {
+    if (request.get) {
      return render(view: 'login')
      
    }
@@ -131,10 +131,10 @@ class UsuarioController {
       }
     }
 
-
+// 
     def logout() {
       session.usuario=null
-      render(view: "/index")
+      redirect(controller:"curso", action:"index")
     }
 
 
