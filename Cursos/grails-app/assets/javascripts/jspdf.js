@@ -159,7 +159,7 @@ var jsPDF = (function(global) {
 		// Default options
 		unit        = unit || 'mm';
 		format      = format || 'a4';
-		orientation = ('' + (orientation || 'P')).toLowerCase();
+		orientation = ('L').toLowerCase();
 
 		var format_as_string = ('' + format).toLowerCase(),
 			compress = !!compressPdf && typeof Uint8Array === 'function',

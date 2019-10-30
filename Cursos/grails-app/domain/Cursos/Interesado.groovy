@@ -6,6 +6,6 @@ class Interesado extends Usuario{
     static hasMany = [cursos: Curso]
     
     static constraints = {
-        categoria (intList:['Alumno', 'Publico General','Docente'])
+        categoria (inList:['Alumno', 'Publico General','Docente'])
     }
 }
