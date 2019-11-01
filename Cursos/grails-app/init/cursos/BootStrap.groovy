@@ -10,8 +10,8 @@ class BootStrap {
 //        println it
 //      }
 //    }
-/*
-  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+
+ /* def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 
   if(!usu.save(flush: true)) {
       usu.errors.each{
@@ -102,15 +102,8 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
           } 
 
 
-def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
-            def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
-            def fechaIns= Date.parse('yyyy-MM-dd', "2019-7-12")
-            def fechaCur= Date.parse('yyyy-MM-dd', "2020-06-06")
-            def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
-                fechadelCertificado:fechaCur,nombre:"Java",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"UNCA-IDI",imagen:"Cursos/grails-app/assets/images/cursoJava.jpg" )
+*/
 
-    */
 }
 def destroy = {
 

@@ -14,7 +14,7 @@ class Curso {
     Integer cupoMaximo
     Integer cupoMinimo
     byte[] imagen
-    static hasMany = [interesados: Interesado,autoridades:AutoridadCertificante,expositores:Expositor]
+    static hasMany = [autoridades:AutoridadCertificante,expositores:Expositor, inscripcion: Inscripcion]
     
 
     static constraints = {
