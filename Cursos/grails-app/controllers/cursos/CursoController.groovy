@@ -90,11 +90,15 @@ class CursoController {
                     }
                 }
                 else{
-                    redirect(controller: 'fechalimite', action: 'alcanzada')    
+                    render(view: "index", model: [message:'La etapa de inscripcion para este curso ha concluido'])
+                    //redirect(controller: 'fechalimite', action: 'alcanzada')    
                 }
             }
             else{
-                redirect(controller: 'yainscripto', action: 'enestecurso')
+                        def cursos= cursoService.buscarCursitoNombre(params.nombrecurso)
+
+                render(view: "index", model: [message:'Ya se encuentra inscripto en este curso',cursoList:cursos, cursoCount:cursos.size()])
+                //redirect(controller: 'yainscripto', action: 'enestecurso')
             }
             //redirect (controller:'insc', action: 'tamanio')
         }

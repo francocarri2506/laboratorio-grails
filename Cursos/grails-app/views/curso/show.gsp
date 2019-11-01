@@ -10,19 +10,24 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
-					<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                    <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-				</g:if>
-				<g:else>
-                              
-					<!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
+                <g:if test="${session!=null && session.usuario!=null}">
+                    <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
+					    <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                        <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				    </g:if>
+                
+                    <g:else>
+                                
+                        <!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
 
-                    <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
-					    <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
-                    </g:form>
-                    <!--action="inscribirse"-->
-                </g:else>	
+                        <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
+                            <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
+                        </g:form>
+                        <!--action="inscribirse"-->
+                    </g:else>
+
+                </g:if>
+                
                 
             </ul>
         </div>
@@ -120,7 +125,7 @@
 
 
 
-
+        <g:if test="${session!=null && session.usuario!=null}">
             <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
 
                 <g:form resource="${this.curso}" method="DELETE">
@@ -130,6 +135,8 @@
                     </fieldset>
                 </g:form>
            </g:if> 
+        </g:if> 
+
         </div>
 
         <asset:javascript src="headroom.min.js"/>

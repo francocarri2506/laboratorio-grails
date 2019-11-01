@@ -56,7 +56,7 @@
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Iniciar sesión en su cuenta </h3>
-							<p class="text-center text-muted">¿No tiene una cuenta? <g:link controller="usuario" action="create">Registrarse</g:link>. </p>  <!-- al hacer click en registrarce me manda a crear usuario... pero le da rol de admin por lo visto--> 
+							<p class="text-center text-muted">¿No tiene una cuenta? <g:link controller="interesado" action="create">Registrarse</g:link>. </p>  <!-- al hacer click en registrarce me manda a crear usuario... pero le da rol de admin por lo visto--> 
 							
 							<hr>
 							

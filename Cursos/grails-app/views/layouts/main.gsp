@@ -45,7 +45,7 @@
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 
 
-			<a class="navbar-brand" href="curso/index">
+			<a class="navbar-brand" href="/curso/index">
             <asset:image src="logo2.png"  alt="Progressus HTML5 template"/></a>
             
             </div>
@@ -113,6 +113,7 @@
 									<li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
 									<li><a href="/curso/miscursos"> Mis Cursos</a></li>
 									<li><a href="#"> Mis Certificados</a></li>
+									<li><a href="/inscripcion/misinscripciones"> Mis cupones</a></li>
 								</ul>
 							</g:else>	
 								

@@ -79,7 +79,7 @@
     <p style="text-align: justify;">Oficinas Planta BajaEste nuevo plan de estudios responde a los lineamientos establecidos por el Ministerio de Cultura y Educación de la Nación, por la Ley de Educación Superior N° 24.521/95, a las pautas de homogeneización curricular establecidas por el Consejo Nacional de Escuelas de Agrimensura (CONEA) y a los estándares de acreditación de las Carreras de Grado de Ingeniería de la República Argentina aprobadas por el Consejo Federal de Decanos de Ingeniería (CONFEDI), y la Resolución del Ministerio de Educación, Ciencia y Tecnología N° 1054/01, procurando definir desde el diseño, una currícula que se ajuste a los profundos cambios científicos y tecnológicos que caracterizan la dinámica actual de las carreras de grado, y contemple las exigencias específicas que la sociedad demanda a los profesionales de la Agrimensura.</p>
     <p style="text-align: justify;">Por otra parte, a partir de la actualización curricular es posible facilitar el enfoque interdisciplinario, propiciar la investigación en temáticas especificas de la Agrimensura y contribuir con otras áreas del saber, y muy especialmente, promover un sistema metodológico de enseñanza-aprendizaje que prepare al alumno para el rol protagónico de agente promotor del cambio y transformador de las realidades territoriales que se presentan como desafío para el desarrollo de las sociedades.</p>
     <br>
-    <p class="text-right">Más información en <a href="http://tecno.unca.edu.ar/" rel="designer">TECNO-UNCA</a></p>
+    <p class="text-right">Más información en <a href="http://tecno.unca.edu.ar/" target="_blank" rel="designer">TECNO-UNCA</a></p>
     </div>
                         <div style="clear:both"></div>	
                         
