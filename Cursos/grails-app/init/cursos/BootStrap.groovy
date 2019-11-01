@@ -110,8 +110,7 @@ def fechaD= Date.parse('yyyy-MM-dd', "2019-10-12")
                 fechadelCertificado:fechaCur,nombre:"Java",cupoMaximo:10 ,
                 cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"UNCA-IDI",imagen:"Cursos/grails-app/assets/images/cursoJava.jpg" )
 
-
-*/
+    */
 }
 def destroy = {
 
