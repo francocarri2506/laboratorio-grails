@@ -98,8 +98,8 @@
         </li>
     
         <li class="fieldcontain">
-            <span id="interesados-label" class="property-label">Interesados</span>
-            <div class="property-value" aria-labelledby="interesados-label"><ul>${this.curso.interesados}</ul></div>
+            <span id="inscripcion-label" class="property-label">Inscriptos</span>
+            <div class="property-value" aria-labelledby="inscripcion-label"><ul>${this.curso.inscripcion}</ul></div>
         </li>
     
         <li class="fieldcontain">

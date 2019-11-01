@@ -17,4 +17,8 @@ List listadoCursos() {
     def cursos = Curso.findAll()
       return cursos
   }
+
+  Curso cursoId(Map params){
+    return Curso.get(params.id)
+  }
 }
