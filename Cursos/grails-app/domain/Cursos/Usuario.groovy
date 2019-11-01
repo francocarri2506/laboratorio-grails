@@ -57,7 +57,8 @@ class Usuario implements Serializable{
       def beforeValidate() {
           nombreUsuario=nombreUsuario?.toUpperCase()
           email=email?.toLowerCase()
-
+          nombre=nombre?.toUpperCase()
+          apellido=apellido?.toUpperCase()
       }
 
     static constraints = {

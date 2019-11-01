@@ -8,6 +8,7 @@ class Inscripcion {
     FormaPago formaPago
     Integer  numeroorden
     String estado
+    BigInteger costo
 
     static constraints = {
     //  fechaInscripcion (blank:true, value: new Date() )  //nose si esto se podra
@@ -15,6 +16,7 @@ class Inscripcion {
         formaPago (nullable:true)
         numeroorden (nullable: true)
         estado (inList:["Inscripto", "Postulante"])
+        costo (nullable:true)
     }
 
 }

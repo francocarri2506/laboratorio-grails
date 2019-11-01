@@ -7,25 +7,64 @@
     </head>
     <body>
         <a href="#show-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
+        
+
         <div id="show-inscripcion" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:display bean="inscripcion" />
-            <g:form resource="${this.inscripcion}" method="DELETE">
+            <h1>Comprobante de Inscripcion</h1>
+            
+            <ol class="property-list inscripcion">
+    
+        <li class="fieldcontain">
+            <span id="fechaInscripcion-label" class="property-label">Fecha Inscripcion</span>
+            <div class="property-value" aria-labelledby="fechaInscripcion-label">${this.inscripcion.fechaInscripcion}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="formaPago-label" class="property-label">Forma de pago</span>
+            <div class="property-value" aria-labelledby="formaPago-label">${this.inscripcion.formaPago}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="numeroorden-label" class="property-label">Numero de orden</span>
+            <div class="property-value" aria-labelledby="numeroorden-label">${this.inscripcion.numeroorden}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="estado-label" class="property-label">Estado</span>
+            <div class="property-value" aria-labelledby="estado-label">${this.inscripcion.estado}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="costo-label" class="property-label">Costo</span>
+            <div class="property-value" aria-labelledby="costo-label">${this.inscripcion.costo}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="interesado-label" class="property-label">Interesado</span>
+            <div class="property-value" aria-labelledby="interesado-label"><a href="/interesado/show/${this.inscripcion.interesado.id}">${this.inscripcion.interesado.nombre +" "+ this.inscripcion.interesado.apellido}</a></div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="interesado-label" class="property-label">DNI</span>
+            <div class="property-value" aria-labelledby="interesado-label">${this.inscripcion.interesado.dni}</div>
+        </li>
+
+        <li class="fieldcontain">
+            <span id="cursos-label" class="property-label">Cursos</span>
+            <div class="property-value" aria-labelledby="cursos-label"><a href="/curso/show/${this.inscripcion.cursos.id}">${this.inscripcion.cursos.nombre}</a></div>
+        </li>
+    
+</ol>
+        <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
+            <form action="/inscripcion/delete/13" method="post"><input type="hidden" name="_method" value="DELETE" id="_method">
                 <fieldset class="buttons">
-                    <g:link class="edit" action="edit" resource="${this.inscripcion}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                    <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                    <a href="/inscripcion/edit/13" class="edit">Editar</a>
+                    <input class="delete" type="submit" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">
                 </fieldset>
-            </g:form>
+            </form>
+        </g:if> 
         </div>
     </body>
 </html>
+
+

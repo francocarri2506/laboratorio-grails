@@ -43,7 +43,9 @@ class CursoController {
 
     def inscribirse (Long id){
         def curso = Curso.findById(id)
-        def idc= curso.id;
+        def idc= curso.id
+        //def fechaI = new Date()
+        def costoC = curso.costo
         if (curso==null){
             redirect(controller: 'curso', action: 'create')
         }
@@ -59,13 +61,20 @@ class CursoController {
             if(inte.size()==0){
                 curso.addToInteresados(usuario)
                 usuario.addToCursos(curso)
-                usuario.save()   
+                usuario.save()
+                
                 if (!curso.save()){
                     redirect(controller: 'usuario', action: 'create')
                 }
                 def fechaI = new Date()
                 if (fechaI < curso.fechaLimiteInscripcion || fechaI == curso.fechaLimiteInscripcion){
-                    def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI)
+                    if(usuario.categoria=="Alumno"){
+                        costoC= costoC*0.5
+                    }
+                    else if(usuario.categoria=="Docente"){
+                        costoC=costoC*0.7
+                    }
+                    def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI, estado: "Inscripto", costo: costoC, numeroorden: insc.size()+1)
                     
 
                     if(!ins.save(flush: true)) {
@@ -75,7 +84,8 @@ class CursoController {
                     redirect(action: 'index')
                     }
                     else{
-                    redirect(controller: 'curso', action: 'miscursos')
+                    def idi= ins.id;
+                    redirect(controller: 'inscripcion', action: 'show', id: idi)
                     }
                 }
                 else{
