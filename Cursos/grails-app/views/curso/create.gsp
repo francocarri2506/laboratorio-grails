@@ -27,7 +27,9 @@
             </g:hasErrors>
             <g:form resource="${this.curso}" method="POST" enctype="multipart/form-data">
                 <fieldset class="form">
-                    <f:all bean="curso"/>
+               
+                <f:all bean="curso"/>
+
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />

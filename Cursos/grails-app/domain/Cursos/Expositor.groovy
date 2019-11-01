@@ -5,6 +5,7 @@ class Expositor extends Usuario{
     byte[] firma
     String titulo
     static hasMany = [cursos:Curso]
+    static belongsTo = [cursos: Curso]
 
     static constraints = {
         

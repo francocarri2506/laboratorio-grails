@@ -238,6 +238,8 @@ class CursoController {
       response.outputStream << img.imagen
       response.outputStream.flush()
     }
+
+    
 }
 
 
