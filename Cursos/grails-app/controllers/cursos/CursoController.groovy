@@ -59,10 +59,11 @@ class CursoController {
             def inte= Inscripcion.findAllByCursosAndInteresado(curso, usuario)
             
             if(inte.size()==0){
+                /*
                 curso.addToInteresados(usuario)
-                usuario.addToCursos(curso)
+                usuario.addToIns(curso)
                 usuario.save()
-                
+                */
                 if (!curso.save()){
                     redirect(controller: 'usuario', action: 'create')
                 }
