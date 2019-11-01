@@ -91,6 +91,11 @@
             <span id="cupoMinimo-label" class="property-label">Cupo Minimo</span>
             <div class="property-value" aria-labelledby="cupoMinimo-label">${this.curso.cupoMinimo}</div>
         </li>
+
+        <li class="fieldcontain">
+            <span id="costo-label" class="property-label">Costo</span>
+            <div class="property-value" aria-labelledby="costo-label">${this.curso.costo}</div>
+        </li>
     <!--   --> 
         <li class="fieldcontain">
             <span id="expositores-label" class="property-label">Expositores</span>
@@ -106,12 +111,16 @@
             <span id="inscripcion-label" class="property-label">Inscriptos</span>
             <div class="property-value" aria-labelledby="inscripcion-label"><ul>${this.curso.inscripcion}</ul></div>
         </li>
-    
+
+
         <li class="fieldcontain">
             <span id="imagen-label" class="property-label">Imagen</span>
             <div class="property-value" aria-labelledby="imagen-label"><img  src=${createLink(controller:"Curso", action:"verImagen", id:"${params.id}")} width='300' /></div>
 
-        </li>    
+        </li> 
+
+
+
 </ol>
 
 

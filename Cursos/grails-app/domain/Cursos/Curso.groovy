@@ -1,5 +1,8 @@
 package Cursos
 
+//import grails.rest.Resource
+//@Resource(uri='/cursos')
+
 class Curso {
 
     String nombre
@@ -49,8 +52,11 @@ class Curso {
             return ['cupoMaximoError',obj.cupoMinimo]
         }})
         
-        cupoMinimo (blank:true)
-
+        cupoMinimo (blank:true, validator:{ Integer valor, Curso obj ->
+        if(valor < 0){
+            return ['cupoMinimoError',obj.cupoMinimo]
+        }})
+        costo (blank:true)
         imagen (nullable:true)
     }
 
