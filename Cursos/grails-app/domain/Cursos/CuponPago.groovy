@@ -3,7 +3,7 @@ package Cursos
 class CuponPago {
 
     String estado
-    FormaPago formaPago
+    
     Integer id
     //static belongsTo = [formaPago:FormaPago]
     static constraints = {

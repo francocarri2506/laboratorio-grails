@@ -5,7 +5,7 @@ class Inscripcion {
     Date fechaInscripcion
     Curso cursos
     Interesado interesado
-    FormaPago formaPago
+    
     Integer  numeroorden
     String estado
     BigInteger costo
