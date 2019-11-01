@@ -23,7 +23,7 @@
         <asset:stylesheet src="hover-pack.css"/>
 
         <g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title>JOGAF - Home</title>
     </head>
 
 

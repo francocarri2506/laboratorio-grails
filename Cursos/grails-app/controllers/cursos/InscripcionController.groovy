@@ -29,6 +29,13 @@ class InscripcionController {
         render(view: 'cuponPago', model:[inscripcionList:insc, inscripcionCount:insc.size()])
     }
 
+    def misinscripciones (Long id){
+        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
+        def insc = Inscripcion.findAllByInteresado(usuario)
+
+        render(view: 'misinscripciones', model:[inscripcionList: insc, inscripcionCount:insc.size()])
+    }
+
     def save(Inscripcion inscripcion) {
         if (inscripcion == null) {
             notFound()
@@ -88,7 +95,7 @@ class InscripcionController {
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'inscripcion.label', default: 'Inscripcion'), id])
-                redirect action:"index", method:"GET"
+                redirect (controller:"curso", action:"index", method:"GET")
             }
             '*'{ render status: NO_CONTENT }
         }
