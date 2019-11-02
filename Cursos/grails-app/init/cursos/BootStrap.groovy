@@ -10,7 +10,7 @@ class BootStrap {
 //        println it
 //      }
 //    }
-/*
+
  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 
   if(!usu.save(flush: true)) {
@@ -72,7 +72,7 @@ class BootStrap {
             def fechaCur= Date.parse('yyyy-MM-dd', "2020-06-06")
             def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
                 fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria" )
+                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria", costo: "400" )
 
       
 
@@ -101,7 +101,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
 
-*/
+
 
 
 }

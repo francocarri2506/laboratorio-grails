@@ -14,6 +14,9 @@
                     <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
 					    <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
                         <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                        <g:form resource="${this.curso}" method="POST" action='inscriptoscurso'>              
+                            <g:submitButton name="inscriptos" class="inscriptos" value="INSCRIPTOS EN ESTE CURSO" style= "background-color: green; color: white"/>	
+                        </g:form>
 				    </g:if>
                 
                     <g:else>
