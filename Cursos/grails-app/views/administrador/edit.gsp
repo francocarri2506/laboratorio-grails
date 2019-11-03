@@ -10,12 +10,13 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
+                <li><g:link class="list" action="index">Lista de Administradores</g:link></li>
+                <li><g:link class="create" action="create">Nuevo Administrador</g:link></li>
+
+           
         </div>
         <div id="edit-administrador" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
+            <h1>Editar Administrador</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -32,7 +33,7 @@
                     <f:all bean="administrador"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    <button type="submit" class="save btn btn-success">Editar Administrador</button>
                 </fieldset>
             </g:form>
         </div>

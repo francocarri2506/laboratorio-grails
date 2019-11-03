@@ -17,4 +17,9 @@ class AutoridadCertificante extends Usuario{
     static mapping = {
             firma sqlType: 'bytea' 
     }
+
+    @Override
+    String toString(){
+        return (this.nombre +" "+ this.apellido)
+    }
 }
