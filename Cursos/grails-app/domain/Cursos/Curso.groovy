@@ -65,3 +65,8 @@ class Curso {
             imagen sqlType: 'bytea' 
     }
 }
+
+@Override
+String toString(Curso curso){
+    return ("Holaaaaaa")
+}

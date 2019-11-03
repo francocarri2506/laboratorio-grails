@@ -130,6 +130,10 @@
                     <input class="delete" type="submit" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">
                 </fieldset>
             </form>
+            <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
+                <g:submitButton name="inscriptos" class="inscriptos" value="GENERAR CERTIFICADO" style= "background-color: orange; color: white"/>	
+            </g:form>
         </g:if>
         <g:else>
             <form action="/inscripcion/delete/${this.inscripcion.id}" method="post"><input type="hidden" name="_method" value="DELETE" id="_method">
