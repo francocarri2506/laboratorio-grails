@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class CursoController {
 
     CursoService cursoService
+    InscripcionService inscripcionService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -39,6 +40,18 @@ class CursoController {
 
     def show(Long id) {
         respond cursoService.get(id)
+    }
+
+    def inscriptoscurso(Long id){
+        def curso = Curso.findById(id)
+        
+        if(curso==null){
+            redirect(controller:"nohay", action:"curso")
+        }
+        def idc= curso.id
+        def insc = Inscripcion.findAllByCursos(curso)
+
+        render(view: 'inscriptoscurso', model:[inscripcionList:insc, inscripcionCount:insc.size()]) 
     }
 
     def inscribirse (Long id){

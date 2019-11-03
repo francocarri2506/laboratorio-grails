@@ -96,8 +96,10 @@ class CertificadoAsistenciaController {
             '*'{ render status: NOT_FOUND }
         }
     }
-    def certificadoPDF() {
-        render (view:"certificadoPDF")
-        
+    def certificadoPDF(Long id) {
+        def insc= Inscripcion.findAllById(id)
+        //Aca se deberia crear un objeto CertificadoAsistencia, guardarlo, y enviarlo a la vista
+        //certificadoPDF en vez de enviar la inscripcion
+        render (view:"certificadoPDF", model:[inscripcionList:insc, inscripcionCount:insc.size()])
     }
 }

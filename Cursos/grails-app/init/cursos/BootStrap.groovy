@@ -10,7 +10,7 @@ class BootStrap {
 //        println it
 //      }
 //    }
-/*
+
  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 
   if(!usu.save(flush: true)) {
@@ -71,8 +71,13 @@ class BootStrap {
             def fechaIns= Date.parse('yyyy-MM-dd', "2019-11-09")
             def fechaCur= Date.parse('yyyy-MM-dd', "2020-12-10")
             def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
+<<<<<<< HEAD
                 fechadelCertificado:fechaCur,nombre:"Robótica Inicial", cupoMaximo:20,
                 cupoMinimo:1 ,cantidadHoras:"3",horarios:"9:00 - 12:00",lugar:"FTyCA - Aula Marta Bienner", costo: "700" )
+=======
+                fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
+                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria", costo: "400" )
+>>>>>>> 725b568690ae5e774dd9e448399efead9c8ccf8d
 
       
 
@@ -101,7 +106,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             }
           } 
 
-*/
+
 
 
 }
