@@ -38,7 +38,7 @@
           
         </div>
         <br><br><br>  
-        <div id="client">Autoridad Certificante</div><br>
+        <div id="client">Autoriad Certificante</div><br>
       </g:each>
     </main>
     <footer>
