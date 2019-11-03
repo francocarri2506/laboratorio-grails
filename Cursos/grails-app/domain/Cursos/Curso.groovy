@@ -17,11 +17,13 @@ class Curso {
     Integer cupoMaximo
     Integer cupoMinimo
     byte[] imagen
+    String tipo
     static hasMany = [autoridades:AutoridadCertificante,expositores:Expositor, inscripcion: Inscripcion]
     
 
     static constraints = {
         nombre (blank:false, maxsize:100, unique:true)
+        tipo (inList:["Asistencia","Evaluativo"])
         fechaDesde (blank:true, validator:{ Date fecha, Curso obj ->
        if(fecha < new Date()){
        return ['fechaDesdeError',obj.fechaDesde]
@@ -64,9 +66,9 @@ class Curso {
     static mapping = {
             imagen sqlType: 'bytea' 
     }
-}
 
-@Override
-String toString(Curso curso){
-    return ("Holaaaaaa")
+    @Override
+    String toString(){
+        return (this.nombre)
+    }
 }

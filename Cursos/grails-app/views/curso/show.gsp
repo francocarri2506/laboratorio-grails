@@ -47,7 +47,7 @@
 
         <li class="fieldcontain">
             <span id="nombre-label" class="property-label">Nombre</span>
-            <div class="property-value" aria-labelledby="nombre-label">${this.curso.nombre}</div>
+            <div class="property-value" aria-labelledby="nombre-label">${this.curso.toString()}</div>
         </li>
     
         <li class="fieldcontain">
