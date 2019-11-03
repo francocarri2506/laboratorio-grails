@@ -31,14 +31,14 @@
           <div id="client">
             
             <h2 class="name">CERTIFICAMOS que la persona  ${it.interesado.nombre} ${it.interesado.apellido}   con el DNI  ${it.interesado.dni} <br><br>
-             paricipó como  ${it.interesado.categoria} en el CURSO   ${it.cursos.nombre} , realizado en <br><br>
+             participó como  ${it.interesado.categoria} en el CURSO   ${it.cursos.nombre} , realizado en <br><br>
              San Fernando del Valle de Catamarca de la Provincia de Catamarca </h2>
             
           </div>
           
         </div>
         <br><br><br>  
-        <div id="client">Autoriad Certificante</div><br>
+        <div id="client">Autoridad Certificante</div><br>
       </g:each>
     </main>
     <footer>
