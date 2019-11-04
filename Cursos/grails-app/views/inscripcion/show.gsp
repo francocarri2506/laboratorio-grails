@@ -132,13 +132,13 @@
                     </fieldset>
                 </form>
                 
-                <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
+                <g:if test="${this.inscripcion.cursos.tipo=="Asistencia" && this.inscripcion.cursos.fechadelCertificado<new Date()}"> <!--solo puede descargar el certificado una vez finalizado el curso-->
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos" value="Descargar certificado" style= "background-color: orange; color: white"/>	
                     </g:form>
                 </g:if>
-                <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo"}">
+                <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo" && this.inscripcion.cursos.fechadelCertificado<new Date()}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos" value="Descargar certificado" style= "background-color: orange; color: white"/>	
