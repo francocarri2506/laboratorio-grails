@@ -124,7 +124,7 @@
 						<g:else>
 							<div class="nav" role="navigation">
 								<ul>
-								<li><g:link class="btn"  controller="usuario" action="acceder">ACCEDER / REGISTRARSE</g:link></li>
+								<li><g:link class="btn"  controller="usuario" action="acceder">ACCEDER</g:link></li>
 								</ul>
 							</div>
 						</g:else>

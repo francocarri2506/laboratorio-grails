@@ -76,7 +76,7 @@
 
 								<div class="row">
 									<div class="col-lg-8">
-										<b><a href="">¿OLVIDO SU CONTRASEÑA?</a></b>
+										<b></b>
 									</div>
 									<div class="col-lg-4 text-right">
 										<button class="btn btn-action" type="submit">ACCEDER</button>
