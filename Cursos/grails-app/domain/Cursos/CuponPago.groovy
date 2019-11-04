@@ -3,12 +3,13 @@ package Cursos
 class CuponPago {
 
     String estado
-    Inscripcion inscripcion
-    Integer codigo
+    String pago
     Date fechaPago
-
+    Integer id
+    //static belongsTo = [formaPago:FormaPago]
     static constraints = {
-        codigo (unique:true, maxsize:5)
-        estado (blank:false, inlist:["Pendiente", "Realizado"])
+        pago(inList: ['Pendiente','Realizado'])
+        id (unique:true, maxsize:5)
+        estado (blank:false, maxsize:100)
     }
 }

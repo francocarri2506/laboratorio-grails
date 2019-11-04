@@ -22,6 +22,14 @@ List listadoCursos() {
     return Curso.get(params.id)
   }
 
+  List cursosxFechas(Map params){
+    def fechaD = new Date().parse('yyyy-MM-dd', params.fechaDesde)
+    def fechaH = new Date().parse('yyyy-MM-dd', params.fechaHasta)
+    return Curso.withCriteria() {           
+      between("fechaDesde", fechaD, fechaH)
+    }
+  
+
 /*
   void altaCurso(Map params) {
     def c = new Curso()
@@ -69,7 +77,7 @@ List listadoCursos() {
   }
   */
 }
-
+}
 
 /*PARA EL API REST
 

@@ -106,9 +106,9 @@
 
                   <li><a><i class="fa fa-bar-chart-o"></i> GESTION ESTADISTICAS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><g:link controller="administrador" action="cursosxFecha" >Cursos por Fecha</g:link></li>
+                      <li><g:link controller="administrador" action="pagoInscriptos" >Pagos Realiados de Inscriptos</g:link></li>
+                      <li><g:link controller="administrador" action="nopagoInscriptos" >Pagos Adeudados de Inscriptos</g:link></li>
                       <li><a href="echarts.html">ECharts</a></li>
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
@@ -165,16 +165,17 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <a data-toggle="tooltip" data-placement="top" title="Ver Perfil">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
+              
+              <a data-toggle="tooltip" data-placement="top" title="Salir de Pantalla Completa" onclick="cancelFullScreen();">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Pantalla Completa" onclick="launchFullScreen(document.documentElement);">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Cerrar Sesión" href="/usuario/logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -202,7 +203,7 @@
                       
                       </g:else>	
                         <ul class="dropdown-menu dropdown-usermenu pull-right">
-                          <li><a href="#"> Perfil</a></li>
+                          <li><a href="/administrador/show/${session.usuario.id}"> Perfil</a></li>
                           <li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
                         </ul>
                   </li>

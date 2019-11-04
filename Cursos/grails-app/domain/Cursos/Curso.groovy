@@ -62,13 +62,12 @@ class Curso {
         imagen (nullable:true)
     }
 
+    @Override
+    String toString (){
+        return this.nombre
+    }
+
 
     static mapping = {
             imagen sqlType: 'bytea' 
-    }
-
-    @Override
-    String toString(){
-        return (this.nombre)
-    }
-}
+    }}
