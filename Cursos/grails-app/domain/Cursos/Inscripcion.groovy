@@ -5,7 +5,8 @@ class Inscripcion {
     Date fechaInscripcion
     Curso cursos
     Interesado interesado
-    
+    Date fechaPago
+    String estadoPago
     Integer  numeroorden
     String estado
     BigInteger costo
@@ -20,6 +21,9 @@ class Inscripcion {
         costo (nullable:true)
         
         nota (nullable:true, inList:["1","2","3","4","5","6","7","8","9","10"])
+        fechaPago(nullable:true)
+        estadoPago(inList:["Realizado", "Pendiente"])
     }
+
 
 }

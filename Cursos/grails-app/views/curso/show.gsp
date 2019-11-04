@@ -25,7 +25,7 @@
                                 
                         <!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
 
-                        <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
+                        <g:form method="POST" resource="${this.curso}" action='inscribirse' onsubmit= "return controlFechaInsc()">              
                             <g:submitButton name="inscribirse" class="inscribirse btn btn-info" value="INSCRIBIRME A ESTE CURSO"/>	
                         </g:form>
                         <!--action="inscribirse"-->

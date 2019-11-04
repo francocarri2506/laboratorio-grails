@@ -59,6 +59,11 @@
                     </fieldset>
                 </form>
 
+                <g:form method="POST" resource= "${this.inscripcion}" action="establecerPago">
+                
+                        <g:submitButton name="inscriptos" class="inscriptos" value="ESTABLECER PAGO" style= "background-color: orange; color: white"/>	
+                </g:form>
+
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
