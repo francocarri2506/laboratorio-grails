@@ -82,7 +82,7 @@
                 <fieldset class="buttons">
 
                     <g:link action="edit" resource="${this.autoridadCertificante}"><button type="button" class="edit btn btn-warning">Editar Autoridad</button></g:link>
-                    <button class="delete btn btn-danger" type="submit" value="Eliminar Curso" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro que desea eliminar autoridad?')}');">Eliminar Autoridad</button>
+                    <button class="delete btn btn-danger" type="submit" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro que desea eliminar autoridad?')}');">Eliminar Autoridad</button>
                     
                 </fieldset>
             </g:form>

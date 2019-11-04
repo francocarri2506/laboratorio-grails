@@ -10,7 +10,7 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link  action="create"><button type="button" name="create" class="create btn btn-success">Nuevo Usuario</button></g:link></li>
             </ul>
         </div>
         <div id="list-usuario" class="content scaffold-list" role="main">
