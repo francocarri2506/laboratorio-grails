@@ -3,9 +3,9 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>CREAR INTERESADO</title>
 
-        <asset:stylesheet src="bootstrap.min.css"/>
+    <asset:stylesheet src="bootstrap.min.css"/>
 	<asset:stylesheet src="font-awesome.min.css"/>
 
 	<!-- Custom styles for our template -->
@@ -92,7 +92,7 @@
 								<div class="row">
 									
 									<div class="col-lg-12 text-right">
-										<input type="submit" name="create" class="save" id="create" value="CREAR"/>
+                						<button type="submit" name="create" class="save btn btn-success">crear</button>
 										
                                         
 									</div>
