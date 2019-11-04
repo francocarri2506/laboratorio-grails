@@ -59,10 +59,6 @@ class SecurityInterceptor {
       //match(controller:"interesado", action:"show")
       //match(controller:"interesado", action:"create")
 
-
-
-
-
       match(controller:"usuario", action:"index")
       match(controller:"usuario", action:"edit")
       match(controller:"usuario", action:"show")
@@ -73,18 +69,21 @@ class SecurityInterceptor {
   }
 
   boolean before() {
-      if (!session.usuario && actionName != "login") {
+      if (!session.usuario && (actionName != "loginUser" && actionName != "acceder")) {
           redirect(controller: "usuario", action: "acceder")
           return false
       }
 
       def usuario = Usuario.findByNombreUsuario(session.usuario?.nombreUsuario)
 
-     if(/*controllerName=='curso' && */(actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' || actionName== 'certificadoPDF' )) {
+     if(session.usuario && (actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' || actionName== 'certificadoPDF' )) {
        if(!(usuario instanceof Administrador)) {
-           render(view: "index", model: [message:'No tiene permisos para la accion solicitada'])
+           render(view: "/curso/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
        }
+     }
+
+     
      }
 
 
