@@ -67,12 +67,12 @@ class BootStrap {
     }
 
             def fechaD= Date.parse('yyyy-MM-dd', "2019-11-11")
-            def fechaH= Date.parse('yyyy-MM-dd', "2020-05-05")
+            def fechaH= Date.parse('yyyy-MM-dd', "2020-11-30")
             def fechaIns= Date.parse('yyyy-MM-dd', "2019-11-09")
-            def fechaCur= Date.parse('yyyy-MM-dd', "2020-06-06")
+            def fechaCur= Date.parse('yyyy-MM-dd', "2020-12-10")
             def curso = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
-                fechadelCertificado:fechaCur,nombre:"Grails",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 3 ",horarios:"9:00 - 12:00",lugar:"santa maria", costo: "400" )
+                fechadelCertificado:fechaCur,nombre:"Robótica Inicial", cupoMaximo:20,
+                cupoMinimo:1 ,cantidadHoras:"3",horarios:"9:00 - 12:00",lugar:"FTyCA - Aula Marta Bienner", costo: "700", tipo:"Asistencia" )
 
       
 
@@ -82,8 +82,8 @@ class BootStrap {
             curso.save(flush:true)
 
           def curso1 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
-                fechadelCertificado:fechaCur,nombre:"Programacion 3",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 4 ",horarios:"8:00 - 12:00",lugar:"UNCA IDI", costo: "600" )
+                fechadelCertificado:fechaCur,nombre:"Programacion Web",cupoMaximo:24 ,
+                cupoMinimo:1 ,cantidadHoras:"4", horarios:"8:00 - 12:00",lugar:"UNCa - IDI - Aula 2", costo: "600", tipo:"Asistencia" )
 
   if(!curso1.save(flush: true)) {
             curso1.errors.each{
@@ -92,8 +92,8 @@ class BootStrap {
           } 
 
 def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcion:fechaIns, 
-                fechadelCertificado:fechaCur,nombre:"Ingenieria de Software 3",cupoMaximo:10 ,
-                cupoMinimo:3 ,cantidadHoras:" 2 ",horarios:"10:00 - 12:00",lugar:"UNCA IDI", costo: "500" )
+                fechadelCertificado:fechaCur,nombre:"Diseño Web",cupoMaximo:10 ,
+                cupoMinimo:3 ,cantidadHoras:" 2 ",horarios:"10:00 - 12:00",lugar:"UNCA IDI", costo: "500", tipo:"Evaluativo" )
 
   if(!curso2.save(flush: true)) {
             curso2.errors.each{

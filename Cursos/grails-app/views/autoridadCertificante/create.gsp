@@ -3,18 +3,18 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'autoridadCertificante.label', default: 'AutoridadCertificante')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
+        <title>CREAR NUEVA AUTORIDAD </title>
     </head>
     <body>
         <a href="#create-autoridadCertificante" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><a <g:link class="list" action="index">Lista de Autoridades Certificantes</g:link></a></li>
             </ul>
         </div>
         <div id="create-autoridadCertificante" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
+            <h1>NUEVA AUTORIDAD CERTIFICANTE</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -30,7 +30,7 @@
                     <f:all bean="autoridadCertificante"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <button type="submit" name="create" class="save btn btn-success">crear</button>
                 </fieldset>
             </g:form>
         </div>

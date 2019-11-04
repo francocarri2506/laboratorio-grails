@@ -12,11 +12,13 @@
                 <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
                 <g:if test="${session!=null && session.usuario!=null}">
                     <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
-					    <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                        <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                        <li><g:link action="index"><button type="button" class="list btn btn-secondary">Lista de Cursos</button></g:link></li>
+                        <li><g:link action="create"><button type="button" class="create  btn btn-success">Nuevo Curso</button></g:link></li>
                         <g:form resource="${this.curso}" method="POST" action='inscriptoscurso'>              
-                            <g:submitButton name="inscriptos" class="inscriptos" value="INSCRIPTOS EN ESTE CURSO" style= "background-color: green; color: white"/>	
+                            <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="INSCRIPTOS EN ESTE CURSO"/>	
+                            
                         </g:form>
+                      
 				    </g:if>
                 
                     <g:else>
@@ -24,7 +26,7 @@
                         <!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
 
                         <g:form resource="${this.curso}" method="POST" action='inscribirse' onsubmit= "return controlFechaInsc()">              
-                            <g:submitButton name="inscribirse" class="inscribirse" value="INSCRIBIRME A ESTE CURSO"/>	
+                            <g:submitButton name="inscribirse" class="inscribirse btn btn-info" value="INSCRIBIRME A ESTE CURSO"/>	
                         </g:form>
                         <!--action="inscribirse"-->
                     </g:else>
@@ -35,7 +37,7 @@
             </ul>
         </div>
         <div id="show-curso" class="content scaffold-show" role="main">
-            <h1><g:message code="default.show.label" args="[entityName]" /></h1>
+            <h1>${this.curso.nombre}</h1>
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
@@ -47,7 +49,7 @@
 
         <li class="fieldcontain">
             <span id="nombre-label" class="property-label">Nombre</span>
-            <div class="property-value" aria-labelledby="nombre-label">${this.curso.nombre}</div>
+            <div class="property-value" aria-labelledby="nombre-label">${this.curso.toString()}</div>
         </li>
     
         <li class="fieldcontain">
@@ -133,8 +135,9 @@
 
                 <g:form resource="${this.curso}" method="DELETE">
                     <fieldset class="buttons">
-                        <g:link class="edit" action="edit" resource="${this.curso}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-                        <input class="delete" type="submit" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                        <g:link action="edit" resource="${this.curso}"><button type="button" class="edit btn btn-warning">Editar Curso</button></g:link>
+                        <button class="delete btn btn-danger" type="submit" value="Eliminar Curso" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro que desea eliminar este curso?')}');">Eliminar Curso</button>
+                    
                     </fieldset>
                 </g:form>
            </g:if> 

@@ -65,8 +65,10 @@
             <g:if test="${session!=null && session.usuario!=null}">
                 <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
                     <div class="container"> 
-                        <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
-                        <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                        <li><g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></li>
+                        <li><g:link  action="create"><button type="button" name="create" class="create btn btn-success">Nuevo Curso</button></g:link></li>
+                        
+
                         <ul><br><br>
                             <form action="buscarCurso" method="POST">
                                 <div class="row">
@@ -83,7 +85,7 @@
                         </ul><br><br>
                         <div class="row">
                             <div id="list-curso" class="content scaffold-list" role="main">
-                                <h1><g:message code="default.list.label" args="[entityName]" /></h1>
+                                <h1>CURSOS DISPONIBLES</h1>
                                 <g:if test="${flash.message}">
                                     <div class="message" role="status">${flash.message}</div>
                                 </g:if>

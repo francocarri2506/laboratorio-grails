@@ -10,8 +10,8 @@
         <div class="nav" role="navigation">
             <ul>
                 <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><g:link class="list" action="index">Lista de Autoridades</g:link></li>
+                <li><g:link class="create" action="create">Nueva Autoridad</g:link></li>
             </ul>
         </div>
         <div id="edit-autoridadCertificante" class="content scaffold-edit" role="main">
@@ -26,13 +26,13 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.autoridadCertificante}" method="PUT">
+            <g:form resource="${this.autoridadCertificante}" method="PUT" enctype="multipart/form-data">
                 <g:hiddenField name="version" value="${this.autoridadCertificante?.version}" />
                 <fieldset class="form">
                     <f:all bean="autoridadCertificante"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+                    <button type="submit" class="save btn btn-success">Editar Autoridad</button>
                 </fieldset>
             </g:form>
         </div>
