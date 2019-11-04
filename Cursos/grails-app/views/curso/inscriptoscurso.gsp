@@ -9,32 +9,46 @@
         <a href="#list-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>                
             </ul>
         </div>
         <div id="list-inscripcion" class="content scaffold-list" role="main">
-            <h1>Inscriptos en el curso ${this.inscripcionList.cursos.nombre}</h1>
+            <h1>Inscriptos en el curso </h1>
             
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${inscripcionList}" />
+            <table class="table">
+                <thead>
+                    <tr > 
+                            <th scope="col" class="sortable">Fecha de la Inscripcion</th>
+                            <th scope="col" class="sortable">Numero de Orden</th>
+                            <th scope="col" class="sortable ">Estado</th>
+                            <th scope="col" class="sortable">Costo</th>
+                            <th scope="col" class="sortable">Nota</th>
+                            <th scope="col" class="sortable">Fecha Pago</th>
+                            <th scope="col" class="sortable">Estado Pago</th>
+                            <th scope="col" class="sortable">Interesado</th>    
+                    </tr>
+                </thead>
+                <tbody>
+                <g:each in="${inscripcionList}">
+                    <tr class="info">
+                    
+                        <td ><a href="/inscripcion/show/${it.id}"><g:formatDate format="dd/MM/yyyy" date="${it.fechaInscripcion}"/></a></td>
+                        <td>${it.numeroorden}</td>
+                        <td>${it.estado}</td>
+                        <td>${it.costo}</td>
+                        <td>${it.nota}</td>
+                        <td><g:formatDate format="dd/MM/yyyy" date="${it.fechaPago}"/></td>
+                        <td>${it.estadoPago}</td>
+                        <td>${it.interesado.nombre +" "+it.interesado.apellido}</td>
+                    </tr>
+                    </g:each>
+                </tbody>
+            </table>
 
-            <div class="pagination">
-                <g:paginate total="${inscripcionCount ?: 0}" />
-            </div>
 
-            <h2>MOSTRAR ASI PARA VER BIEN LOS NOMBRES Y NO CODIGOS</h2>
-            <h3>Se puede hacer una tabla</h3>
-            <g:each in="${inscripcionList}">
-            <div>
-                <span>Fecha: <a href="/inscripcion/show/${it.id}">${it.fechaInscripcion}</a></span>
-                <span>Interesado: <a href="/interesado/show/${it.interesado.id}">${it.interesado.nombre +" "+it.interesado.apellido}</a></span>
-                <span>Curso: <a href="/curso/show/${it.cursos.id}">${it.cursos.nombre}</a></span>
-            </div>
-            </g:each>
-            
+
+
+
         </div>
     </body>
 </html>
