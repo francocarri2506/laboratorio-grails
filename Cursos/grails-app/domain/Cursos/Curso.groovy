@@ -72,8 +72,4 @@ class Curso {
             imagen sqlType: 'bytea' 
     }
 
-    @Override
-    String toString(){
-        return (this.nombre)
-    }
 }

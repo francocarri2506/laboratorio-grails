@@ -10,7 +10,7 @@ class BootStrap {
 //        println it
 //      }
 //    }
-/*
+
  def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 
   if(!usu.save(flush: true)) {
@@ -103,7 +103,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
 
 
 
-*/
+
 }
 def destroy = {
 
