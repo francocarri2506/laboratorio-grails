@@ -28,7 +28,7 @@
         <br>
         
         <div class="tabla_nth_child">
-                <table>
+                <table class="table">
                     <tr>
                         <th>Curso</th>
                         <th>Nombre y Apellido</th>
@@ -39,7 +39,7 @@
                        
                     </tr>
                     <g:each in="${inscripcionList}">
-                    <tr>
+                    <tr class="success">
                         <td><div><label id="curso">${it.cursos.nombre} </label> </div></td>
                         <td><div><label id="nombre">${it.interesado.nombre} </label> <label id="apellido">${it.interesado.apellido}</label></div></td>
                         <td><div><label id="dni">${it.interesado.dni} </label> </div></td>
