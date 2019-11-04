@@ -5,7 +5,7 @@ class Inscripcion {
     Date fechaInscripcion
     Curso cursos
     Interesado interesado
-    
+    CuponPago cupon
     Integer  numeroorden
     String estado
     BigInteger costo

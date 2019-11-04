@@ -3,16 +3,14 @@ package Cursos
 import grails.gorm.services.Service
 
 @Service(Inscripcion)
-interface InscripcionService {
+abstract class InscripcionService implements InscripcionsitaService {
 
-    Inscripcion get(Serializable id)
-
-    List<Inscripcion> list(Map args)
-
-    Long count()
-
-    void delete(Serializable id)
-
-    Inscripcion save(Inscripcion inscripcion)
+    List pago(){
+    return Inscripcion.withCriteria() {           
+      cupon{
+        eq("pago", "Realizado")
+      }    
+    }
+  }
 
 }
