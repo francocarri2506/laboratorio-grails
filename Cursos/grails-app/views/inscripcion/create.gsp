@@ -9,8 +9,8 @@
         <a href="#create-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
+                <li><g:link class="list" action="index">Lista de Inscripciones</g:link></li>
             </ul>
         </div>
         <div id="create-inscripcion" class="content scaffold-create" role="main">
@@ -30,7 +30,7 @@
                     <f:all bean="inscripcion"/>
                 </fieldset>
                 <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                    <button type="submit" name="create" class="save btn btn-success">crear</button>
                 </fieldset>
             </g:form>
         </div>

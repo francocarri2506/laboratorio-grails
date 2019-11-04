@@ -9,8 +9,8 @@
         <a href="#list-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
+                <li><g:link  action="create"><button type="button" name="create" class="create btn btn-success">Nueva Inscripcion</button></g:link></li>
             </ul>
         </div>
         <div id="list-inscripcion" class="content scaffold-list" role="main">
