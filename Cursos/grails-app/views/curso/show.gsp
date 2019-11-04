@@ -133,7 +133,7 @@
         <g:if test="${session!=null && session.usuario!=null}">
             <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
 
-                <g:form resource="${this.curso}" method="DELETE">
+                <g:form resource="${this.curso}" method="DELETE" enctype="multipart/form-data">
                     <fieldset class="buttons">
                         <g:link action="edit" resource="${this.curso}"><button type="button" class="edit btn btn-warning">Editar Curso</button></g:link>
                         <button class="delete btn btn-danger" type="submit" value="Eliminar Curso" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Esta seguro que desea eliminar este curso?')}');">Eliminar Curso</button>

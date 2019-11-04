@@ -23,7 +23,7 @@
            
              <div class="margenseparadorlayout">
     <div class="container-fluid">
-    <g:if test="${inscripciones}">
+    <g:if test="${inscripcionList}">
         <div class="centrar mb-3"><h3>Inscriptos que efectuaron el pago</h3></div>
         <br>
         
@@ -33,17 +33,21 @@
                         <th>Curso</th>
                         <th>Nombre y Apellido</th>
                         <th>Dni</th>
-                        <th>Pago</th>
-                        <th>Fecha del Pago</th>
+                        <th>Fecha de Inscripcion</th>
+                        <th>Estado del Pago</th>
+                        <th>Fecha de Pago</th>
                        
                     </tr>
-                    <g:each in="${inscripciones?}">
+                    <g:each in="${inscripcionList}">
                     <tr>
                         <td><div><label id="curso">${it.cursos.nombre} </label> </div></td>
                         <td><div><label id="nombre">${it.interesado.nombre} </label> <label id="apellido">${it.interesado.apellido}</label></div></td>
                         <td><div><label id="dni">${it.interesado.dni} </label> </div></td>
-                        <td><div><label id="pago">${it.cupon.pago} </label> </div></td>
+                        <td><div><label id="fdi"><g:formatDate format="dd/MM/yyyy" date="${it.fechaInscripcion}"/></label> </div></td>
+                        <td><div><label id="pago">${it.estadoPago} </label> </div></td>
                         <td><div><label id="fdp"><g:formatDate format="dd/MM/yyyy" date="${it.fechaPago}"/></label> </div></td>
+
+                        
                     </tr>
                     </g:each>            
                 </table>
@@ -53,7 +57,7 @@
         </g:else>  
             </div>
 </div>
-            </div>
-        </div>
+            
+        
     </body>
 </html>
