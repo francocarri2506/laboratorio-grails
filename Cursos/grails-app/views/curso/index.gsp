@@ -70,14 +70,12 @@
                         
 
                         <ul><br><br>
-                            <form action="buscarCurso" method="POST">
+                            <form  method="POST" action="curso/buscarCurso">
                                 <div class="row">
                                     <div class="col-md-6">
-                                            
-                                            <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese Nombre del curso que decea buscar">
+                                            <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
                                     </div>
                                     <div class="col-md-6">
-                                        <br />
                                         <button type="submit" class="btn btn-primary">Buscar</button>
                                     </div>
                                 </div>
@@ -100,14 +98,17 @@
                 <g:else>
                     <div class="container"> 
                     <!--   <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
-                    -->     <ul><br><br>
-                            <form action="buscarCurso" method="POST">
+                    --> 
+                    <h1>PRÓXIMOS CURSOS</h1>
+                        
+                    <ul><br>
+                            
+                            <form action="curso/buscarCurso" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
-                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese Nombre del curso que decea buscar">
+                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
                                         </div>
                                         <div class="col-md-6">
-                                            <br />
                                             <button type="submit" class="btn btn-primary">Buscar</button>
                                         </div>
                                     </div>
