@@ -146,4 +146,8 @@ class AdministradorController {
         render(view:"pagoInscriptos")
         
     }
+    
+    def nopagoInscriptos() {       
+        [inscripciones: inscripcionService.noPago()] 
+    }
 }
