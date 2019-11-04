@@ -21,6 +21,14 @@ class CuponPagoController {
     def create() {
         respond new CuponPago(params)
     }
+/*
+    def crear(Long id){
+        def insc =Inscripcion.findAllById(id)
+        def fecha= new Date()
+        def cupon = new CuponPago (estado: "Realizado", fechaPago: fecha, codigo: insc.id , inscripcion: insc)
+        cupon.save()
+
+    }*/
 
     def save(CuponPago cuponPago) {
         if (cuponPago == null) {

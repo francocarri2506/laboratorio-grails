@@ -13,4 +13,11 @@ abstract class InscripcionService implements InscripcionsitaService {
     }
   }
 
+  List noPago(){
+    return Inscripcion.withCriteria() {           
+      cupon{
+        eq("pago", "Pendiente")
+      }       
+    }
+}
 }

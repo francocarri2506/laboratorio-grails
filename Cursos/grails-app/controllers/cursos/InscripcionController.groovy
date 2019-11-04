@@ -22,11 +22,17 @@ class InscripcionController {
         respond new Inscripcion(params)
     }
 
-    def cuponPago(Long id){
-        def curso = Curso.findById(id)
-        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
-        def insc = Inscripcion.findAllByCursosAndInteresado(curso, usuario)
-        render(view: 'cuponPago', model:[inscripcionList:insc, inscripcionCount:insc.size()])
+    def establecerPago(Long id){
+        def insc = Inscripcion.findById(id)
+        def fecha = new Date()
+        if(insc==null){
+            redirect(controller: 'aaa', action: 'index')
+        }
+
+        insc.fechaPago= fecha
+        insc.estadoPago= "Realizado"
+        insc.save(flush:true)
+        redirect(controller: 'usuario', action: 'create')
     }
 
     def misinscripciones (Long id){

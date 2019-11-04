@@ -88,7 +88,7 @@ class CursoController {
                     else if(usuario.categoria=="Docente"){
                         costoC=costoC*0.7
                     }
-                    def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI, estado: "Inscripto", costo: costoC, numeroorden: insc.size()+1)
+                    def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI, estado: "Inscripto", estadoPago:"Pendiente", costo: costoC, numeroorden: insc.size()+1)
                     
 
                     if(!ins.save(flush: true)) {
