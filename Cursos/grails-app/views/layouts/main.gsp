@@ -267,7 +267,7 @@
 											<g:link controller="login" action="logout" controller="login"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link>
 									</g:if>
 									<g:else>	
-											<g:link controller="usuario" action="acceder">ACCEDER / REGISTRARSE</g:link>
+											<g:link controller="usuario" action="acceder">ACCEDER</g:link>
 										
 									</g:else>
 									<g:if test="${message}">
