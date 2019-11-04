@@ -6,18 +6,18 @@ import grails.gorm.services.Service
 abstract class InscripcionService implements InscripcionsitaService {
 
     List pago(){
-    return Inscripcion.withCriteria() {           
-      cupon{
-        eq("pago", "Realizado")
-      }    
+    return Inscripcion.withCriteria() {  
+
+    eq('estadoPago', 'Realizado')         
+         
     }
   }
 
   List noPago(){
     return Inscripcion.withCriteria() {           
       cupon{
-        eq("pago", "Pendiente")
+        eq("estadoPago", "Pendiente")
       }       
     }
-}
+  }
 }

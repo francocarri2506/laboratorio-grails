@@ -141,13 +141,19 @@ class AdministradorController {
             [cursos: cursoService.cursosxFechas(params)]
         }  
     }
+    def pagoInscriptos (){
 
-    def pagoInscriptos() { 
-        render(view:"pagoInscriptos")
-        
+       
+        def insc = Inscripcion.findAllByEstadoPago("Realizado")
+
+        render(view: 'pagoInscriptos', model:[inscripcionList: insc, inscripcionCount:insc.size()])
+    
     }
     
+
     def nopagoInscriptos() {       
-        [inscripciones: inscripcionService.noPago()] 
+        def insc = Inscripcion.findAllByEstadoPago("Pendiente")
+
+        render(view: 'nopagoInscriptos', model:[inscripcionList: insc, inscripcionCount:insc.size()])
     }
 }

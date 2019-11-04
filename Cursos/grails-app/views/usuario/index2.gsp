@@ -165,7 +165,7 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Ver Perfil">
+              <a data-toggle="tooltip" data-placement="top" title="Ver Perfil" href="/administrador/show/${session.usuario.id}">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
               
