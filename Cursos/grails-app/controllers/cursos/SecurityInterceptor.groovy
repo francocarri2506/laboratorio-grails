@@ -36,7 +36,7 @@ class SecurityInterceptor {
       match(controller:"certificadoAsistencia", action:"edit")
       match(controller:"certificadoAsistencia", action:"show")
       match(controller:"certificadoAsistencia", action:"create")
-      match(controller:"certificadoAsistencia", action:"certificadoPDF")
+      //match(controller:"certificadoAsistencia", action:"certificadoPDF")
 
       match(controller:"cuponPago", action:"index")
       match(controller:"cuponPago", action:"edit")

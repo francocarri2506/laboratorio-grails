@@ -5,7 +5,10 @@ import static org.springframework.http.HttpStatus.*
 
 class AdministradorController {
 
+    CursoService cursoService
+
     AdministradorService administradorService
+    InscripcionService inscripcionService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -112,6 +115,11 @@ class AdministradorController {
         render (view:"facultad")
         
     }
+
+    def cursosFecha() {
+        render (view:"cursosFecha")
+        
+    }
     def preguntas() {
         render (view:"preguntas")
         
@@ -123,5 +131,19 @@ class AdministradorController {
     //PROBANDOOOOOO
     def renderIndex2 = {
         render(view:"index2");
+    }
+
+    def cursosxFecha() {
+        if(params.fechaDesde==null&&params.fechaHasta==null){   
+            render(view:"cursosxFecha")
+        }
+        else{
+            [cursos: cursoService.cursosxFechas(params)]
+        }  
+    }
+
+    def pagoInscriptos() { 
+        render(view:"pagoInscriptos")
+        
     }
 }
