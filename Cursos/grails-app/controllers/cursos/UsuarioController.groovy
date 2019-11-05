@@ -163,10 +163,10 @@ class UsuarioController {
 // 
     def logout() {
       session.usuario=null
-      redirect(controller:"usuario", action:"acceder")
+      redirect(controller:"curso", action:"index")
     }
 
-
+   
     //Para renderizar una vista de otro controlador
     //PROBANDOOOOOOOO
     def redirectALoginController = {

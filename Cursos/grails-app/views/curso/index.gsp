@@ -109,30 +109,42 @@
                                                 <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
                                         </div>
                                         <div class="col-md-6">
-                                            <button type="submit" class="btn btn-primary">Buscar</button>
+                                            <button type="submit" class="btn btn-primary">Buscar</button><br><br>
                                         </div>
                                     </div>
                             </form>
                         </ul>
                      
-                        <div class="row">
-                            <div id="list-curso" class="content scaffold-list" role="main">
-                                <g:each in="${cursoList}" >
-                                    <div class="col-md-6">
-                                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                                            <div class="col p-4 d-flex flex-column position-static">
-                                                <h3 class=""><a href="/curso/show/${it.id}">${it.nombre}</h3></a>
-                                                 <div ><img  src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='300' /></div>
-                                                <div class="mb-1 text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></div> 
-                                                <div class="mb-1 text-muted">Fecha Limite de Inscripcion: <g:formatDate format="dd/MM/yyyy" date="${it.fechaLimiteInscripcion}"/></div> 
+                    <div class="container">
+                              <div class="row mt">          
+                    <g:each in="${cursoList}" >
+                    
+                    
+                    <!-- col-lg-4 -->
 
-                                            </div>
-                                        </div>
-                                    </div>    
-                                </g:each>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12 desc">
+                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}"><img src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='350' height='260'/>
+                                    <div class="b-wrapper">
+                                        <h4 class="b-from-left b-animate b-delay03${it.id}">${it.nombre}</h4>
+                                        <p class="b-from-right b-animate b-delay03">Leer más</p>
+                                    </div>
+                                </a>
+                        
+                        <p class="text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></p>
+                        <hr-d>
+                        <p class="text-muted">Fecha Limite de Inscripcion: <g:formatDate format="dd/MM/yyyy" date="${it.fechaLimiteInscripcion}"/></p><br>
                     </div>
+                    <!-- col-lg-4 -->
+
+                    
+                    <!-- col-lg-4 -->
+
+                    </g:each>
+                    
+                    </div>
+                    <!-- /row -->
+                    </div>
+        
                     
                 <!-- razones por las que debes estudiar -->
                 <div class="jumbotron top-space">
@@ -217,37 +229,51 @@
                 <g:else>
                     <div class="container"> 
                     <!--   <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
-                    -->     <ul><br><br>
-                            <form action="buscarCurso" method="POST">
+                    -->     
+                    <h1>PRÓXIMOS CURSOS</h1>
+                        
+                    <ul><br>
+                            
+                            <form action="curso/buscarCurso" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
-                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese Nombre del curso que decea buscar">
+                                                <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
                                         </div>
                                         <div class="col-md-6">
-                                            <br />
-                                            <button type="submit" class="btn btn-primary">Buscar</button>
+                                            <button type="submit" class="btn btn-primary">Buscar</button><br><br>
                                         </div>
                                     </div>
                             </form>
                         </ul>
                      
-                        <div class="row">
-                            <div id="list-curso" class="content scaffold-list" role="main">
-                                <g:each in="${cursoList}" >
-                                    <div class="col-md-6">
-                                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                                            <div class="col p-4 d-flex flex-column position-static">
-                                                <h3 class=""><a href="/curso/show/${it.id}">${it.nombre}</h3></a>
-                                                 <div ><img  src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='300' /></div>
-                                                <div class="mb-1 text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></div> 
-                                                <div class="mb-1 text-muted">Fecha Limite de Inscripcion: <g:formatDate format="dd/MM/yyyy" date="${it.fechaLimiteInscripcion}"/></div> 
+                    <div class="container">
+                              <div class="row mt">          
+                    <g:each in="${cursoList}" >
+                    
+                    
+                    <!-- col-lg-4 -->
 
-                                            </div>
-                                        </div>
-                                    </div>    
-                                </g:each>
-                            </div>
-                        </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12 desc">
+                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}"><img src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='350' height='260'/>
+                                    <div class="b-wrapper">
+                                        <h4 class="b-from-left b-animate b-delay03${it.id}">${it.nombre}</h4>
+                                        <p class="b-from-right b-animate b-delay03">Leer más</p>
+                                    </div>
+                                </a>
+                        
+                        <p class="text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></p>
+                        <hr-d>
+                        <p class="text-muted">Fecha Limite de Inscripcion: <g:formatDate format="dd/MM/yyyy" date="${it.fechaLimiteInscripcion}"/></p><br>
+                    </div>
+                    <!-- col-lg-4 -->
+
+                    
+                    <!-- col-lg-4 -->
+
+                    </g:each>
+                    
+                    </div>
+                    <!-- /row -->
                     </div>
                     
                 <!-- razones por las que debes estudiar -->

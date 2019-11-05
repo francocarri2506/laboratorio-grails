@@ -264,7 +264,7 @@
 								<b>
 									<g:if test="${session!=null && session.usuario!=null}">
 											<a href="#"><span class="glyphicon glyphicon-user"></span> Usuario: ${session?.usuario?.nombreUsuario}</a>
-											<g:link controller="login" action="logout" controller="login"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link>
+											<g:link controller="usuario" action="logout" controller="usuario"><span class="glyphicon glyphicon-log-in"></span> Cerrar Sesion</g:link>
 									</g:if>
 									<g:else>	
 											<g:link controller="usuario" action="acceder">ACCEDER</g:link>
