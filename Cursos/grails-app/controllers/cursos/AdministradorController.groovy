@@ -150,6 +150,7 @@ class AdministradorController {
 
     def nopagoInscriptos() {       
         def insc = Inscripcion.findAllByEstadoPago("Pendiente")
+
         render(view: 'nopagoInscriptos', model:[inscripcionList: insc, inscripcionCount:insc.size()])
     }
 }
