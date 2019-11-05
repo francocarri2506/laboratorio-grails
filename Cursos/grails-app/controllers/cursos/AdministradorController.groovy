@@ -142,10 +142,7 @@ class AdministradorController {
         }  
     }
     def pagoInscriptos (){
-
-       
         def insc = Inscripcion.findAllByEstadoPago("Realizado")
-
         render(view: 'pagoInscriptos', model:[inscripcionList: insc, inscripcionCount:insc.size()])
     
     }
@@ -153,7 +150,6 @@ class AdministradorController {
 
     def nopagoInscriptos() {       
         def insc = Inscripcion.findAllByEstadoPago("Pendiente")
-
         render(view: 'nopagoInscriptos', model:[inscripcionList: insc, inscripcionCount:insc.size()])
     }
 }

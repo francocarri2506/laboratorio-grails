@@ -9,6 +9,7 @@ class UrlMappings {
             }
         }
 
+
         "/" (controller:'curso', view: 'index', action: 'index')
 
         "500"(view:'/error')
@@ -37,5 +38,27 @@ class UrlMappings {
          }
          
          */
+
+        //"/libros"(resources:"libro")
+
+        "/cursitos"(resources:"cursito")
+
+
+        "/cursitos"(resources: "cursito") {
+	         collection {
+              "/pagoInscriptos"(controller: "Cursito", action: "pagoInscriptos")
+
+	         }
+         }
+
+        "/cursitos"(resources: "cursito") {
+	         collection {
+              "/nopagoInscriptos"(controller: "Cursito", action: "nopagoInscriptos")
+
+	         }
+         }
+
     }
+
+
 }

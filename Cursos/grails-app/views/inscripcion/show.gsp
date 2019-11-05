@@ -54,31 +54,38 @@
 
                 <form action="/inscripcion/delete/${this.inscripcion.id}" method="post"><input type="hidden" name="_method" value="DELETE" id="_method">
                     <fieldset class="buttons">
+                <!--  
                         <a href="/inscripcion/edit/${this.inscripcion.id}" class="edit">Editar</a>
                         <input class="delete" type="submit" value="Eliminar" onclick="return confirm('¿Está usted seguro?');">
-                <!--   
+                 
+                -->  
                     <g:link action="edit" resource="${this.inscripcion}"><button type="button" class="edit btn btn-warning">Editar Inscripcion</button></g:link>
                     <button class="delete btn btn-danger" type="submit" onclick="return confirm('¿Está usted seguro?');">Eliminar Inscripcion</button>
-                 -->    
+                   
 
                     </fieldset>
                 </form>
 
                 <g:form method="POST" resource= "${this.inscripcion}" action="establecerPago">
-                
+                    <fieldset class="buttons">
                         <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="ESTABLECER PAGO" />	
+                    </fieldset>
                 </g:form>
 
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                      <fieldset class="buttons">  
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="GENERAR CERTIFICADO" />	
+                        </fieldset>
                     </g:form>
                 </g:if>
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                        <fieldset class="buttons">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="GENERAR CERTIFICADO NOTA" />	
+                    </fieldset>
                     </g:form>
                 </g:if>
         
@@ -138,15 +145,18 @@
                 
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia" && this.inscripcion.cursos.fechadelCertificado<new Date()}"> <!--solo puede descargar el certificado una vez finalizado el curso-->
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                        <fieldset class="buttons"> 
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="Descargar certificado"/>
-	
+	</fieldset>
                     </g:form>
                 </g:if>
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo" && this.inscripcion.cursos.fechadelCertificado<new Date()}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                        <fieldset class="buttons">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="Descargar certificado" />	
+                    </fieldset>
                     </g:form>
                 </g:if>
         
