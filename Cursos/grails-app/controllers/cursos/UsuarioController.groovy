@@ -163,7 +163,7 @@ class UsuarioController {
 // 
     def logout() {
       session.usuario=null
-      redirect(controller:"curso", action:"index")
+      redirect(controller:"usuario", action:"acceder")
     }
 
 

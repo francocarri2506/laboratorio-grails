@@ -65,30 +65,33 @@
 
                     </fieldset>
                 </form>
-
-                <g:form method="POST" resource= "${this.inscripcion}" action="establecerPago">
-                    <fieldset class="buttons">
-                        <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="ESTABLECER PAGO" />	
-                    </fieldset>
-                </g:form>
-
+                
+                <g:if test="${this.inscripcion.estadoPago=="Pendiente"}">
+                    <g:form method="POST" resource= "${this.inscripcion}" action="establecerPago">
+                            <g:submitButton name="inscriptos" class="btn btn-info" value="ESTABLECER PAGO" />	
+                    </g:form>
+                </g:if>
+                <g:else>
+                    <button class="btn btn-danger" value="Pago realizado">Pago realizado</button>
+                </g:else>
+                
+                
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                       <fieldset class="buttons">  
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
-                        <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="GENERAR CERTIFICADO" />	
-                        </fieldset>
+                        <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO" />
                     </g:form>
                 </g:if>
+                
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         <fieldset class="buttons">
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
-                        <g:submitButton name="inscriptos" class="inscriptos  btn btn-info" value="GENERAR CERTIFICADO NOTA" />	
-                    </fieldset>
+                        <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO NOTA" />
                     </g:form>
                 </g:if>
-        
+                
             </g:if>
     
 

@@ -27,7 +27,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.administrador}" method="PUT">
+            <g:form resource="${this.administrador}" method="POST">
                 <g:hiddenField name="version" value="${this.administrador?.version}" />
                 <fieldset class="form">
                     <f:all bean="administrador"/>

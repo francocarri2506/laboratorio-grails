@@ -27,7 +27,7 @@
                 </g:eachError>
             </ul>
             </g:hasErrors>
-            <g:form resource="${this.expositor}" method="PUT" enctype="multipart/form-data">
+            <g:form resource="${this.expositor}" method="POST" enctype="multipart/form-data">
                 <g:hiddenField name="version" value="${this.expositor?.version}" />
                 <fieldset class="form">
                     <f:all bean="expositor"/>
