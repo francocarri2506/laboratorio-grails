@@ -16,9 +16,20 @@
                 <ol class="property-list inscripcion">
     
                     <li class="fieldcontain">
+                        <span id="cursos-label" class="property-label">Curso</span>
+                        <div class="property-value" aria-labelledby="cursos-label"><a href="/curso/show/${this.inscripcion.cursos.id}">${this.inscripcion.cursos.nombre}</a></div>
+                    </li>
+
+                    <li class="fieldcontain">
+                        <span id="interesado-label" class="property-label">Interesado</span>
+                        <div class="property-value" aria-labelledby="interesado-label"><a href="/interesado/show/${this.inscripcion.interesado.id}">${this.inscripcion.interesado.nombre +" "+ this.inscripcion.interesado.apellido}</a></div>
+                    </li>
+
+                    <li class="fieldcontain">
                         <span id="fechaInscripcion-label" class="property-label">Fecha Inscripcion</span>
                         <div class="property-value" aria-labelledby="fechaInscripcion-label">${this.inscripcion.fechaInscripcion}</div>
                     </li>
+                
                 
                     <li class="fieldcontain">
                         <span id="numeroorden-label" class="property-label">Numero de orden</span>
@@ -36,20 +47,16 @@
                     </li>
                 
                     <li class="fieldcontain">
-                        <span id="interesado-label" class="property-label">Interesado</span>
-                        <div class="property-value" aria-labelledby="interesado-label"><a href="/interesado/show/${this.inscripcion.interesado.id}">${this.inscripcion.interesado.nombre +" "+ this.inscripcion.interesado.apellido}</a></div>
-                    </li>
-                
-                    <li class="fieldcontain">
                         <span id="interesado-label" class="property-label">DNI</span>
                         <div class="property-value" aria-labelledby="interesado-label">${this.inscripcion.interesado.dni}</div>
                     </li>
 
-                    <li class="fieldcontain">
-                        <span id="cursos-label" class="property-label">Cursos</span>
-                        <div class="property-value" aria-labelledby="cursos-label"><a href="/curso/show/${this.inscripcion.cursos.id}">${this.inscripcion.cursos.nombre}</a></div>
-                    </li>
 
+                    <li class="fieldcontain">
+                        <span id="cursos-label" class="property-label">Estado del pago</span>
+                        <div class="property-value" aria-labelledby="cursos-label">${this.inscripcion.estadoPago}</div>
+                    </li>
+        
                 </ol>
 
                 <form action="/inscripcion/delete/${this.inscripcion.id}" method="post"><input type="hidden" name="_method" value="DELETE" id="_method">
@@ -78,7 +85,7 @@
                 
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
-                      <fieldset class="buttons">  
+                      
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO" />
                     </g:form>
@@ -86,9 +93,12 @@
                 
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo"}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
-                        <fieldset class="buttons">
+                        
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO NOTA" />
+                        <g:if test="${this.inscripcion.nota==null}">
+                            <button class="btn btn-danger" value="Nota no cargada">Nota no cargada</button>
+                        </g:if>
                     </g:form>
                 </g:if>
                 
@@ -102,6 +112,16 @@
                 
                 <ol class="property-list inscripcion">
         
+                    <li class="fieldcontain">
+                        <span id="cursos-label" class="property-label">Curso</span>
+                        <div class="property-value" aria-labelledby="cursos-label"><a href="/curso/show/${this.inscripcion.cursos.id}">${this.inscripcion.cursos.nombre}</a></div>
+                    </li>
+
+                    <li class="fieldcontain">
+                        <span id="interesado-label" class="property-label">Interesado</span>
+                        <div class="property-value" aria-labelledby="interesado-label"><a href="/interesado/show/${this.inscripcion.interesado.id}">${this.inscripcion.interesado.nombre +" "+ this.inscripcion.interesado.apellido}</a></div>
+                    </li>
+
                     <li class="fieldcontain">
                         <span id="fechaInscripcion-label" class="property-label">Fecha Inscripcion</span>
                         <div class="property-value" aria-labelledby="fechaInscripcion-label">${this.inscripcion.fechaInscripcion}</div>
@@ -124,18 +144,14 @@
                     </li>
                 
                     <li class="fieldcontain">
-                        <span id="interesado-label" class="property-label">Interesado</span>
-                        <div class="property-value" aria-labelledby="interesado-label"><a href="/interesado/show/${this.inscripcion.interesado.id}">${this.inscripcion.interesado.nombre +" "+ this.inscripcion.interesado.apellido}</a></div>
-                    </li>
-                
-                    <li class="fieldcontain">
                         <span id="interesado-label" class="property-label">DNI</span>
                         <div class="property-value" aria-labelledby="interesado-label">${this.inscripcion.interesado.dni}</div>
                     </li>
 
+
                     <li class="fieldcontain">
-                        <span id="cursos-label" class="property-label">Cursos</span>
-                        <div class="property-value" aria-labelledby="cursos-label"><a href="/curso/show/${this.inscripcion.cursos.id}">${this.inscripcion.cursos.nombre}</a></div>
+                        <span id="cursos-label" class="property-label">Estado del pago</span>
+                        <div class="property-value" aria-labelledby="cursos-label">${this.inscripcion.estadoPago}</div>
                     </li>
         
                 </ol>
@@ -162,7 +178,12 @@
                     </fieldset>
                     </g:form>
                 </g:if>
-        
+
+                <g:if test="${this.inscripcion.cursos.fechadelCertificado>new Date()}">
+                    <fieldset class="buttons">
+                    <button class="btn btn-danger" value="Certificado no disponible">Certificado no disponible</button>    
+                    </fieldset>
+                </g:if>
     
             </g:elseif> 
 

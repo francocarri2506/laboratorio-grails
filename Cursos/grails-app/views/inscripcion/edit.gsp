@@ -9,7 +9,7 @@
         <a href="#edit-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
+                <li><g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></li>
                 <li><g:link class="list" action="index">Lista de Inscripciones</g:link></li>
                 <li><g:link class="create" action="create">Nueva Inscripcion</g:link></li>
             </ul>

@@ -111,39 +111,15 @@ class UsuarioController {
                 if (u.password == u.generateMD5_A(params.password)) {
                     session.usuario = u
 
-                    /*
-                    if(u instanceof Administrador){
-                        def usRol = UsuarioRol.findByUsuario(u)
-                
-                        if (usRol==null){
-                            def rol = new Rol (authority: "ADMIN")
-                            def usuarioRol = new UsuarioRol(usuario: u, rol: rol)
-                            if(!usuarioRol.save(flush:true)) {
-                                usuarioRol.errors.each{
-                                    println it
-                                }
-                            }    
-                        }    
-                    }
-                    else if(u instanceof Interesado){
-                        def usRol = UsuarioRol.findByUsuario(u)
-                                        
-                        if (usRol==null){
-                            def rol = new Rol (authority: "INTERESADO")
-                            rol.save()
-                            def usuarioRol = new UsuarioRol(usuario: u, rol: rol)
-                            usuarioRol.save()    
-                        }    
-                    }
-                    */
+                    
     
 
 
                     def usRol = UsuarioRol.findByUsuario(u)
                 
-                    if (usRol==null || usRol.rol.authority== "INTERESADO"){
-                    // render(view: "/index")
-                        redirect(controller:"curso", action:"index")
+                    if (u instanceof Interesado){
+                        redirect(uri:'/')
+                    
                     }
                     else if (usRol.rol.authority == "ADMIN"){
                         render(view: "index2")  //si el rol es admin se muestra la pagina del administrador (revisar)
@@ -163,7 +139,7 @@ class UsuarioController {
 // 
     def logout() {
       session.usuario=null
-      redirect(controller:"curso", action:"index")
+      render(view:"acceder")
     }
 
    

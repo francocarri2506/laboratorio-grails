@@ -32,7 +32,7 @@ class InscripcionController {
         insc.fechaPago= fecha
         insc.estadoPago= "Realizado"
         insc.save(flush:true)
-        redirect(controller: 'usuario', action: 'create')
+        redirect(controller: 'inscripcion', action: "show", id:id)
     }
 
     def misinscripciones (Long id){

@@ -72,14 +72,7 @@ class CursoController {
             def inte= Inscripcion.findAllByCursosAndInteresado(curso, usuario)
             
             if(inte.size()==0){
-                /*
-                curso.addToInteresados(usuario)
-                usuario.addToIns(curso)
-                usuario.save()
-                */
-                if (!curso.save()){
-                    redirect(controller: 'usuario', action: 'create')
-                }
+                
                 def fechaI = new Date()
                 if (fechaI < curso.fechaLimiteInscripcion || fechaI == curso.fechaLimiteInscripcion){
                     if(usuario.categoria=="Alumno"){
@@ -99,6 +92,13 @@ class CursoController {
                     }
                     else{
                     def idi= ins.id;
+                    curso.addToInscripcion(ins)
+                    usuario.addToIns(ins)
+                    usuario.save(flush:true)
+                    
+                    if (!curso.save(flush:true)){
+                        redirect(controller: 'noseguardo', action: 'create')
+                    }
                     redirect(controller: 'inscripcion', action: 'show', id: idi)
                     }
                 }

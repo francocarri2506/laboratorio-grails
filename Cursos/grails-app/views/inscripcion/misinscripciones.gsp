@@ -20,13 +20,5 @@
             </div>
         </div>
         
-        <h2>MOSTRAR ASI PARA VER BIEN EL NOMBRE DEL CURSO</h2>
-        <g:each in="${inscripcionList}">
-           <div>
-            <span>Identificador: ${it.id}</span>
-            <span>Interesado: ${it.interesado.nombre +" "+it.interesado.apellido}</span>
-            <span>Curso: ${it.cursos.nombre}</span>
-           </div>
-        </g:each>
     </body>
 </html>

@@ -69,26 +69,31 @@ class SecurityInterceptor {
   }
 
   boolean before() {
-      if (!session.usuario && (actionName != "loginUser" && actionName != "acceder")) {
-          redirect(controller: "usuario", action: "acceder")
+      if (!session.usuario && (actionName!="loginUser")) {
+          render (view:"acceder")
+          
           return false
+          
       }
+      
+      
 
       def usuario = Usuario.findByNombreUsuario(session.usuario?.nombreUsuario)
 
-     if(session.usuario && (actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' || actionName== 'certificadoPDF' )) {
+     if((actionName=='index' || actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' || actionName== 'certificadoPDF' )) {
        if(!(usuario instanceof Administrador)) {
            render(view: "/curso/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
        }
+       
      }
-
      
-     }
-
-
+  
       return true
   }
+
+
+      
 
   boolean after() { 
 
