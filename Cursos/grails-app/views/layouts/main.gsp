@@ -81,7 +81,7 @@
 
 						</g:if>
 						<g:else>
-							<li><g:link controller="curso" action="index">INICIO</g:link></li>
+							<li><g:link action=''>INICIO</g:link></li>
 								<li><a href="#facultad">LA FACULTAD</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>

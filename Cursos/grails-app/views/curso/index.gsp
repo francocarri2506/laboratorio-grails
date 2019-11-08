@@ -103,7 +103,7 @@
                         
                     <ul><br>
                             
-                            <form action="curso/buscarCurso" method="POST">
+                            <g:form action="buscarCurso" method="POST">
                                     <div class="row">
                                         <div class="col-md-6">
                                                 <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
@@ -112,7 +112,7 @@
                                             <button type="submit" class="btn btn-primary">Buscar</button><br><br>
                                         </div>
                                     </div>
-                            </form>
+                            </g:form>
                         </ul>
                      
                     <div class="container">
