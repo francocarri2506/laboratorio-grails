@@ -68,13 +68,19 @@
             <div class="property-value" aria-labelledby="firma-label"><img  src=${createLink(controller:"AutoridadCertificante", action:"verImagen", id:"${params.id}")} width='300' /></div>
         </li>
     
-     <!--  
+     
     
         <li class="fieldcontain">
             <span id="cursos-label" class="property-label">Cursos</span>
-            <div class="property-value" aria-labelledby="cursos-label"><ul>${this.autoridadCertificante.cursos}</ul></div>
+            <ul>
+            <g:each in="${this.cursos}">
+                <div class="property-value" aria-labelledby="cursos-label">${it.nombre}</li></div>
+                        
+            </g:each>
+            <ul>
+            
         </li>
-    --> 
+    
     </ol>
             
            

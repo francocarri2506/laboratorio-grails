@@ -23,7 +23,43 @@
                     <g:if test="${flash.message}">
                     <div class="message" role="status">${flash.message}</div>
                     </g:if>
-                    <f:display bean="interesado" />
+                    
+                    
+                    <ol class="property-list interesado">
+    
+        <li class="fieldcontain">
+            <span id="nombreUsuario-label" class="property-label">Nombre Usuario</span>
+            <div class="property-value" aria-labelledby="nombreUsuario-label">${this.interesado.nombreUsuario}</div>
+        </li>
+    
+    
+        <li class="fieldcontain">
+            <span id="email-label" class="property-label">Email</span>
+            <div class="property-value" aria-labelledby="email-label">${this.interesado.email}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="dni-label" class="property-label">Dni</span>
+            <div class="property-value" aria-labelledby="dni-label">${this.interesado.dni}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="apellido-label" class="property-label">Apellido</span>
+            <div class="property-value" aria-labelledby="apellido-label">${this.interesado.apellido}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="nombre-label" class="property-label">Nombre</span>
+            <div class="property-value" aria-labelledby="nombre-label">${this.interesado.nombre}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="categoria-label" class="property-label">Categoria</span>
+            <div class="property-value" aria-labelledby="categoria-label">${this.interesado.categoria}</div>
+        </li>
+    
+</ol>
+
                     <g:form resource="${this.interesado}" method="DELETE">
                         <fieldset class="buttons">
                             <g:link action="edit" resource="${this.interesado}"><button type="button" class="edit btn btn-warning">Editar Interesado</button></g:link>
@@ -45,7 +81,43 @@
                     <g:if test="${flash.message}">
                     <div class="message" role="status">${flash.message}</div>
                     </g:if>
-                    <f:display bean="interesado" />
+                    
+    <ol class="property-list interesado">
+    
+        <li class="fieldcontain">
+            <span id="nombreUsuario-label" class="property-label">Nombre Usuario</span>
+            <div class="property-value" aria-labelledby="nombreUsuario-label">${this.interesado.nombreUsuario}</div>
+        </li>
+    
+    
+        <li class="fieldcontain">
+            <span id="email-label" class="property-label">Email</span>
+            <div class="property-value" aria-labelledby="email-label">${this.interesado.email}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="dni-label" class="property-label">Dni</span>
+            <div class="property-value" aria-labelledby="dni-label">${this.interesado.dni}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="apellido-label" class="property-label">Apellido</span>
+            <div class="property-value" aria-labelledby="apellido-label">${this.interesado.apellido}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="nombre-label" class="property-label">Nombre</span>
+            <div class="property-value" aria-labelledby="nombre-label">${this.interesado.nombre}</div>
+        </li>
+    
+        <li class="fieldcontain">
+            <span id="categoria-label" class="property-label">Categoria</span>
+            <div class="property-value" aria-labelledby="categoria-label">${this.interesado.categoria}</div>
+        </li>
+    
+</ol>
+
+
                     <g:form resource="${this.interesado}" method="DELETE">
                         <fieldset class="buttons">
                             <g:link action="edit" resource="${this.interesado}"><button type="button" class="edit btn btn-warning">Editar</button></g:link>

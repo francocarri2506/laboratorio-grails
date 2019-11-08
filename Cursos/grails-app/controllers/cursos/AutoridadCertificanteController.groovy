@@ -15,11 +15,15 @@ class AutoridadCertificanteController {
     }
 
     def show(Long id) {
-        respond autoridadCertificanteService.get(id)
+        def autoridad= AutoridadCertificante.findById(id)
+        def cursos = Curso.findAll()
+        //def cursos = Curso.findAllByAutoridades(autoridad)
+        respond (autoridadCertificanteService.get(id), model:[cursos:cursos, cursosCount:cursos.size() ])
     }
 
     def create() {
-        respond new AutoridadCertificante(params)
+        def cursos = Curso.findAll()
+        respond (new AutoridadCertificante(params), model:[cursos:cursos, cursosCount:cursos.size() ])
     }
 
     def save(AutoridadCertificante autoridadCertificante) {
@@ -45,7 +49,8 @@ class AutoridadCertificanteController {
     }
 
     def edit(Long id) {
-        respond autoridadCertificanteService.get(id)
+        def cursos = Curso.findAll()
+        respond (autoridadCertificanteService.get(id), model:[cursos:cursos, cursosCount:cursos.size() ])
     }
 
     def update(AutoridadCertificante autoridadCertificante) {

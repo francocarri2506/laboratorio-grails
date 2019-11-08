@@ -29,7 +29,64 @@
             <g:form resource="${this.autoridadCertificante}" method="PUT" enctype="multipart/form-data">
                 <g:hiddenField name="version" value="${this.autoridadCertificante?.version}" />
                 <fieldset class="form">
-                    <f:all bean="autoridadCertificante"/>
+
+
+                
+            <div class="fieldcontain required">
+                <label for="nombreUsuario">Nombre Usuario<span class="required-indicator">*</span></label>
+                <input type="text" name="nombreUsuario" value="${this.autoridadCertificante.nombreUsuario}" required="" id="nombreUsuario">
+            </div>
+            <div class="fieldcontain required">
+                <label for="password">Password<span class="required-indicator">*</span></label>
+                <input type="password" name="password" value="" required="" id="password">
+            </div>
+            <div class="fieldcontain required">
+                <label for="email">Email<span class="required-indicator">*</span></label>
+                <input type="email" name="email" value="${this.autoridadCertificante.email}" required="" id="email">
+            </div>
+            <div class="fieldcontain required">
+                <label for="dni">Dni<span class="required-indicator">*</span></label>
+                <input type="text" name="dni" value="${this.autoridadCertificante.dni}" required="" pattern="[0-9]{8}" id="dni">
+            </div>
+            <div class="fieldcontain required">
+                <label for="apellido">Apellido<span class="required-indicator">*</span></label>
+                <input type="text" name="apellido" value="${this.autoridadCertificante.apellido}" required="" id="apellido">
+            </div>
+            <div class="fieldcontain required">
+                <label for="nombre">Nombre<span class="required-indicator">*</span></label>
+                <input type="text" name="nombre" value="${this.autoridadCertificante.nombre}" required="" id="nombre">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="cargo">Cargo<span class="required-indicator">*</span></label>
+                <select name="cargo" required="" id="cargo">
+                    <option value="Decano">Decano</option>
+                    <option value="Secretario">Secretario</option>
+                    <option value="Secretaria">Secretaria</option>
+                    <option value="Academico">Academico</option>
+                    <option value="Director Departamento">Director Departamento</option>
+                    <option value="Directora Departamento">Directora Departamento</option>
+                </select>
+            </div>
+
+            <div class="fieldcontain">
+                <label for="firma">Firma</label>
+                <p align="center"> <input type="file" name="firma" value="" id="firma"> </p>
+            </div>
+
+            
+
+            <div class="fieldcontain">
+
+                <label for="cursos">Cursos</label>
+                <select name="cursos" id="cursos" multiple="">
+                    <g:each in="${cursos}">
+                        <option value="${it.id}">${it.nombre} </option>
+                    </g:each>
+                </select>
+            </div>
+
+
                 </fieldset>
                 <fieldset class="buttons">
                     <button type="submit" class="save btn btn-success">Editar Autoridad</button>

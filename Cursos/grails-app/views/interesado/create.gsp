@@ -17,40 +17,83 @@
         
 <g:if test="${session!=null && session.usuario!=null}">
 	<g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
-
-
-			<a href="#create-autoridadCertificante" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+			<a href="#create-interesado" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
                 <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                 <li><a <g:link class="list" action="index">Lista de Interesados</g:link></a></li>
             </ul>
         </div>
-        <div id="create-autoridadCertificante" class="content scaffold-create" role="main">
+        <div id="create-interesado" class="content scaffold-create" role="main">
             <h1>NUEVO INTERESADO</h1>
+
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+            	<div class="message" role="status">${flash.message}</div>
             </g:if>
             <g:hasErrors bean="${this.interesado}">
             <ul class="errors" role="alert">
                 <g:eachError bean="${this.interesado}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
+             	</g:eachError>
             </ul>
             </g:hasErrors>
+
             <g:form resource="${this.interesado}" method="POST" >
-                <fieldset class="form">
-                    <f:all bean="interesado"/>
-                </fieldset>
+                 <fieldset class="form">
+
+            <div class="fieldcontain required">
+                <label for="nombreUsuario">Nombre Usuario<span class="required-indicator">*</span></label>
+                <input type="text" name="nombreUsuario" value="" required="" id="nombreUsuario">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="password">Password<span class="required-indicator">*</span></label>
+                <input type="password" name="password" value="" required="" id="password">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="email">Email<span class="required-indicator">*</span></label>
+                <input type="email" name="email" value="" required="" id="email">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="dni">Dni<span class="required-indicator">*</span></label>
+                <input type="text" name="dni" value="" required="" pattern="[0-9]{8}" id="dni">
+            </div>
+
+            <div class="fieldcontain required">
+            <label for="apellido">Apellido
+                <span class="required-indicator">*</span>
+            </label><input type="text" name="apellido" value="" required="" id="apellido">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="nombre">Nombre<span class="required-indicator">*</span></label>
+                <input type="text" name="nombre" value="" required="" id="nombre">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="categoria">Categoria<span class="required-indicator">*</span></label>
+                <select name="categoria" required="" id="categoria">
+                        <option value="Alumno">Alumno</option>
+                        <option value="Publico General">Publico General</option>
+                        <option value="Docente">Docente</option>
+                </select>
+            </div>
+
+        </fieldset>
                 <fieldset class="buttons">
                     <button type="submit" name="create" class="save btn btn-success">crear</button>
                 </fieldset>
             </g:form>
+			
         </div> 
 
-
 	</g:if>
-	<g:else>
+</g:if>
+<g:else>
+   
+
+	
 <!-- container -->
 	<div class="container">
 		<ol class="breadcrumb">
@@ -68,7 +111,7 @@
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3 class="thin text-center">Crear un nuevo Usuario</h3>
+							<h3 class="thin text-center">Crear un nuevo Usuario Interesado</h3>
 							<hr>
                             <form action="save" method="post" onsubmit="return Clave()">					
 								<div class="top-margin">
@@ -123,8 +166,7 @@
 			<!-- /Article -->
 		</div>
 	</div>	<!-- /container -->
-	</g:else>
-</g:if>
+</g:else>
     <asset:javascript src="prueba.js"/>
     </body>
 </html>

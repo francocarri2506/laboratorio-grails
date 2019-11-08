@@ -15,11 +15,19 @@ class ExpositorController {
     }
 
     def show(Long id) {
-        respond expositorService.get(id)
+
+        def expositor= Expositor.findById(id)
+        def cursos = Curso.findAll()
+        //def cursos = Curso.findAllByExpositores(expositor)
+        respond (expositorService.get(id), model:[cursos:cursos, cursosCount:cursos.size() ])
+    
+        
     }
 
     def create() {
-        respond new Expositor(params)
+         def cursos = Curso.findAll()
+        respond (new Expositor(params), model:[cursos:cursos, cursosCount:cursos.size() ])
+    
     }
 
     def save(Expositor expositor) {
@@ -45,7 +53,9 @@ class ExpositorController {
     }
 
     def edit(Long id) {
-        respond expositorService.get(id)
+        def cursos = Curso.findAll()
+        respond (expositorService.get(id), model:[cursos:cursos, cursosCount:cursos.size() ])
+    
     }
 
     def update(Expositor expositor) {

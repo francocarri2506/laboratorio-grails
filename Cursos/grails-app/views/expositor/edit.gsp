@@ -29,9 +29,61 @@
             </g:hasErrors>
             <g:form resource="${this.expositor}" method="POST" enctype="multipart/form-data">
                 <g:hiddenField name="version" value="${this.expositor?.version}" />
-                <fieldset class="form">
+               <!-- <fieldset class="form">
                     <f:all bean="expositor"/>
                 </fieldset>
+-->
+
+                <fieldset class="form">
+
+
+                
+            <div class="fieldcontain required">
+                <label for="nombreUsuario">Nombre Usuario<span class="required-indicator">*</span></label>
+                <input type="text" name="nombreUsuario" value="${this.expositor.nombreUsuario}" required="" id="nombreUsuario">
+            </div>
+            <div class="fieldcontain required">
+                <label for="password">Password<span class="required-indicator">*</span></label>
+                <input type="password" name="password" value="" required="" id="password">
+            </div>
+            <div class="fieldcontain required">
+                <label for="email">Email<span class="required-indicator">*</span></label>
+                <input type="email" name="email" value="${this.expositor.email}" required="" id="email">
+            </div>
+            <div class="fieldcontain required">
+                <label for="dni">Dni<span class="required-indicator">*</span></label>
+                <input type="text" name="dni" value="${this.expositor.dni}" required="" pattern="[0-9]{8}" id="dni">
+            </div>
+            <div class="fieldcontain required">
+                <label for="apellido">Apellido<span class="required-indicator">*</span></label>
+                <input type="text" name="apellido" value="${this.expositor.apellido}" required="" id="apellido">
+            </div>
+            <div class="fieldcontain required">
+                <label for="nombre">Nombre<span class="required-indicator">*</span></label>
+                <input type="text" name="nombre" value="${this.expositor.nombre}" required="" id="nombre">
+            </div>
+
+            <div class="fieldcontain required">
+                <label for="titulo">Titulo<span class="required-indicator">*</span></label>
+                <input type="text" name="titulo" value="${this.expositor.titulo}" required="" id="titulo">
+            </div>
+
+            <div class="fieldcontain">
+                <label for="firma">Firma</label>
+                <p align="center"> <input type="file" name="firma" value="" id="firma"> </p>
+            </div>
+
+    
+            <div class="fieldcontain">
+
+                <label for="cursos">Cursos</label>
+                <select name="cursos" id="cursos" multiple="">
+                    <g:each in="${cursos}">
+                        <option value="${it.id}">${it.nombre} </option>
+                    </g:each>
+                </select>
+            </div>
+            </fieldset>
                 <fieldset class="buttons">
                     <button type="submit" class="save btn btn-success">Editar Expositor</button>
                 </fieldset>
