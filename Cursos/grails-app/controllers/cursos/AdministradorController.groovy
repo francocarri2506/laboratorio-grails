@@ -38,17 +38,21 @@ class AdministradorController {
             return
         }
 
-        def rol = new Rol (authority: "ADMIN")
-        if (rol!=null){
-            redirect (controller:"nohay", action:"rol")
+        def rol = Rol.findByAuthority("ADMIN")
+        if(!rol.save(flush: true)) {
+            rol.errors.each{
+                println it
+            }
         }
         
+        
         def usuarioRol = new UsuarioRol(usuario: administrador, rol: rol)
-        (!usuarioRol.save(flush:true)) {
+        if(!usuarioRol.save(flush:true)) {
             usuarioRol.errors.each{
                 println it
             }
         }
+
 
         request.withFormat {
             form multipartForm {
