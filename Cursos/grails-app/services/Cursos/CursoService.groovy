@@ -77,4 +77,13 @@ List listadoCursos() {
   }
   */
 }
+
+  def misCursos(Usuario usuario){
+    return Inscripcion.findAllByInteresado(usuario)
+  }
+
+  def inscriptosCurso(Long id){
+    def curso = Curso.findById(id)
+    return Inscripcion.findAllByCursos(curso)
+  } 
 }

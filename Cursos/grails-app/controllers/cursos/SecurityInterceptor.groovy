@@ -73,7 +73,7 @@ class SecurityInterceptor {
   boolean before() {
       
 
-      if (!session.usuario && (actionName!="loginUser" || (controllerName=="interesado" && actionName!="create"))) {
+      if (!session.usuario && ((actionName!="loginUser" && controllerName=="usuario") || (controllerName=="interesado" && actionName!="create")||(controllerName=="curso" && (actionName!="index" && actionName!="show" && actionName!="buscarCurso")))) {
           render (view:"/usuario/acceder")
           
           return false
@@ -84,7 +84,7 @@ class SecurityInterceptor {
 
       def usuario = Usuario.findByNombreUsuario(session.usuario?.nombreUsuario)
 
-     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show')) || (actionName=='edit' || actionName=='save' || actionName=='create' || actionName=='delete' || actionName== 'certificadoPDF' ))) {
+     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show'  && actionName!='buscarCurso' && actionName!='inscribirse' && actionName!='miscursos')) || (controllerName=="inscripcion" && (actionName!='show' && actionName!='misinscripciones' && actionName!='delete')) || (actionName=='edit' || actionName=='save' || actionName=='create' || (controllerName!="inscribirse" && actionName=='delete') || actionName== 'certificadoPDF' ))) {
        if(!(usuario instanceof Administrador)) {
            render(view: "/curso/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false

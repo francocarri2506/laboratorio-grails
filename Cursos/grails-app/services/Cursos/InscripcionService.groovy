@@ -20,4 +20,12 @@ abstract class InscripcionService implements InscripcionsitaService {
       }       
     }
   }
+
+  def pagar(Long id){
+    return Inscripcion.findById(id)
+  }
+
+  def buscarInscripciones(Usuario usuario){
+    return Inscripcion.findAllByInteresado(usuario)
+  }
 }

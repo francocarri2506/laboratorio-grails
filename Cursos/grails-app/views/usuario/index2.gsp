@@ -109,8 +109,7 @@
                       <li><g:link controller="administrador" action="cursosxFecha" >Cursos por Fecha</g:link></li>
                       <li><g:link controller="administrador" action="pagoInscriptos" >Pagos Realiados de Inscriptos</g:link></li>
                       <li><g:link controller="administrador" action="nopagoInscriptos" >Pagos Adeudados de Inscriptos</g:link></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
+                      
                     </ul>
                   </li>
                   
