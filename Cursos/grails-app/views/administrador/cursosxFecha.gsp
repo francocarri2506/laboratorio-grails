@@ -28,11 +28,11 @@
             <div class="form-group row">
                 <label for="fechaDesde_cf" id="fechaDesde_cf"class="col-sm-1 col-form-label">Fecha inicio</label>
                     <div class="col-sm-2">
-                        <input type="date" class="form-control" id="fechaDesde" name="fechaDesde" required>
+                        <input type="date" class="form-control" id="fechaDesde" name="fechaDesde" placeholder="aaaa-MM-dd" required>
                     </div>
                         <label for="fechaHasta_cf" id="fechaHasta_cf" class="col-sm-1 col-form-label">Fecha fin</label>
                     <div class="col-sm-2">
-                        <input type="date" class="form-control" id="fechaHasta" name="fechaHasta" required>
+                        <input type="date" class="form-control" id="fechaHasta" name="fechaHasta" placeholder="aaaa-MM-dd" required>
                     </div>
                     <div class="col-sm-1"><button type="submit" class="btn btn-success">Buscar</button></div>
             </div>        
