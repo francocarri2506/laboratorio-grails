@@ -29,9 +29,9 @@ class CursoController {
     }
 
     def miscursos(){
-        //def curso = Curso.findById(id)
-        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
-        def insc = Inscripcion.findAllByInteresado(usuario)
+        
+        def usuario = session.usuario
+        def insc = cursoService.misCursos(usuario)
         def cursos= insc.cursos
 
         render(view: 'miscursos', model:[cursoList:cursos, cursoCount:cursos.size()]) 
@@ -43,13 +43,7 @@ class CursoController {
     }
 
     def inscriptoscurso(Long id){
-        def curso = Curso.findById(id)
-        
-        if(curso==null){
-            redirect(controller:"nohay", action:"curso")
-        }
-        def idc= curso.id
-        def insc = Inscripcion.findAllByCursos(curso)
+        def insc = cursoService.inscriptosCurso(id)
 
         render(view: 'inscriptoscurso', model:[inscripcionList:insc, inscripcionCount:insc.size()]) 
     }
@@ -104,65 +98,20 @@ class CursoController {
                 }
                 else{
                     render(view: "index", model: [message:'La etapa de inscripcion para este curso ha concluido'])
-                    //redirect(controller: 'fechalimite', action: 'alcanzada')    
+                        
                 }
             }
             else{
-                        def cursos= cursoService.buscarCursitoNombre(params.nombrecurso)
+                //def cursos= cursoService.buscarCursitoNombre(params.nombrecurso)
 
-                render(view: "index", model: [message:'Ya se encuentra inscripto en este curso',cursoList:cursos, cursoCount:cursos.size()])
-                //redirect(controller: 'yainscripto', action: 'enestecurso')
+                render(view: "index", model: [message:'Ya se encuentra inscripto en este curso'])
             }
-            //redirect (controller:'insc', action: 'tamanio')
+            
         }
         else{
             redirect (controller:'insc', action: 'nohaycupo')
         } 
-        /*
-        def longitud = curso.interesados.length
-        //if(curso.interesados.size()<curso.cupoMaximo || curso.interesados.size()==curso.cupoMaximo){
-        if(curso.interesados.size()<curso.cupoMaximo || curso.interesados.size()==curso.cupoMaximo){    
-            curso.addToInteresados(usuario)    
-            if (!curso.save()){
-                redirect(controller: 'usuario', action: 'create')
-            }
-            def ins = new Inscripcion (cursos: curso, interesado: usuario)
-            if(!ins.save(flush: true)) {
-            ins.errors.each{
-                println it
-            }
-            redirect(action: 'index')
-            }
-            else{
-            redirect(controller: 'inscripcion', action: 'create')
-            }
 
-            //redirect(controller: 'curso', action: 'longitud')        
-        }
-        else{
-            redirect(controller: 'curso', action: 'yanohaycupo') 
-        }*/
-        /*
-        curso.addToInteresados(usuario)
-        if (!curso.save()){
-            redirect(controller: 'usuario', action: 'create')
-        }*/
-        /*
-        def ins = new Inscripcion (cursos: curso, interesado: usuario)
-        if (ins==null){
-            redirect(controller: 'inscripcion', action: 'create')
-        }
-        
-        if(!ins.save(flush: true)) {
-            ins.errors.each{
-                println it
-            }
-            redirect(action: 'index')
-        }
-        else{
-            redirect(controller: 'inscripcion', action: 'create')
-        }
-*/
     }
 
     def create() {

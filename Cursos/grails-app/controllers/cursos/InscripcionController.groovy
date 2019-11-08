@@ -23,12 +23,8 @@ class InscripcionController {
     }
 
     def establecerPago(Long id){
-        def insc = Inscripcion.findById(id)
+        def insc = inscripcionService.pagar(id)
         def fecha = new Date()
-        if(insc==null){
-            redirect(controller: 'aaa', action: 'index')
-        }
-
         insc.fechaPago= fecha
         insc.estadoPago= "Realizado"
         insc.save(flush:true)
@@ -36,8 +32,8 @@ class InscripcionController {
     }
 
     def misinscripciones (Long id){
-        def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
-        def insc = Inscripcion.findAllByInteresado(usuario)
+        def usuario = session.usuario
+        def insc = inscripcionService.buscarInscripciones(usuario)
 
         render(view: 'misinscripciones', model:[inscripcionList: insc, inscripcionCount:insc.size()])
     }
