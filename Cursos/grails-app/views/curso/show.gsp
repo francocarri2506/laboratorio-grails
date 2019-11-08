@@ -56,12 +56,12 @@
     
         <li class="fieldcontain">
             <span id="fechaDesde-label" class="property-label">Fecha Desde</span>
-            <div class="property-value" aria-labelledby="fechaDesde-label">${this.curso.fechaDesde}</div>
+            <div class="property-value" aria-labelledby="fechaDesde-label"><g:formatDate format="dd/MM/yyyy" date="${this.curso.fechaDesde}"/></div>
         </li>
     
         <li class="fieldcontain">
             <span id="fechaHasta-label" class="property-label">Fecha Hasta</span>
-            <div class="property-value" aria-labelledby="fechaHasta-label">${this.curso.fechaHasta}</div>
+            <div class="property-value" aria-labelledby="fechaHasta-label"><g:formatDate format="dd/MM/yyyy" date="${this.curso.fechaHasta}"/></div>
         </li>
     
         <li class="fieldcontain">
@@ -81,12 +81,12 @@
     
         <li class="fieldcontain">
             <span id="fechaLimiteInscripcion-label" class="property-label">Fecha Limite Inscripcion</span>
-            <div class="property-value" id="fechaLimite" aria-labelledby="fechaLimiteInscripcion-label">${this.curso.fechaLimiteInscripcion}</div>
+            <div class="property-value" id="fechaLimite" aria-labelledby="fechaLimiteInscripcion-label"><g:formatDate format="dd/MM/yyyy" date="${this.curso.fechaLimiteInscripcion}"/></div>
         </li>
     
         <li class="fieldcontain">
-            <span id="fechadelCertificado-label" class="property-label">Fechadel Certificado</span>
-            <div class="property-value" aria-labelledby="fechadelCertificado-label">${this.curso.fechadelCertificado}</div>
+            <span id="fechadelCertificado-label" class="property-label">Fecha del Certificado</span>
+            <div class="property-value" aria-labelledby="fechadelCertificado-label"><g:formatDate format="dd/MM/yyyy" date="${this.curso.fechadelCertificado}"/></div>
         </li>
     
         <li class="fieldcontain">
@@ -101,24 +101,25 @@
 
         <li class="fieldcontain">
             <span id="costo-label" class="property-label">Costo</span>
-            <div class="property-value" aria-labelledby="costo-label">${this.curso.costo}</div>
+            <div class="property-value" aria-labelledby="costo-label">$${this.curso.costo}</div>
         </li>
     <!--   --> 
         <li class="fieldcontain">
             <span id="expositores-label" class="property-label">Expositores</span>
-            <div class="property-value" aria-labelledby="expositores-label"><ul>${this.curso.expositores}</ul></div>
+            <ul><g:each in="${curso.expositores}">
+                <li><div class="property-value" aria-labelledby="costo-label"><a href="/expositor/show/${it.id}">  ${it.apellido} ${it.nombre}</a></div></li>
+            </g:each>
+            </ul>    
         </li>
     
         <li class="fieldcontain">
             <span id="autoridades-label" class="property-label">Autoridades</span>
-            <div class="property-value" aria-labelledby="autoridades-label"><ul>${this.curso.autoridades}</ul></div>
+            <ul><g:each in="${curso.autoridades}">
+                <li><div class="property-value" aria-labelledby="costo-label"><a href="/autoridades/show/${it.id}">  ${it.apellido} ${it.nombre}</a></div></li>
+            </g:each>
+            </ul>  
         </li>
     
-        <li class="fieldcontain">
-            <span id="inscripcion-label" class="property-label">Inscriptos</span>
-            <div class="property-value" aria-labelledby="inscripcion-label"><ul>${this.curso.inscripcion}</ul></div>
-        </li>
-
 
         <li class="fieldcontain">
             <span id="imagen-label" class="property-label">Imagen</span>

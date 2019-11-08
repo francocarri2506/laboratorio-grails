@@ -84,10 +84,43 @@
                         <div class="row">
                             <div id="list-curso" class="content scaffold-list" role="main">
                                 <h1>CURSOS DISPONIBLES</h1>
+
+                                    
                                 <g:if test="${flash.message}">
                                     <div class="message" role="status">${flash.message}</div>
                                 </g:if>
-                                <f:table collection="${cursoList}" />
+
+                                            <table class="table">
+                            <thead>
+                                <tr > 
+                                        <th scope="col" class="sortable">Nombre</th>
+                                        <th scope="col" class="sortable">Tipo</th>
+                                        <th scope="col" class="sortable ">Fecha Desde</th>
+                                        <th scope="col" class="sortable">Fecha Hasta</th>
+                                        <th scope="col" class="sortable">Cantidad de Horas</th>
+                                        <th scope="col" class="sortable">Lugar</th>
+                                        <th scope="col" class="sortable">Horarios</th>
+                                        
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <g:each in="${cursoList}">
+                                <tr class="info">
+                                
+                                    <td ><a href="/curso/show/${it.id}">${it.nombre}</a></td>
+                                    <td>${it.tipo}</td>
+                                    <td><g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></td>
+                                    <td><g:formatDate format="dd/MM/yyyy" date="${it.fechaHasta}"/></td>
+                                    <td>${it.cantidadHoras}</td>
+                                    <td>${it.lugar}</td>
+                                    <td>${it.horarios}</td>
+                                    
+                                </tr>
+                                </g:each>
+                            </tbody>
+                        </table>
+                               
                                 <div class="pagination">
                                     <g:paginate total="${cursoCount ?: 0}" />
                                 </div>
@@ -96,6 +129,7 @@
                     </div> 
                 </g:if>
                 <g:else>
+                 </div> 
                     <div class="container"> 
                     <!--   <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
                     --> 
