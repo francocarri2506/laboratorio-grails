@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'administrador.label', default: 'Administrador')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <title>JOGAF - EDITAR ${this.administrador.nombre} ${this.administrador.apellido}</title>
     </head>
     <body>
         <a href="#edit-administrador" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

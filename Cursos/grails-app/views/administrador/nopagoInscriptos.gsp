@@ -3,13 +3,13 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'inscripcion.label', default: 'Inscripcion')}" />
-        <title>Inscriptos en el curso</title>
+        <title>JOGAF - INSCRIPTOS QUE NO PAGARON</title>
     </head>
     <body>
         <a href="#list-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="/usuario/indexAdmin"><g:message code="default.home.label"/></a></li>
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                 
             </ul>
         </div>
@@ -24,7 +24,7 @@
              <div class="margenseparadorlayout">
     <div class="container-fluid">
     <g:if test="${inscripcionList}">
-        <div class="centrar mb-3"><h3>Inscriptos que adeudan el pago</h3></div>
+        <div class="centrar mb-3"><h3>INSCRIPTOS QUE ADEUDAN EL PAGO</h3></div>
         <br>
         
         <div class="tabla_nth_child">

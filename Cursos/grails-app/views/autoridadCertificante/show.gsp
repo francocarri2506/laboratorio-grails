@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'autoridadCertificante.label', default: 'AutoridadCertificante')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <title>JOGAF - VER ${this.autoridadCertificante.nombre}   ${this.autoridadCertificante.nombre}</title>
     </head>
     <body>
         <a href="#show-autoridadCertificante" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -78,7 +78,7 @@
     </ol>
             
            
-            <g:form resource="${this.autoridadCertificante}" method="DELETE">
+            <g:form resource="${this.autoridadCertificante}" method="DELETE" enctype="multipart/form-data">
                 <fieldset class="buttons">
 
                     <g:link action="edit" resource="${this.autoridadCertificante}"><button type="button" class="edit btn btn-warning">Editar Autoridad</button></g:link>

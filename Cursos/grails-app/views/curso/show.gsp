@@ -3,15 +3,17 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <title>JOGAF - ${this.curso.nombre}</title>
     </head>
     <body>
+
         <a href="#show-curso" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                
                 <g:if test="${session!=null && session.usuario!=null}">
                     <g:if test="${session.usuario.getRoles().any{it.authority=='ADMIN'}}" >
+                        <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                         <li><g:link action="index"><button type="button" class="list btn btn-secondary">Lista de Cursos</button></g:link></li>
                         <li><g:link action="create"><button type="button" class="create  btn btn-success">Nuevo Curso</button></g:link></li>
                         <g:form resource="${this.curso}" method="POST" action='inscriptoscurso'>              
@@ -24,7 +26,7 @@
                     <g:else>
                                 
                         <!--<li><g:link class="inscribirse" action="inscribirse" resource="${this.curso}" onblur="return validarFormulario()">INSCRIBIRSE</g:link></li>-->		
-
+                        <a href="#show-curso" class="skip" tabindex="-1">Principal</a>
                         <g:form method="POST" resource="${this.curso}" action='inscribirse' onsubmit= "return controlFechaInsc()">              
                             <g:submitButton name="inscribirse" class="inscribirse btn btn-info" value="INSCRIBIRME A ESTE CURSO"/>	
                         </g:form>

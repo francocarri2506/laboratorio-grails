@@ -3,13 +3,14 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'interesado.label', default: 'Interesado')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <title>JOGAF - EDITAR - ${this.interesado.nombre} ${this.interesado.apellido}</title>
+
     </head>
     <body>
         <a href="#edit-interesado" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                 <li><g:link class="list" action="index">Lista de Interesados</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Interesado</g:link></li>
             </ul>

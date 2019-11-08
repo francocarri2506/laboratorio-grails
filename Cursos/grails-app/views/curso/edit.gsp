@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'curso.label', default: 'Curso')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
+        <title>Editar Curso</title>
     </head>
     <body>
         <a href="#edit-curso" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
@@ -12,8 +12,6 @@
                 <li><a><g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                 <li><g:link class="list" action="index">Lista de Cursos</g:link></li>
                 <li><g:link class="create" action="create">Nuevo Curso</g:link></li>
-
-
 
             </ul>
         </div>

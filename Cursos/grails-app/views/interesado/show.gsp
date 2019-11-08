@@ -3,7 +3,8 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'interesado.label', default: 'Interesado')}" />
-        <title><g:message code="default.show.label" args="[entityName]" /></title>
+        <title>JOGAF - VER ${this.interesado.nombre} ${this.interesado.apellido}</title>
+
     </head>
     <body>
 

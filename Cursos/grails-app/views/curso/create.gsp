@@ -30,13 +30,10 @@
 <!---->
             <g:form resource="${this.curso}" method="POST" enctype="multipart/form-data">
                 <fieldset class="form">
-               
-                <f:all bean="curso"/>
-
+                    <f:all bean="curso"/>
                 </fieldset>
                 <fieldset class="buttons">
-
-                <button type="submit" name="create" class="save btn btn-success">crear</button>
+                    <button type="submit" name="create" class="save btn btn-success">crear</button>
                 </fieldset>
             </g:form>
 

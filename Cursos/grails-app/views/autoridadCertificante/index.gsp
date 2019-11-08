@@ -3,7 +3,7 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'autoridadCertificante.label', default: 'AutoridadCertificante')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
+        <title> JOGAF - GESTIONAR AUTORIDAD CERTIFICANTE</title>
     </head>
     <body>
         <a href="#list-autoridadCertificante" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>

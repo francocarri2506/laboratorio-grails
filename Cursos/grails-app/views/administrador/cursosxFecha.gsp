@@ -3,13 +3,13 @@
     <head>
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'inscripcion.label', default: 'Inscripcion')}" />
-        <title>Inscriptos en el curso</title>
+        <title>JOGAF - CURSOS POR FECHA</title>
     </head>
     <body>
         <a href="#list-inscripcion" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
         <div class="nav" role="navigation">
             <ul>
-                <li><a class="home" href="/usuario/indexAdmin"><g:message code="default.home.label"/></a></li>
+                <li><a <g:link class="home" controller="usuario" action="indexAdmin">Principal</g:link></a></li>
                 
             </ul>
         </div>
@@ -23,7 +23,7 @@
            
              <div class="margenseparadorlayout">
     <div class="container-fluid">
-        <div class="centrar mb-3"><h3>Cursos realizados en una fecha determinada</h3></div>
+        <div class="centrar mb-3"><h3>CURSOS REALIZADOS EN UNA FECHA DETERMINADA</h3></div>
         <br><g:form method="post" action="cursosxFecha">
             <div class="form-group row">
                 <label for="fechaDesde_cf" id="fechaDesde_cf"class="col-sm-1 col-form-label">Fecha inicio</label>
