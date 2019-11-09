@@ -246,3 +246,206 @@
 
 
 
+
+
+
+
+
+<div id="list-interesado" class="content scaffold-list" role="main">
+            <h1>LISTA DE INTERESADOS</h1>
+            <g:if test="${flash.message}">
+                <div class="message" role="status">${flash.message}</div>
+            </g:if>
+            
+    <g:if test="${interesadoList}">
+        
+        <div class="tabla_nth_child">
+                <table class="table">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Dni</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                       
+                    </tr>
+                    <g:each in="${interesadoList}">
+                    <tr class="danger">
+                        <td><div><label id="nombre">${it.nombre} </label> </div></td>
+                        <td><div><label id="apellido">${it.apellido} </label></div></td>
+                        <td><div><label id="dni">${it.dni} </label> </div></td>
+                        <td><div><label id="email">${it.email} </label> </div></td>
+                        <td><div><label id="email">${it.cargo} </label> </div></td>
+                    </tr>
+                    </g:each>            
+                </table>
+
+            <div class="pagination">
+                <g:paginate total="${interesadoCount ?: 0}" />
+            </div>
+        </div>
+        </div>
+
+
+
+
+        <div id="list-interesado" class="content scaffold-list" role="main">
+            <h1>LISTA DE INTERESADOS</h1>
+            
+            <table>
+    <thead>
+         <tr>
+            
+                <th class="sortable"><a href="/interesado/index?sort=nombreUsuario&amp;max=10&amp;order=asc">Nombre Usuario</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=password&amp;max=10&amp;order=asc">Password</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=email&amp;max=10&amp;order=asc">Email</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=dni&amp;max=10&amp;order=asc">Dni</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=apellido&amp;max=10&amp;order=asc">Apellido</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=nombre&amp;max=10&amp;order=asc">Nombre</a></th>
+            
+                <th class="sortable"><a href="/interesado/index?sort=categoria&amp;max=10&amp;order=asc">Categoria</a></th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr class="even">
+                
+                    
+                        <td><a href="/interesado/show/4">GABRIEL</a></td>
+                    
+                
+                    
+                        <td>e961b2ac40aac4cc36a8bf65bca9177e</td>
+                    
+                
+                    
+                        <td>gabriel@gmail.com</td>
+                    
+                
+                    
+                        <td>39998125</td>
+                    
+                
+                    
+                        <td>PACHECO</td>
+                    
+                
+                    
+                        <td>GABRIEL</td>
+                    
+                
+                    
+                        <td>Alumno</td>
+                    
+                
+            </tr>
+        
+            <tr class="odd">
+                
+                    
+                        <td><a href="/interesado/show/9">FRANCO1212</a></td>
+                    
+                
+                    
+                        <td>e961b2ac40aac4cc36a8bf65bca9177e</td>
+                    
+                
+                    
+                        <td>carrizonicolasfranco1@gmail.com</td>
+                    
+                
+                    
+                        <td>26352569</td>
+                    
+                
+                    
+                        <td>CARRIZO1</td>
+                    
+                
+                    
+                        <td>NICOLAS1</td>
+                    
+                
+                    
+                        <td>Alumno</td>
+                    
+                
+            </tr>
+        
+            <tr class="even">
+                
+                    
+                        <td><a href="/interesado/show/13">GIMENA1</a></td>
+                    
+                
+                    
+                        <td>f4c276d518db1ad3dbc2400036ad0362</td>
+                    
+                
+                    
+                        <td>carrizonicolasfranco2@gmail.com</td>
+                    
+                
+                    
+                        <td>67345554</td>
+                    
+                
+                    
+                        <td>CARRIZO3</td>
+                    
+                
+                    
+                        <td>GIMENA</td>
+                    
+                
+                    
+                        <td>Publico General</td>
+                    
+                
+            </tr>
+        
+            <tr class="odd">
+                
+                    
+                        <td><a href="/interesado/show/14">FRANCOCARRIZO</a></td>
+                    
+                
+                    
+                        <td>e961b2ac40aac4cc36a8bf65bca9177e</td>
+                    
+                
+                    
+                        <td>carrizonicolasfranco3@gmail.com</td>
+                    
+                
+                    
+                        <td>39910673</td>
+                    
+                
+                    
+                        <td>CARRIZO</td>
+                    
+                
+                    
+                        <td>NICOLAS</td>
+                    
+                
+                    
+                        <td>Docente</td>
+                    
+                
+            </tr>
+        
+    </tbody>
+</table>
+
+            <div class="pagination">
+                
+            </div>
+        </div>

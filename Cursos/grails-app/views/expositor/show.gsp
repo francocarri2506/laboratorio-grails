@@ -62,12 +62,16 @@
             <div class="property-value" aria-labelledby="firma-label"><img  src=${createLink(controller:"Expositor", action:"verImagen", id:"${params.id}")} width='300' /></div>
         </li>
 
-        <!--  
         <li class="fieldcontain">
             <span id="cursos-label" class="property-label">Cursos</span>
-            <div class="property-value" aria-labelledby="cursos-label"><ul>${this.expositor.cursos}</ul></div>
+            <ul>
+            <g:each in="${expositor.cursos}">
+               <li><div class="property-value" aria-labelledby="cursos-label">${it.nombre}</li></div>
+                        
+            </g:each>
+            <ul>
+            
         </li>
-        --> 
     </ol>
             <g:form resource="${this.expositor}" method="DELETE">
                 <fieldset class="buttons">
