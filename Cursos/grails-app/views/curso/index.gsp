@@ -137,7 +137,7 @@
                         
                     <ul><br>
                             
-                            <g:form action="buscarCurso" method="POST">
+                            <g:form action="buscarCurso" method="PUT">
                                     <div class="row">
                                         <div class="col-md-6">
                                                 <input type="text" name="nombrecurso" id="nombrecurso" class="form-control"  placeholder="Ingrese nombre del curso que desea buscar">
