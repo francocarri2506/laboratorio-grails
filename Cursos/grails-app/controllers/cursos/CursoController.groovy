@@ -109,7 +109,7 @@ class CursoController {
             
         }
         else{
-            redirect (controller:'insc', action: 'nohaycupo')
+            render(view: "index", model: [message:'No hay cupos disponibles para este curso'])
         } 
 
     }

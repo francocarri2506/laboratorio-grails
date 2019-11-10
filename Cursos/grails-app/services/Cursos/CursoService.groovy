@@ -85,5 +85,70 @@ List listadoCursos() {
   def inscriptosCurso(Long id){
     def curso = Curso.findById(id)
     return Inscripcion.findAllByCursos(curso)
-  } 
+  }
+
+  def inscribirCurso(Long id){
+    def curso = Curso.findById(id)
+    def idc= curso.id
+    //def fechaI = new Date()
+    def costoC = curso.costo
+    if (curso==null){
+        redirect(controller: 'curso', action: 'create')
+    }
+    def usuario = Interesado.findByNombreUsuario(session.usuario?.nombreUsuario)
+    if(usuario==null){
+        redirect(controller: 'usuario', action: 'create')
+    }
+    def insc= Inscripcion.findAllByCursos(curso)
+    
+    if(insc.size()<curso.cupoMaximo || curso.interesados.size()==curso.cupoMaximo){
+        def inte= Inscripcion.findAllByCursosAndInteresado(curso, usuario)
+        
+        if(inte.size()==0){
+            
+            def fechaI = new Date()
+            if (fechaI < curso.fechaLimiteInscripcion || fechaI == curso.fechaLimiteInscripcion){
+                if(usuario.categoria=="Alumno"){
+                    costoC= costoC*0.5
+                }
+                else if(usuario.categoria=="Docente"){
+                    costoC=costoC*0.7
+                }
+                def ins = new Inscripcion (cursos: curso, interesado: usuario, fechaInscripcion: fechaI, estado: "Inscripto", estadoPago:"Pendiente", costo: costoC, numeroorden: insc.size()+1)
+                
+
+                if(!ins.save(flush: true)) {
+                ins.errors.each{
+                    println it
+                }
+                redirect(action: 'index')
+                }
+                else{
+                def idi= ins.id;
+                curso.addToInscripcion(ins)
+                usuario.addToIns(ins)
+                usuario.save(flush:true)
+                
+                if (!curso.save(flush:true)){
+                    redirect(controller: 'noseguardo', action: 'create')
+                }
+                redirect(controller: 'inscripcion', action: 'show', id: idi)
+                }
+            }
+            else{
+                render(view: "index", model: [message:'La etapa de inscripcion para este curso ha concluido'])
+                    
+            }
+        }
+        else{
+            //def cursos= cursoService.buscarCursitoNombre(params.nombrecurso)
+
+            render(view: "index", model: [message:'Ya se encuentra inscripto en este curso'])
+        }
+        
+    }
+    else{
+        redirect (controller:'insc', action: 'nohaycupo')
+    }
+  }
 }
