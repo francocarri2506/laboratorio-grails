@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class CursoController {
 
     CursoService cursoService
+    
     InscripcionService inscripcionService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -115,10 +116,14 @@ class CursoController {
     }
 
     def create() {
-        respond new Curso(params)
+        def expositores = Expositor.findAll()
+        def autoridades = AutoridadCertificante.findAll()
+        
+        respond (new Curso(params), model:[expositores:expositores, expositoresCount:expositores.size(), autoridades:autoridades, autoridadesCount:autoridades.size() ])
     }
 
     def save(Curso curso) {
+        
         if (curso == null) {
             notFound()
             return

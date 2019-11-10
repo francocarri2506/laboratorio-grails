@@ -3,7 +3,7 @@ package Cursos
 class Inscripcion {
 
     Date fechaInscripcion
-    Curso cursos
+    
     Interesado interesado
     Date fechaPago
     String estadoPago
@@ -11,6 +11,7 @@ class Inscripcion {
     String estado
     BigInteger costo
     String nota
+    static belongsTo = [cursos: Curso]
 
     static constraints = {
     //  fechaInscripcion (blank:true, value: new Date() )  //nose si esto se podra

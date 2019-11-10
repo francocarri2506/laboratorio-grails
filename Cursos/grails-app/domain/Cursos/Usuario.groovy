@@ -63,9 +63,9 @@ class Usuario implements Serializable{
 
     static constraints = {
     
-      nombreUsuario blank: false, unique: true
-      password blank: false
-      email blank: false, email: true, unique: true
+      nombreUsuario (blank:false, unique:true )
+      password (blank:false )
+      email (blank:false, email:true, unique:true )
       dni(blank:false , unique:true , matches: "[0-9]{8}")
       apellido(blank:false , maxsize:100)
       nombre(blank:false , maxsize:100)

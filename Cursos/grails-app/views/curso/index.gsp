@@ -128,7 +128,7 @@
                         </div>
                     </div> 
                 </g:if>
-                <g:else>
+                <g:else> <!--Index del intereseado logeado-->
                  </div> 
                     <div class="container"> 
                     <!--   <li><a class="home" href="${createLink(uri: '/')}">Principal</a></li>
@@ -150,19 +150,22 @@
                         </ul>
                      
                     <div class="container">
-                              <div class="row mt">          
-                    <g:each in="${cursoList}" >
+                              <div class="row mt">   
+                              
+                    <g:each in="${cursoList?}" >
                     
                     
                     <!-- col-lg-4 -->
 
                     <div class="col-lg-4 col-md-6 col-xs-12 desc">
-                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}"><img src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='350' height='260'/>
-                                    <div class="b-wrapper">
+                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}"><img src="${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")}" width='350' height='260'/>
+                                                
+
+                                    <div class="b-wrapper">                            
                                         <h4 class="b-from-left b-animate b-delay03${it.id}">${it.nombre}</h4>
                                         <p class="b-from-right b-animate b-delay03">Leer más</p>
                                     </div>
-                                </a>
+                        </a>
                         
                         <p class="text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></p>
                         <hr-d>
@@ -278,22 +281,22 @@
                                         </div>
                                     </div>
                             </form>
-                        </ul>
+                    </ul>
                      
-                    <div class="container">
-                              <div class="row mt">          
-                    <g:each in="${cursoList}" >
+                <div class="container">
+                    <div class="row mt">          
+                    <g:each in="${cursoList?}" >
                     
                     
                     <!-- col-lg-4 -->
 
                     <div class="col-lg-4 col-md-6 col-xs-12 desc">
-                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}"><img src=${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")} width='350' height='260'/>
+                        <a class="b-link-fade b-animate-go" href="/curso/show/${it.id}" target="_blank"><img src="${createLink(controller:"Curso", action:"verImagen", id:"${it.id}")}" width='350' height='260'/>
                                     <div class="b-wrapper">
                                         <h4 class="b-from-left b-animate b-delay03${it.id}">${it.nombre}</h4>
                                         <p class="b-from-right b-animate b-delay03">Leer más</p>
                                     </div>
-                                </a>
+                        </a>
                         
                         <p class="text-muted">Fecha de inicio: <g:formatDate format="dd/MM/yyyy" date="${it.fechaDesde}"/></p>
                         <hr-d>
@@ -308,7 +311,7 @@
                     
                     </div>
                     <!-- /row -->
-                    </div>
+                </div>
                     
                 <!-- razones por las que debes estudiar -->
                 <div class="jumbotron top-space">

@@ -82,7 +82,7 @@
 						</g:if>
 						<g:else>
 							<li><g:link action=''>INICIO</g:link></li>
-								<li><a href="#facultad">LA FACULTAD</a></li>
+								<li><g:link controller="administrador" action="facultad">LA FACULTAD</g:link></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS <b class="caret"></b></a>
 									<ul class="dropdown-menu">
