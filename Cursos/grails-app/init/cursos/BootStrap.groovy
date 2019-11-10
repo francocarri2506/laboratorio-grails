@@ -11,7 +11,7 @@ class BootStrap {
 //      }
 //    }
 
- def usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
+ /*ef usu= new Administrador(dni:"39998673", apellido:"carrizo",nombre:"franco", nombreUsuario: 'franco', password: 'holahola', email: 'carrizonicolasfranco@gmail.com')
 
   if(!usu.save(flush: true)) {
       usu.errors.each{
@@ -99,7 +99,7 @@ def curso2 = new Curso(fechaDesde:fechaD,fechaHasta:fechaH,fechaLimiteInscripcio
             curso2.errors.each{
               println it
             }
-          }}
+          }*/}
 def destroy = {
 
   }

@@ -14,5 +14,5 @@ interface ExpositorService {
     void delete(Serializable id)
 
     Expositor save(Expositor expositor)
-
+  
 }

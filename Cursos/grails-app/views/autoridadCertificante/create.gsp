@@ -73,11 +73,25 @@
                 </select>
             </div>
 
-            <div class="fieldcontain">
-                <label for="firma">Firma</label>
-                <p align="center"> <input type="file" name="firma" value="" id="firma"> </p>
-            </div>
-
+                    <div class="fieldcontain">
+           
+                                <label for="firma">Firma</label>
+                                
+                    </div>
+                                 <div class="container">
+             
+                            <div class="row">
+                             <div class="col-sm-2">
+                             </div>
+                             <div class="col-sm-10">
+                                <input type="file" name="firma" value="" id="firma">
+                                 
+                            
+                            </div>
+                             </div>
+                             </div>
+             
+           
             
 
             <div class="fieldcontain">
