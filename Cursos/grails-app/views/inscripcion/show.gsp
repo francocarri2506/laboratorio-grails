@@ -27,7 +27,7 @@
 
                     <li class="fieldcontain">
                         <span id="fechaInscripcion-label" class="property-label">Fecha Inscripcion</span>
-                        <div class="property-value" aria-labelledby="fechaInscripcion-label">${this.inscripcion.fechaInscripcion}</div>
+                        <div class="property-value" aria-labelledby="fechaInscripcion-label"><g:formatDate format="dd/MM/yyyy" date="${this.inscripcion.fechaInscripcion}"/></div>
                     </li>
                 
                 
@@ -124,7 +124,7 @@
 
                     <li class="fieldcontain">
                         <span id="fechaInscripcion-label" class="property-label">Fecha Inscripcion</span>
-                        <div class="property-value" aria-labelledby="fechaInscripcion-label">${this.inscripcion.fechaInscripcion}</div>
+                        <div class="property-value" aria-labelledby="fechaInscripcion-label"><g:formatDate format="dd/MM/yyyy" date="${this.inscripcion.fechaInscripcion}"/></div>
                     </li>
                 
                 
@@ -170,6 +170,7 @@
 	</fieldset>
                     </g:form>
                 </g:if>
+                
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo" && this.inscripcion.cursos.fechadelCertificado<new Date()}">
                     <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         <fieldset class="buttons">
@@ -181,7 +182,7 @@
 
                 <g:if test="${this.inscripcion.cursos.fechadelCertificado>new Date()}">
                     <fieldset class="buttons">
-                    <button class="btn btn-danger" value="Certificado no disponible">Certificado no disponible</button>    
+                    <button class="btn btn-danger" value="Certificado no disponible" title="El curso no ha finalizado aún">Certificado no disponible</button>    
                     </fieldset>
                 </g:if>
     
