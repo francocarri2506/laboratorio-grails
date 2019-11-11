@@ -71,7 +71,7 @@ class SecurityInterceptor {
   }
 
   boolean before() {
-      
+
 
       if (!session.usuario && ((actionName!="loginUser" && controllerName=="usuario") || (controllerName=="interesado" && actionName!="create")||(controllerName=="curso" && (actionName!="index" && actionName!="show" && actionName!="buscarCurso")))) {
           render (view:"/usuario/acceder")
@@ -84,12 +84,16 @@ class SecurityInterceptor {
 
       def usuario = Usuario.findByNombreUsuario(session.usuario?.nombreUsuario)
 
-     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show' && actionName!='inscribirse' && actionName!='miscursos')) || (controllerName=="inscripcion" && (actionName!='show' && actionName!='misinscripciones' && actionName!='delete')) || (actionName=='edit' || actionName=='save' || actionName=='create' || (controllerName!="inscripcion" && actionName=='delete') || actionName== 'certificadoPDF' ))) {
+     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show' && actionName!='inscribirse' && actionName!='miscursos')) || (controllerName=="inscripcion" && (actionName!='show' && actionName!='misinscripciones' && actionName!='delete')) || ((actionName=='edit' && controllerName!="interesado") || actionName=='save' || actionName=='create' || (controllerName!="inscripcion" && actionName=='delete') || actionName== 'certificadoPDF' ))) {
        if(!(usuario instanceof Administrador)) {
            render(view: "/curso/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
        }
        
+     }
+
+     if(controllerName!="curso" && actionName=="buscarCurso"){
+       redirect(controller: "curso", action:"buscarCurso")
      }
      
   
