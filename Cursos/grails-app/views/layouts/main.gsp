@@ -110,10 +110,12 @@
 							
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
 									<li><a href="/interesado/show/${session.usuario.id}"> Perfil</a></li>
-									<li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
+									
 									<li><a href="/curso/miscursos"> Mis Cursos</a></li>
 								
 									<li><a href="/inscripcion/misinscripciones"> Mis cupones</a></li>
+
+									<li><g:link controller="usuario" action="logout" ><span class="fa fa-sign-out pull-right"></span> Cerrar Sesion</g:link></li>
 								</ul>
 							</g:else>	
 								
