@@ -5,7 +5,8 @@ import static org.springframework.http.HttpStatus.*
 
 class CertificadoAsistenciaController {
 
-    CertificadoAsistenciaService certificadoAsistenciaService
+    CertificadoAsisService certificadoAsisService
+    
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -97,9 +98,11 @@ class CertificadoAsistenciaController {
         }
     }
     def certificadoPDF(Long id) {
-        def insc= Inscripcion.findAllById(id)
+        def insc= certificadoAsisService.certificadoAsistencia(id)
         //Aca se deberia crear un objeto CertificadoAsistencia, guardarlo, y enviarlo a la vista
         //certificadoPDF en vez de enviar la inscripcion
-        render (view:"certificadoPDF", model:[inscripcionList:insc, inscripcionCount:insc.size()])
+        render (view:"certificadoPDF", model:[inscripcion:insc])
     }
+
+    
 }

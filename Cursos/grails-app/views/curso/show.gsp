@@ -115,7 +115,9 @@
         <li class="fieldcontain">
             <span id="autoridades-label" class="property-label">Autoridades</span>
             <ul><g:each in="${curso.autoridades}">
-                <li><div class="property-value" aria-labelledby="costo-label"><a href="/autoridades/show/${it.id}">  ${it.apellido} ${it.nombre}</a></div></li>
+                <li><div class="property-value" aria-labelledby="costo-label"><a href="/autoridadCertificante/show/${it.id}">${it.apellido} ${it.nombre}</a>
+                </div>
+                </li>
             </g:each>
             </ul>  
         </li>

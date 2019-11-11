@@ -84,7 +84,7 @@
                 
                 
                 <g:if test="${this.inscripcion.cursos.tipo=="Asistencia"}">
-                    <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                    <g:form method="POST" target="_blank" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                       
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO" />
@@ -92,7 +92,7 @@
                 </g:if>
                 
                 <g:if test="${this.inscripcion.cursos.tipo=="Evaluativo"}">
-                    <g:form method="POST" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
+                    <g:form method="POST" target="_blank" url="[controller:'certificadoAsistencia', action:'certificadoPDF']">
                         
                         <g:hiddenField name="id" value="${this.inscripcion.id}" />   <!--Pasa como parametro el id al metodo certificadoPDF-->           
                         <g:submitButton name="inscriptos" class="inscriptos btn btn-info" value="GENERAR CERTIFICADO NOTA" />

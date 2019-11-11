@@ -73,11 +73,11 @@
         <li class="fieldcontain">
             <span id="cursos-label" class="property-label">Cursos</span>
             <ul>
-            <g:each in="${autoridadCertificante.cursos}">
-               <li><div class="property-value" aria-labelledby="cursos-label">${it.nombre}</li></div>
+            <g:each in="${this.autoridadCertificante.cursos}">
+               <li><div class="property-value" aria-labelledby="cursos-label">${it.nombre}</div></li>
                         
             </g:each>
-            <ul>
+            </ul>
             
         </li>
     

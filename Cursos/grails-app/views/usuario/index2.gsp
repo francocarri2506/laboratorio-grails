@@ -74,9 +74,8 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> GESTION CERTIFICADOS <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/certificadoAsistencia/index">Certificados de asistencia</a></li>
-                      <li><a href="/certificadoExpositor/index">Certificados de Expositor</a></li>
-                      <li><a href="/certificadoAprobacion/index">Certificado de Aprobación</a></li>
+                      <li><a href="/inscripcion/index">Asistencia/aprobacion</a></li>
+                      
                       
                     </ul>
                   </li>

@@ -84,7 +84,7 @@ class SecurityInterceptor {
 
       def usuario = Usuario.findByNombreUsuario(session.usuario?.nombreUsuario)
 
-     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show'  && actionName!='buscarCurso' && actionName!='inscribirse' && actionName!='miscursos')) || (controllerName=="inscripcion" && (actionName!='show' && actionName!='misinscripciones' && actionName!='delete')) || (actionName=='edit' || actionName=='save' || actionName=='create' || (controllerName!="inscribirse" && actionName=='delete') || actionName== 'certificadoPDF' ))) {
+     if(session.usuario &&((controllerName== "curso" && (actionName!='index' && actionName!='buscarCurso' && actionName!='show' && actionName!='inscribirse' && actionName!='miscursos')) || (controllerName=="inscripcion" && (actionName!='show' && actionName!='misinscripciones' && actionName!='delete')) || (actionName=='edit' || actionName=='save' || actionName=='create' || (controllerName!="inscripcion" && actionName=='delete') || actionName== 'certificadoPDF' ))) {
        if(!(usuario instanceof Administrador)) {
            render(view: "/curso/index", model: [message:'No tiene permisos para la accion solicitada'])
            return false
